@@ -1,0 +1,149 @@
+ID	Name	Kantonszugehörigkeit	Kanton_ID
+1001	La Broye	Freiburg (10)	10
+1002	La Glâne	Freiburg (10)	10
+1003	La Gruyère	Freiburg (10)	10
+1004	La Sarine	Freiburg (10)	10
+1005	See / Lac	Freiburg (10)	10
+1006	Sense	Freiburg (10)	10
+1007	La Veveyse	Freiburg (10)	10
+101	Affoltern	Zürich (1)	1
+102	Andelfingen	Zürich (1)	1
+103	Bülach	Zürich (1)	1
+104	Dielsdorf	Zürich (1)	1
+105	Hinwil	Zürich (1)	1
+106	Horgen	Zürich (1)	1
+107	Meilen	Zürich (1)	1
+108	Pfäffikon	Zürich (1)	1
+109	Uster	Zürich (1)	1
+110	Winterthur	Zürich (1)	1
+1101	Gäu	Solothurn (11)	11
+1102	Thal	Solothurn (11)	11
+1103	Bucheggberg	Solothurn (11)	11
+1104	Dorneck	Solothurn (11)	11
+1105	Gösgen	Solothurn (11)	11
+1106	Wasseramt	Solothurn (11)	11
+1107	Lebern	Solothurn (11)	11
+1108	Olten	Solothurn (11)	11
+1109	Solothurn	Solothurn (11)	11
+111	Dietikon	Zürich (1)	1
+1110	Thierstein	Solothurn (11)	11
+112	Zürich	Zürich (1)	1
+1200	Kt. Basel-Stadt	Basel-Stadt (12)	12
+1301	Arlesheim	Basel-Landschaft (13)	13
+1302	Laufen	Basel-Landschaft (13)	13
+1303	Liestal	Basel-Landschaft (13)	13
+1304	Sissach	Basel-Landschaft (13)	13
+1305	Waldenburg	Basel-Landschaft (13)	13
+1401	Oberklettgau	Schaffhausen (14)	14
+1402	Reiat	Schaffhausen (14)	14
+1403	Schaffhausen	Schaffhausen (14)	14
+1404	Schleitheim	Schaffhausen (14)	14
+1405	Stein	Schaffhausen (14)	14
+1406	Unterklettgau	Schaffhausen (14)	14
+1501	Hinterland	Appenzell A.Rh. (15)	15
+1502	Mittelland	Appenzell A.Rh. (15)	15
+1503	Vorderland	Appenzell A.Rh. (15)	15
+1600	Kt. Appenzell i.Rh.	Appenzell I.Rh. (16)	16
+1721	St. Gallen	Sankt Gallen (17)	17
+1722	Rorschach	Sankt Gallen (17)	17
+1723	Rheintal	Sankt Gallen (17)	17
+1724	Werdenberg	Sankt Gallen (17)	17
+1725	Sarganserland	Sankt Gallen (17)	17
+1726	See-Gaster	Sankt Gallen (17)	17
+1727	Toggenburg	Sankt Gallen (17)	17
+1728	Wil	Sankt Gallen (17)	17
+1821	Albula	Graubünden (18)	18
+1822	Bernina	Graubünden (18)	18
+1823	Hinterrhein	Graubünden (18)	18
+1824	Imboden	Graubünden (18)	18
+1825	Inn	Graubünden (18)	18
+1826	Landquart	Graubünden (18)	18
+1827	Maloja / Maloggia	Graubünden (18)	18
+1828	Moesa	Graubünden (18)	18
+1829	Plessur	Graubünden (18)	18
+1830	Prättigau-Davos	Graubünden (18)	18
+1831	Surselva	Graubünden (18)	18
+1901	Aarau	Aargau (19)	19
+1902	Baden	Aargau (19)	19
+1903	Bremgarten	Aargau (19)	19
+1904	Brugg	Aargau (19)	19
+1905	Kulm	Aargau (19)	19
+1906	Laufenburg	Aargau (19)	19
+1907	Lenzburg	Aargau (19)	19
+1908	Muri	Aargau (19)	19
+1909	Rheinfelden	Aargau (19)	19
+1910	Zofingen	Aargau (19)	19
+1911	Zurzach	Aargau (19)	19
+2011	Arbon	Thurgau (20)	20
+2012	Frauenfeld	Thurgau (20)	20
+2013	Kreuzlingen	Thurgau (20)	20
+2014	Münchwilen	Thurgau (20)	20
+2015	Weinfelden	Thurgau (20)	20
+2101	Bellinzona	Tessin (21)	21
+2102	Blenio	Tessin (21)	21
+2103	Leventina	Tessin (21)	21
+2104	Locarno	Tessin (21)	21
+2105	Lugano	Tessin (21)	21
+2106	Mendrisio	Tessin (21)	21
+2107	Riviera	Tessin (21)	21
+2108	Vallemaggia	Tessin (21)	21
+2221	Aigle	Waadt (22)	22
+2222	Broye-Vully	Waadt (22)	22
+2223	Gros-de-Vaud	Waadt (22)	22
+2224	Jura-Nord vaudois	Waadt (22)	22
+2225	Lausanne	Waadt (22)	22
+2226	Lavaux-Oron	Waadt (22)	22
+2227	Morges	Waadt (22)	22
+2228	Nyon	Waadt (22)	22
+2229	Ouest lausannois	Waadt (22)	22
+2230	Riviera-Pays-d'Enhaut	Waadt (22)	22
+2301	Brig	Wallis (23)	23
+2302	Conthey	Wallis (23)	23
+2303	Entremont	Wallis (23)	23
+2304	Goms	Wallis (23)	23
+2305	Hérens	Wallis (23)	23
+2306	Leuk	Wallis (23)	23
+2307	Martigny	Wallis (23)	23
+2308	Monthey	Wallis (23)	23
+2309	Raron	Wallis (23)	23
+2310	Saint-Maurice	Wallis (23)	23
+2311	Sierre	Wallis (23)	23
+2312	Sion	Wallis (23)	23
+2313	Visp	Wallis (23)	23
+2401	Boudry	Neuenburg (24)	24
+2402	La Chaux-de-Fonds	Neuenburg (24)	24
+2403	Le Locle	Neuenburg (24)	24
+2404	Neuchâtel	Neuenburg (24)	24
+2405	Val-de-Ruz	Neuenburg (24)	24
+2406	Val-de-Travers	Neuenburg (24)	24
+241	Jura bernois	Bern (2)	2
+242	Biel/Bienne	Bern (2)	2
+243	Seeland	Bern (2)	2
+244	Oberaargau	Bern (2)	2
+245	Emmental	Bern (2)	2
+246	Bern-Mittelland	Bern (2)	2
+247	Thun	Bern (2)	2
+248	Obersimmental-Saanen	Bern (2)	2
+249	Frutigen-Niedersimmental	Bern (2)	2
+250	Interlaken-Oberhasli	Bern (2)	2
+2500	Cant. de Genève	Genf (25)	25
+2601	Delémont	Jura (26)	26
+2602	Les Franches-Montagnes	Jura (26)	26
+2603	Porrentruy	Jura (26)	26
+311	Luzern-Stadt	Luzern (3)	3
+312	Luzern-Land	Luzern (3)	3
+313	Hochdorf	Luzern (3)	3
+314	Sursee	Luzern (3)	3
+315	Willisau	Luzern (3)	3
+316	Entlebuch	Luzern (3)	3
+400	Kt. Uri	Uri (4)	4
+501	Einsiedeln	Schwyz (5)	5
+502	Gersau	Schwyz (5)	5
+503	Höfe	Schwyz (5)	5
+504	Küssnacht (SZ)	Schwyz (5)	5
+505	March	Schwyz (5)	5
+506	Schwyz	Schwyz (5)	5
+600	Kt. Obwalden	Obwalden (6)	6
+700	Kt. Nidwalden	Nidwalden (7)	7
+800	Kt. Glarus	Glarus (8)	8
+900	Kt. Zug	Zug (9)	9

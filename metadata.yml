@@ -1,0 +1,51 @@
+files:
+  - file: municipalities.csv
+    name: Die 2324 Gemeinden der Schweiz am 1.1.2015
+    date: 1.1.2015
+    source: BFS – ThemaKart
+    license: © Bundesamt für Statistik, ThemaKart, Neuchâtel 2009–2015
+    dataset_id: 116466
+  - file: districts.csv
+    name: Die 148 Bezirke der Schweiz am 1.1.2013
+    date: 01.01.2013
+    source: BFS – ThemaKart
+    license: © Bundesamt für Statistik, ThemaKart, Neuchâtel 2009–2015
+    dataset_id: 89638
+  - file: cantons.csv
+    name: Die 26 Kantone der Schweiz
+    date: 01.01.1997
+    source: BFS – ThemaKart
+    license: © Bundesamt für Statistik, ThemaKart, Neuchâtel 2009–2015
+    dataset_id: 328
+  - file: steuer_steuerpflichtig.csv
+    name: Durchschnittliches steuerbares Einkommen* pro Steuerpflichtigem/-r, 2011
+    date: 1.1.2011 - 31.12.2011
+    source: ESTV
+    license: © Bundesamt für Statistik, ThemaKart, Neuchâtel 2009–2015
+    dataset_id: [107583, 107572]
+  - file: steuer_bevoelkerung.csv
+    name: Durchschnittliches steuerbares Einkommen* pro Kopf, 2011
+    date: 1.1.2011 - 31.12.2011
+    source: ESTV
+    remark: relevant für die Berechnung der direkten Bundessteuer, von natürlichen Personen
+    license: © Bundesamt für Statistik, ThemaKart, Neuchâtel 2009–2015
+    dataset_id: [107583, 107572]
+  - file: lohnunterschied_geschlecht.csv
+    name: Lohnunterschied zwischen Frauen und Männern, 2010
+    remark: Standardisierter monatlicher Bruttolohn, Median in Franken; privater Sektor und öffentlicher Sektor (Bund).
+    date: 1.10.2010 - 30.6.2011
+    source: BFS – Schweizerische Lohnstrukturerhebung (LSE)
+    license: © Bundesamt für Statistik, ThemaKart, Neuchâtel 2009–2015
+    dataset_id: 62942
+  - file: gemeinde_klassen_22.csv
+    name: Gemeindetypologie der Schweiz in 22 Klassen am 5.12.2000 (Volkszählung)
+    date: 05.12.2000
+    source: BFS – ThemaKart
+    license: © Bundesamt für Statistik, ThemaKart, Neuchâtel 2009–2015
+    dataset_id: 13496
+  - file: raum_stadt_charakter.csv
+    name: Der Raum mit städtischem Charakter am 18.12.2014*
+    date: 31.12.2012
+    source: BFS – Raumgliederungen der Schweiz
+    license: © Bundesamt für Statistik, ThemaKart, Neuchâtel 2009–2015
+    dataset_id: 107646
