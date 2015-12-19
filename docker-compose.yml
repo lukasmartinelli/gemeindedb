@@ -1,0 +1,16 @@
+pgdata:
+  image: "tianon/true"
+  volumes:
+  - /var/lib/postgresql/data
+postgis:
+  build: "postgis"
+  volumes_from:
+   - pgdata
+  ports:
+   - "5432"
+import:
+  build: "import"
+  links:
+   - postgis:postgis
+  volumes:
+   - ./data:/data
