@@ -1,0 +1,2597 @@
+Regions-ID	Regionsname	Anteil der Steuerbelastung* am Bruttoarbeitseinkommen in %
+1	Aeugst am Albis	1.67
+2	Affoltern am Albis	1.84
+3	Bonstetten	1.72
+4	Hausen am Albis	1.75
+5	Hedingen	1.74
+6	Kappel am Albis	1.78
+7	Knonau	1.84
+8	Maschwanden	1.84
+9	Mettmenstetten	1.65
+10	Obfelden	1.82
+11	Ottenbach	1.8
+12	Rifferswil	1.78
+13	Stallikon	1.58
+14	Wettswil am Albis	1.5
+21	Adlikon	1.76
+22	Benken (ZH)	1.82
+23	Berg am Irchel	1.78
+24	Buch am Irchel	1.81
+25	Dachsen	1.76
+26	Dorf	1.8
+27	Feuerthalen	1.83
+28	Flaach	1.78
+29	Flurlingen	1.78
+30	Andelfingen	1.71
+31	Henggart	1.75
+32	Humlikon	1.83
+33	Kleinandelfingen	1.75
+34	Laufen-Uhwiesen	1.78
+35	Marthalen	1.8
+36	Oberstammheim	1.84
+37	Ossingen	1.84
+38	Rheinau	1.84
+39	Thalheim an der Thur	1.78
+40	Trüllikon	1.77
+41	Truttikon	1.78
+42	Unterstammheim	1.84
+43	Volken	1.84
+44	Waltalingen	1.84
+51	Bachenbülach	1.66
+52	Bassersdorf	1.64
+53	Bülach	1.8
+54	Dietlikon	1.63
+55	Eglisau	1.84
+56	Embrach	1.78
+57	Freienstein-Teufen	1.77
+58	Glattfelden	1.79
+59	Hochfelden	1.75
+60	Höri	1.79
+61	Hüntwangen	1.77
+62	Kloten	1.72
+63	Lufingen	1.6
+64	Nürensdorf	1.59
+65	Oberembrach	1.79
+66	Opfikon	1.69
+67	Rafz	1.81
+68	Rorbas	1.77
+69	Wallisellen	1.62
+70	Wasterkingen	1.82
+71	Wil (ZH)	1.77
+72	Winkel	1.48
+81	Bachs	1.84
+82	Boppelsen	1.59
+83	Buchs (ZH)	1.76
+84	Dällikon	1.73
+85	Dänikon	1.75
+86	Dielsdorf	1.72
+87	Hüttikon	1.77
+88	Neerach	1.45
+89	Niederglatt	1.75
+90	Niederhasli	1.82
+91	Niederweningen	1.74
+92	Oberglatt	1.83
+93	Oberweningen	1.75
+94	Otelfingen	1.73
+95	Regensberg	1.71
+96	Regensdorf	1.7
+97	Rümlang	1.73
+98	Schleinikon	1.81
+99	Schöfflisdorf	1.75
+100	Stadel	1.77
+101	Steinmaur	1.75
+102	Weiach	1.56
+111	Bäretswil	1.81
+112	Bubikon	1.75
+113	Dürnten	1.82
+114	Fischenthal	1.84
+115	Gossau (ZH)	1.82
+116	Grüningen	1.77
+117	Hinwil	1.75
+118	Rüti (ZH)	1.83
+119	Seegräben	1.8
+120	Wald (ZH)	1.84
+121	Wetzikon (ZH)	1.8
+131	Adliswil	1.74
+132	Hirzel	1.78
+133	Horgen	1.58
+134	Hütten	1.84
+135	Kilchberg (ZH)	1.49
+136	Langnau am Albis	1.65
+137	Oberrieden	1.54
+138	Richterswil	1.69
+139	Rüschlikon	1.51
+140	Schönenberg (ZH)	1.77
+141	Thalwil	1.5
+142	Wädenswil	1.74
+151	Erlenbach (ZH)	1.52
+152	Herrliberg	1.49
+153	Hombrechtikon	1.81
+154	Küsnacht (ZH)	1.45
+155	Männedorf	1.59
+156	Meilen	1.51
+157	Oetwil am See	1.84
+158	Stäfa	1.51
+159	Uetikon am See	1.59
+160	Zumikon	1.44
+161	Zollikon	1.47
+171	Bauma	1.84
+172	Fehraltorf	1.75
+173	Hittnau	1.84
+174	Illnau-Effretikon	1.78
+175	Kyburg	1.84
+176	Lindau	1.76
+177	Pfäffikon	1.78
+178	Russikon	1.78
+179	Sternenberg	1.84
+180	Weisslingen	1.75
+181	Wila	1.84
+182	Wildberg	1.84
+191	Dübendorf	1.75
+192	Egg	1.64
+193	Fällanden	1.6
+194	Greifensee	1.68
+195	Maur	1.51
+196	Mönchaltorf	1.79
+197	Schwerzenbach	1.58
+198	Uster	1.74
+199	Volketswil	1.6
+200	Wangen-Brüttisellen	1.69
+211	Altikon	1.77
+212	Bertschikon	1.78
+213	Brütten	1.59
+214	Dägerlen	1.81
+215	Dättlikon	1.78
+216	Dinhard	1.7
+217	Elgg	1.82
+218	Ellikon an der Thur	1.78
+219	Elsau	1.8
+220	Hagenbuch	1.77
+221	Hettlingen	1.69
+222	Hofstetten (ZH)	1.84
+223	Neftenbach	1.65
+224	Pfungen	1.75
+225	Rickenbach (ZH)	1.76
+226	Schlatt (ZH)	1.84
+227	Seuzach	1.65
+228	Turbenthal	1.84
+229	Wiesendangen	1.64
+230	Winterthur	1.84
+231	Zell (ZH)	1.84
+241	Aesch (ZH)	1.55
+242	Birmensdorf (ZH)	1.73
+243	Dietikon	1.84
+244	Geroldswil	1.62
+245	Oberengstringen	1.76
+246	Oetwil an der Limmat	1.58
+247	Schlieren	1.81
+248	Uitikon	1.46
+249	Unterengstringen	1.62
+250	Urdorf	1.78
+251	Weiningen (ZH)	1.66
+261	Zürich	2.02
+301	Aarberg	0.86
+302	Bargen (BE)	0.89
+303	Grossaffoltern	0.89
+304	Kallnach	0.88
+305	Kappelen	0.86
+306	Lyss	0.88
+307	Meikirch	0.86
+308	Niederried bei Kallnach	0.89
+309	Radelfingen	0.89
+310	Rapperswil (BE)	0.89
+311	Schüpfen	0.89
+312	Seedorf (BE)	0.9
+321	Aarwangen	0.81
+322	Auswil	0.88
+323	Bannwil	0.88
+324	Bleienbach	0.86
+325	Busswil bei Melchnau	0.83
+326	Gondiswil	0.91
+328	Kleindietwil	0.83
+329	Langenthal	0.83
+330	Leimiswil	0.88
+331	Lotzwil	0.84
+332	Madiswil	0.83
+333	Melchnau	0.87
+334	Obersteckholz	0.89
+335	Oeschenbach	0.95
+336	Reisiswil	0.92
+337	Roggwil (BE)	0.83
+338	Rohrbach	0.87
+339	Rohrbachgraben	0.93
+340	Rütschelen	0.86
+341	Schwarzhäusern	0.83
+342	Thunstetten	0.86
+344	Ursenbach	0.88
+345	Wynau	0.87
+351	Bern	0.86
+352	Bolligen	0.83
+353	Bremgarten bei Bern	0.84
+354	Kirchlindach	0.81
+355	Köniz	0.85
+356	Muri bei Bern	0.75
+357	Oberbalm	0.92
+358	Stettlen	0.84
+359	Vechigen	0.89
+360	Wohlen bei Bern	0.86
+361	Zollikofen	0.83
+362	Ittigen	0.79
+363	Ostermundigen	0.88
+371	Biel/Bienne	0.86
+372	Evilard	0.82
+381	Arch	0.91
+382	Büetigen	0.85
+383	Büren an der Aare	0.88
+384	Busswil bei Büren	0.91
+385	Diessbach bei Büren	0.92
+386	Dotzigen	0.93
+387	Lengnau (BE)	0.86
+388	Leuzigen	0.93
+389	Meienried	0.84
+390	Meinisberg	0.93
+391	Oberwil bei Büren	0.9
+392	Pieterlen	0.89
+393	Rüti bei Büren	0.97
+394	Wengi	0.93
+401	Aefligen	0.81
+402	Alchenstorf	0.89
+403	Bäriswil	0.86
+404	Burgdorf	0.87
+405	Ersigen	0.87
+406	Hasle bei Burgdorf	0.9
+407	Heimiswil	0.92
+408	Hellsau	0.87
+409	Hindelbank	0.84
+410	Höchstetten	0.89
+411	Kernenried	0.83
+412	Kirchberg (BE)	0.84
+413	Koppigen	0.89
+414	Krauchthal	0.89
+415	Lyssach	0.8
+416	Mötschwil	0.88
+417	Niederösch	0.88
+418	Oberburg	0.92
+419	Oberösch	0.88
+420	Rüdtligen-Alchenflüh	0.82
+421	Rumendingen	0.76
+422	Rüti bei Lyssach	0.87
+423	Willadingen	0.81
+424	Wynigen	0.89
+431	Corgémont	0.9
+432	Cormoret	0.94
+433	Cortébert	0.96
+434	Courtelary	0.96
+435	La Ferrière	0.97
+436	La Heutte	0.89
+437	Mont-Tramelan	0.9
+438	Orvin	0.92
+439	Péry	0.86
+440	Plagne	0.94
+441	Renan (BE)	0.97
+442	Romont (BE)	0.89
+443	Saint-Imier	0.9
+444	Sonceboz-Sombeval	0.91
+445	Sonvilier	0.98
+446	Tramelan	0.94
+447	Vauffelin	0.97
+448	Villeret	0.93
+491	Brüttelen	0.93
+492	Erlach	0.87
+493	Finsterhennen	0.93
+494	Gals	0.86
+495	Gampelen	0.84
+496	Ins	0.87
+497	Lüscherz	0.85
+498	Müntschemier	0.89
+499	Siselen	0.93
+500	Treiten	0.79
+501	Tschugg	0.87
+502	Vinelz	0.85
+532	Bangerten	0.85
+533	Bätterkinden	0.88
+534	Büren zum Hof	0.9
+535	Deisswil bei Münchenbuchsee	0.74
+536	Diemerswil	0.88
+537	Etzelkofen	0.82
+538	Fraubrunnen	0.87
+539	Grafenried	0.87
+540	Jegenstorf	0.81
+541	Iffwil	0.84
+542	Limpach	0.9
+543	Mattstetten	0.82
+544	Moosseedorf	0.83
+545	Mülchi	0.92
+546	Münchenbuchsee	0.85
+547	Münchringen	0.86
+548	Ruppoldsried	0.93
+549	Schalunen	0.89
+550	Scheunen	0.83
+551	Urtenen-Schönbühl	0.85
+552	Utzenstorf	0.85
+553	Wiggiswil	0.74
+554	Wiler bei Utzenstorf	0.85
+555	Zauggenried	0.88
+556	Zielebach	0.86
+557	Zuzwil (BE)	0.86
+561	Adelboden	0.94
+562	Aeschi bei Spiez	0.9
+563	Frutigen	0.92
+564	Kandergrund	0.89
+565	Kandersteg	0.91
+566	Krattigen	0.91
+567	Reichenbach im Kandertal	0.9
+571	Beatenberg	0.98
+572	Bönigen	0.91
+573	Brienz (BE)	0.91
+574	Brienzwiler	0.94
+575	Därligen	0.89
+576	Grindelwald	0.9
+577	Gsteigwiler	0.92
+578	Gündlischwand	0.92
+579	Habkern	0.94
+580	Hofstetten bei Brienz	0.92
+581	Interlaken	0.9
+582	Iseltwald	0.91
+584	Lauterbrunnen	0.97
+585	Leissigen	0.91
+586	Lütschental	0.89
+587	Matten bei Interlaken	0.91
+588	Niederried bei Interlaken	0.94
+589	Oberried am Brienzersee	0.94
+590	Ringgenberg (BE)	0.91
+591	Saxeten	0.89
+592	Schwanden bei Brienz	0.91
+593	Unterseen	0.9
+594	Wilderswil	0.9
+602	Arni (BE)	0.88
+603	Biglen	0.88
+604	Bleiken bei Oberdiessbach	0.89
+605	Bowil	0.89
+606	Brenzikofen	0.88
+607	Freimettigen	0.88
+608	Grosshöchstetten	0.84
+609	Häutligen	0.82
+610	Herbligen	0.88
+611	Kiesen	0.86
+612	Konolfingen	0.88
+613	Landiswil	0.88
+614	Linden	0.94
+615	Mirchel	0.8
+616	Münsingen	0.85
+617	Niederhünigen	0.89
+619	Oberdiessbach	0.86
+620	Oberthal	0.91
+622	Oppligen	0.85
+623	Rubigen	0.84
+624	Schlosswil	0.87
+625	Tägertschi	0.87
+626	Walkringen	0.93
+627	Worb	0.87
+628	Zäziwil	0.87
+629	Oberhünigen	0.89
+630	Allmendingen	0.85
+631	Trimstein	0.92
+632	Wichtrach	0.85
+661	Clavaleyres	0.9
+662	Ferenbalm	0.88
+663	Frauenkappelen	0.88
+664	Golaten	0.9
+665	Gurbrü	0.92
+666	Kriechenwil	0.86
+667	Laupen	0.87
+668	Mühleberg	0.8
+669	Münchenwiler	0.86
+670	Neuenegg	0.85
+671	Wileroltigen	0.88
+681	Belprahon	0.92
+682	Bévilard	0.96
+683	Champoz	0.88
+684	Châtelat	0.92
+687	Corcelles (BE)	0.94
+690	Court	0.94
+691	Crémines	0.9
+692	Eschert	0.94
+694	Grandval	0.9
+696	Loveresse	0.94
+697	Malleray	0.96
+699	Monible	0.92
+700	Moutier	0.93
+701	Perrefitte	0.93
+702	Pontenet	0.93
+703	Reconvilier	0.94
+704	Roches (BE)	0.94
+706	Saicourt	0.95
+707	Saules (BE)	0.92
+708	Schelten	0.96
+709	Seehof	0.9
+710	Sornetan	0.96
+711	Sorvilier	0.91
+712	Souboz	0.91
+713	Tavannes	0.92
+715	Rebévelier	0.96
+721	Diesse	0.94
+722	Lamboing	0.94
+723	La Neuveville	0.88
+724	Nods	0.88
+725	Prêles	0.92
+731	Aegerten	0.91
+732	Bellmund	0.83
+733	Brügg	0.84
+734	Bühl	0.92
+735	Epsach	0.93
+736	Hagneck	0.89
+737	Hermrigen	0.91
+738	Jens	0.91
+739	Ipsach	0.85
+740	Ligerz	0.84
+741	Merzligen	0.88
+742	Mörigen	0.82
+743	Nidau	0.91
+744	Orpund	0.92
+745	Port	0.87
+746	Safnern	0.86
+747	Scheuren	0.9
+748	Schwadernau	0.88
+749	Studen (BE)	0.85
+750	Sutz-Lattrigen	0.91
+751	Täuffelen	0.83
+754	Walperswil	0.92
+755	Worben	0.89
+756	Twann-Tüscherz	0.84
+761	Därstetten	0.89
+762	Diemtigen	0.94
+763	Erlenbach im Simmental	0.91
+764	Niederstocken	0.92
+765	Oberstocken	0.95
+766	Oberwil im Simmental	0.9
+767	Reutigen	0.89
+768	Spiez	0.88
+769	Wimmis	0.89
+781	Gadmen	0.94
+782	Guttannen	0.81
+783	Hasliberg	0.94
+784	Innertkirchen	0.87
+785	Meiringen	0.94
+786	Schattenhalb	0.94
+791	Boltigen	0.89
+792	Lenk	0.94
+793	St. Stephan	0.92
+794	Zweisimmen	0.93
+841	Gsteig	0.89
+842	Lauenen	0.91
+843	Saanen	0.82
+851	Albligen	0.96
+852	Guggisberg	0.94
+853	Rüschegg	0.89
+854	Wahlern	0.91
+861	Belp	0.82
+862	Belpberg	0.88
+863	Burgistein	0.91
+865	Gelterfingen	0.87
+866	Gerzensee	0.86
+867	Gurzelen	0.89
+868	Jaberg	0.85
+869	Kaufdorf	0.88
+870	Kehrsatz	0.85
+871	Kienersrüti	0.93
+872	Kirchdorf (BE)	0.87
+873	Kirchenthurnen	0.88
+874	Lohnstorf	0.87
+875	Mühledorf (BE)	0.82
+876	Mühlethurnen	0.87
+877	Niedermuhlern	0.92
+878	Noflen	0.9
+879	Riggisberg	0.9
+880	Rüeggisberg	0.92
+881	Rümligen	0.88
+883	Seftigen	0.91
+884	Toffen	0.87
+885	Uttigen	0.85
+886	Wattenwil	0.9
+888	Wald (BE)	0.9
+901	Eggiwil	0.9
+902	Langnau im Emmental	0.91
+903	Lauperswil	0.89
+904	Röthenbach im Emmental	0.93
+905	Rüderswil	0.87
+906	Schangnau	0.96
+907	Signau	0.91
+908	Trub	0.93
+909	Trubschachen	0.92
+921	Amsoldingen	0.9
+922	Blumenstein	0.87
+923	Buchholterberg	0.89
+924	Eriz	0.93
+925	Fahrni	0.9
+927	Heiligenschwendi	0.92
+928	Heimberg	0.85
+929	Hilterfingen	0.87
+930	Höfen	0.95
+931	Homberg	0.93
+932	Horrenbach-Buchen	0.91
+934	Oberhofen am Thunersee	0.84
+935	Oberlangenegg	0.91
+936	Pohlern	0.9
+937	Schwendibach	0.91
+938	Sigriswil	0.9
+939	Steffisburg	0.88
+940	Teuffenthal (BE)	0.94
+941	Thierachern	0.87
+942	Thun	0.9
+943	Uebeschi	0.92
+944	Uetendorf	0.85
+945	Unterlangenegg	0.92
+946	Wachseldorn	0.92
+947	Zwieselberg	0.9
+948	Forst-Längenbühl	0.88
+951	Affoltern im Emmental	0.88
+952	Dürrenroth	0.92
+953	Eriswil	0.9
+954	Huttwil	0.88
+955	Lützelflüh	0.89
+956	Rüegsau	0.86
+957	Sumiswald	0.91
+958	Trachselwald	0.92
+959	Walterswil (BE)	0.89
+960	Wyssachen	0.93
+971	Attiswil	0.88
+972	Berken	0.81
+973	Bettenhausen	0.83
+974	Bollodingen	0.87
+975	Farnern	0.89
+976	Graben	0.86
+977	Heimenhausen	0.83
+978	Hermiswil	0.86
+979	Herzogenbuchsee	0.81
+980	Inkwil	0.86
+981	Niederbipp	0.8
+982	Niederönz	0.79
+983	Oberbipp	0.83
+985	Ochlenberg	0.87
+987	Rumisberg	0.89
+988	Seeberg	0.88
+989	Thörigen	0.86
+990	Walliswil bei Niederbipp	0.81
+991	Walliswil bei Wangen	0.88
+992	Wangen an der Aare	0.87
+993	Wangenried	0.87
+995	Wiedlisbach	0.87
+996	Wolfisberg	0.89
+1001	Doppleschwand	2.07
+1002	Entlebuch	2.07
+1003	Escholzmatt	2.02
+1004	Flühli	2.05
+1005	Hasle (LU)	2.17
+1006	Marbach (LU)	2.05
+1007	Romoos	1.98
+1008	Schüpfheim	2.05
+1009	Werthenstein	2.12
+1021	Aesch (LU)	2.02
+1022	Altwis	1.87
+1023	Ballwil	1.64
+1024	Emmen	1.91
+1025	Ermensee	1.9
+1026	Eschenbach (LU)	1.6
+1030	Hitzkirch	1.9
+1031	Hochdorf	1.84
+1032	Hohenrain	1.98
+1033	Inwil	1.83
+1037	Rain	1.88
+1039	Römerswil	1.95
+1040	Rothenburg	1.75
+1041	Schongau	1.96
+1051	Adligenswil	1.85
+1052	Buchrain	1.88
+1053	Dierikon	1.71
+1054	Ebikon	1.85
+1055	Gisikon	1.78
+1056	Greppen	1.86
+1057	Honau	1.73
+1058	Horw	1.69
+1059	Kriens	1.84
+1061	Luzern	1.76
+1062	Malters	1.98
+1063	Meggen	1.34
+1064	Meierskappel	2.05
+1065	Root	1.85
+1066	Schwarzenberg	2.17
+1067	Udligenswil	1.86
+1068	Vitznau	1.83
+1069	Weggis	1.62
+1081	Beromünster	1.94
+1082	Büron	1.88
+1083	Buttisholz	2.02
+1084	Eich	1.51
+1085	Geuensee	1.9
+1086	Grosswangen	2.06
+1088	Hildisrieden	1.78
+1089	Knutwil	1.91
+1091	Mauensee	1.98
+1092	Neudorf	1.95
+1093	Neuenkirch	1.97
+1094	Nottwil	1.92
+1095	Oberkirch	1.72
+1096	Pfeffikon	2.1
+1097	Rickenbach (LU)	2.02
+1098	Ruswil	2.02
+1099	Schenkon	1.55
+1100	Schlierbach	1.79
+1102	Sempach	1.68
+1103	Sursee	1.81
+1104	Triengen	1.72
+1107	Wolhusen	2.07
+1121	Alberswil	2.01
+1122	Altbüron	2.11
+1123	Altishofen	1.77
+1125	Dagmersellen	1.72
+1126	Ebersecken	1.98
+1127	Egolzwil	1.86
+1128	Ettiswil	2.01
+1129	Fischbach	2.06
+1130	Gettnau	2.1
+1131	Grossdietwil	2.11
+1132	Hergiswil bei Willisau	2.06
+1135	Luthern	2.17
+1136	Menznau	2.07
+1137	Nebikon	1.82
+1138	Ohmstal	2.06
+1139	Pfaffnau	2.1
+1140	Reiden	1.91
+1142	Roggliswil	2.1
+1143	Schötz	1.93
+1145	Ufhusen	2.05
+1146	Wauwil	1.98
+1147	Wikon	1.95
+1150	Zell (LU)	1.99
+1151	Willisau	1.97
+1201	Altdorf (UR)	0.48
+1202	Andermatt	0.51
+1203	Attinghausen	0.48
+1204	Bauen	0.5
+1205	Bürglen (UR)	0.47
+1206	Erstfeld	0.51
+1207	Flüelen	0.48
+1208	Göschenen	0.51
+1209	Gurtnellen	0.51
+1210	Hospental	0.49
+1211	Isenthal	0.51
+1212	Realp	0.47
+1213	Schattdorf	0.46
+1214	Seedorf (UR)	0.46
+1215	Seelisberg	0.5
+1216	Silenen	0.49
+1217	Sisikon	0.51
+1218	Spiringen	0.51
+1219	Unterschächen	0.48
+1220	Wassen	0.51
+1301	Einsiedeln	0.89
+1311	Gersau	0.97
+1321	Feusisberg	0.53
+1322	Freienbach	0.52
+1323	Wollerau	0.51
+1331	Küssnacht (SZ)	0.77
+1341	Altendorf	0.68
+1342	Galgenen	0.87
+1343	Innerthal	0.74
+1344	Lachen	0.7
+1345	Reichenburg	0.95
+1346	Schübelbach	0.87
+1347	Tuggen	0.88
+1348	Vorderthal	0.76
+1349	Wangen (SZ)	0.88
+1361	Alpthal	0.74
+1362	Arth	0.88
+1363	Illgau	0.98
+1364	Ingenbohl	0.88
+1365	Lauerz	0.84
+1366	Morschach	0.97
+1367	Muotathal	0.84
+1368	Oberiberg	0.86
+1369	Riemenstalden	0.77
+1370	Rothenthurm	0.96
+1371	Sattel	0.9
+1372	Schwyz	0.85
+1373	Steinen	0.94
+1374	Steinerberg	0.88
+1375	Unteriberg	0.95
+1401	Alpnach	4.08
+1402	Engelberg	4.02
+1403	Giswil	4.45
+1404	Kerns	4.26
+1405	Lungern	4.45
+1406	Sachseln	4.16
+1407	Sarnen	3.89
+1501	Beckenried	1.87
+1502	Buochs	1.82
+1503	Dallenwil	1.94
+1504	Emmetten	1.85
+1505	Ennetbürgen	1.71
+1506	Ennetmoos	1.89
+1507	Hergiswil (NW)	1.55
+1508	Oberdorf (NW)	1.79
+1509	Stans	1.87
+1510	Stansstad	1.68
+1511	Wolfenschiessen	2.04
+1601	Betschwanden	1.56
+1602	Bilten	1.5
+1603	Braunwald	1.62
+1605	Elm	1.62
+1606	Engi	1.57
+1607	Ennenda	1.53
+1608	Filzbach	1.59
+1609	Glarus	1.57
+1610	Haslen	1.59
+1613	Linthal	1.62
+1614	Luchsingen	1.62
+1615	Matt	1.6
+1616	Mitlödi	1.53
+1617	Mollis	1.53
+1618	Mühlehorn	1.57
+1619	Näfels	1.56
+1620	Netstal	1.5
+1622	Niederurnen	1.49
+1623	Oberurnen	1.53
+1624	Obstalden	1.59
+1625	Riedern	1.53
+1626	Rüti (GL)	1.62
+1627	Schwanden (GL)	1.51
+1628	Schwändi	1.59
+1629	Sool	1.55
+1701	Baar	0
+1702	Cham	0
+1703	Hünenberg	0
+1704	Menzingen	0
+1705	Neuheim	0
+1706	Oberägeri	0
+1707	Risch	0
+1708	Steinhausen	0
+1709	Unterägeri	0
+1710	Walchwil	0
+1711	Zug	0
+2004	Bussy (FR)	1.16
+2005	Châbles	1.2
+2008	Châtillon (FR)	1.1
+2009	Cheiry	1.28
+2010	Cheyres	1.15
+2011	Cugy (FR)	1.2
+2013	Domdidier	1.18
+2014	Dompierre (FR)	1.27
+2015	Estavayer-le-Lac	1.25
+2016	Fétigny	1.27
+2017	Font	1.21
+2022	Gletterens	1.08
+2024	Léchelles	1.21
+2025	Lully (FR)	1.2
+2027	Ménières	1.28
+2029	Montagny (FR)	1.23
+2033	Morens (FR)	1.26
+2034	Murist	1.3
+2035	Nuvilly	1.29
+2038	Prévondavaux	1.28
+2039	Rueyres-les-Prés	1.2
+2040	Russy	1.17
+2041	Saint-Aubin (FR)	1.2
+2043	Sévaz	1.18
+2044	Surpierre	1.28
+2045	Vallon	1.2
+2047	Villeneuve (FR)	1.27
+2049	Vuissens	1.24
+2050	Les Montets	1.19
+2051	Delley-Portalban	1.02
+2052	Vernay	1.24
+2061	Auboranges	1.15
+2063	Billens-Hennens	1.27
+2066	Chapelle (Glâne)	1.18
+2067	Le Châtelard	1.34
+2068	Châtonnaye	1.18
+2072	Ecublens (FR)	1.27
+2079	Grangettes	1.31
+2086	Massonnens	1.31
+2087	Mézières (FR)	1.19
+2089	Montet (Glâne)	1.13
+2096	Romont (FR)	1.33
+2097	Rue	1.24
+2099	Siviriez	1.13
+2102	Ursy	1.13
+2111	Villaz-Saint-Pierre	1.21
+2112	Vuarmarens	1.19
+2113	Vuisternens-devant-Romont	1.27
+2114	Villorsonnens	1.19
+2115	Torny	1.16
+2116	La Folliaz	1.24
+2121	Haut-Intyamon	1.26
+2122	Pont-en-Ogoz	1.16
+2123	Botterens	1.24
+2124	Broc	1.29
+2125	Bulle	1.14
+2126	Cerniat (FR)	1.34
+2127	Charmey	1.26
+2128	Châtel-sur-Montsalvens	1.21
+2129	Corbières	1.17
+2130	Crésuz	1.17
+2131	Echarlens	1.15
+2134	Grandvillard	1.15
+2135	Gruyères	1.23
+2137	Hauteville	1.21
+2138	Jaun	1.37
+2140	Marsens	1.12
+2143	Morlon	1.24
+2145	Le Pâquier (FR)	1.25
+2147	Pont-la-Ville	1.15
+2148	Riaz	1.12
+2149	La Roche	1.22
+2152	Sâles	1.11
+2153	Sorens	1.23
+2155	Vaulruz	1.2
+2159	Villarvolard	1.27
+2160	Vuadens	1.25
+2162	Bas-Intyamon	1.23
+2171	Arconciel	1.24
+2172	Autafond	1.29
+2173	Autigny	1.22
+2174	Avry	1.07
+2175	Belfaux	1.2
+2177	Chénens	1.22
+2179	Chésopelloz	1.01
+2183	Corminboeuf	1.17
+2184	Corpataux-Magnedens	1.32
+2185	Corserey	1.26
+2186	Cottens (FR)	1.26
+2189	Ependes (FR)	1.19
+2192	Farvagny	1.27
+2194	Ferpicloz	0.91
+2196	Fribourg	1.17
+2197	Givisiez	1.08
+2198	Granges-Paccot	1.1
+2200	Grolley	1.25
+2206	Marly	1.19
+2208	Matran	1.09
+2211	Neyruz (FR)	1.23
+2213	Noréaz	1.22
+2216	Pierrafortscha	1.15
+2217	Ponthaux	1.27
+2220	Le Mouret	1.2
+2221	Prez-vers-Noréaz	1.25
+2222	Rossens (FR)	1.23
+2223	Le Glèbe	1.22
+2225	Senèdes	1.26
+2226	Treyvaux	1.28
+2228	Villars-sur-Glâne	1.08
+2230	Villarsel-sur-Marly	1.25
+2231	Vuisternens-en-Ogoz	1.34
+2233	Hauterive (FR)	1.16
+2234	La Brillaz	1.27
+2235	La Sonnaz	1.18
+2243	Barberêche	1.28
+2244	Büchslen	1.06
+2250	Courgevaux	1.1
+2251	Courlevon	1.21
+2254	Courtepin	1.25
+2257	Cressier (FR)	1.14
+2258	Fräschels	1.16
+2259	Galmiz	1.13
+2260	Gempenach	1.12
+2261	Greng	0.86
+2262	Gurmels	1.24
+2264	Jeuss	1.22
+2265	Kerzers	1.21
+2266	Kleinbösingen	1.12
+2270	Lurtigen	1.22
+2271	Meyriez	1.03
+2272	Misery-Courtion	1.28
+2274	Muntelier	1.01
+2275	Murten	1.12
+2276	Ried bei Kerzers	1.16
+2277	Salvenach	1.15
+2278	Ulmiz	1.2
+2279	Villarepos	1.24
+2280	Bas-Vully	1.1
+2281	Haut-Vully	1.07
+2283	Wallenried	1.24
+2291	Alterswil	1.15
+2292	Brünisried	1.27
+2293	Düdingen	1.16
+2294	Giffers	1.24
+2295	Bösingen	1.16
+2296	Heitenried	1.27
+2298	Oberschrot	1.38
+2299	Plaffeien	1.34
+2300	Plasselb	1.29
+2301	Rechthalten	1.26
+2302	St. Antoni	1.24
+2303	St. Silvester	1.35
+2304	St. Ursen	1.21
+2305	Schmitten (FR)	1.13
+2306	Tafers	1.2
+2307	Tentlingen	1.18
+2308	Ueberstorf	1.19
+2309	Wünnewil-Flamatt	1.26
+2310	Zumholz	1.35
+2321	Attalens	1.19
+2323	Bossonnens	1.24
+2325	Châtel-Saint-Denis	1.21
+2328	Granges (Veveyse)	1.15
+2333	Remaufens	1.26
+2335	Saint-Martin (FR)	1.27
+2336	Semsales	1.23
+2337	Le Flon	1.27
+2338	La Verrerie	1.22
+2401	Egerkingen	2.95
+2402	Härkingen	2.8
+2403	Kestenholz	3.11
+2404	Neuendorf	2.98
+2405	Niederbuchsiten	2.99
+2406	Oberbuchsiten	3.06
+2407	Oensingen	2.95
+2408	Wolfwil	3.14
+2421	Aedermannsdorf	3.39
+2422	Balsthal	3.15
+2423	Gänsbrunnen	3.22
+2424	Herbetswil	3.57
+2425	Holderbank (SO)	3.42
+2426	Laupersdorf	3.36
+2427	Matzendorf	3.48
+2428	Mümliswil-Ramiswil	3.36
+2429	Welschenrohr	3.5
+2441	Aetigkofen	3.26
+2442	Aetingen	2.78
+2444	Bibern (SO)	3.21
+2445	Biezwil	2.96
+2446	Brügglen	3.08
+2449	Gossliwil	3.21
+2450	Hessigkofen	3.08
+2452	Küttigkofen	3.16
+2453	Kyburg-Buchegg	3.24
+2454	Lüsslingen	3.02
+2455	Lüterkofen-Ichertswil	2.71
+2456	Lüterswil-Gächliwil	3.09
+2457	Messen	3.09
+2458	Mühledorf (SO)	3.14
+2459	Nennigkofen	3.02
+2461	Schnottwil	3.26
+2462	Tscheppach	2.97
+2463	Unterramsern	3.08
+2471	Bättwil	3.3
+2472	Büren (SO)	3.36
+2473	Dornach	2.8
+2474	Gempen	3.01
+2475	Hochwald	3.2
+2476	Hofstetten-Flüh	3.14
+2477	Metzerlen-Mariastein	3.37
+2478	Nuglar-St. Pantaleon	3.33
+2479	Rodersdorf	3.26
+2480	Seewen	3.41
+2481	Witterswil	3.27
+2491	Hauenstein-Ifenthal	3.28
+2492	Kienberg	3.5
+2493	Lostorf	2.91
+2495	Niedergösgen	2.87
+2497	Obergösgen	3.19
+2498	Rohr (SO)	3.05
+2499	Stüsslingen	3.17
+2500	Trimbach	3.21
+2501	Winznau	3.34
+2502	Wisen (SO)	3.33
+2503	Erlinsbach (SO)	2.92
+2511	Aeschi (SO)	3.06
+2513	Biberist	3.25
+2514	Bolken	3.33
+2516	Deitingen	3.1
+2517	Derendingen	3.39
+2518	Etziken	3.21
+2519	Gerlafingen	3.21
+2520	Halten	3.29
+2521	Heinrichswil-Winistorf	3.28
+2522	Hersiwil	3.3
+2523	Horriwil	3.3
+2524	Hüniken	3.04
+2525	Kriegstetten	2.97
+2526	Lohn-Ammannsegg	2.87
+2527	Luterbach	3.36
+2528	Obergerlafingen	3.1
+2529	Oekingen	3.15
+2530	Recherswil	3.19
+2531	Steinhof	3.36
+2532	Subingen	3.44
+2534	Zuchwil	3.18
+2541	Balm bei Günsberg	3.14
+2542	Bellach	3.02
+2543	Bettlach	2.78
+2544	Feldbrunnen-St. Niklaus	2.34
+2545	Flumenthal	3.3
+2546	Grenchen	3.17
+2547	Günsberg	3.15
+2548	Hubersdorf	3.2
+2549	Kammersrohr	2.47
+2550	Langendorf	3.1
+2551	Lommiswil	3.41
+2552	Niederwil (SO)	3.22
+2553	Oberdorf (SO)	3.25
+2554	Riedholz	2.97
+2555	Rüttenen	3.04
+2556	Selzach	3.19
+2571	Boningen	2.98
+2572	Däniken	2.66
+2573	Dulliken	3.25
+2574	Eppenberg-Wöschnau	2.95
+2575	Fulenbach	3.06
+2576	Gretzenbach	3.14
+2578	Gunzgen	3.09
+2579	Hägendorf	2.88
+2580	Kappel (SO)	3.02
+2581	Olten	2.92
+2582	Rickenbach (SO)	2.61
+2583	Schönenwerd	3.15
+2584	Starrkirch-Wil	2.96
+2585	Walterswil (SO)	3.23
+2586	Wangen bei Olten	3.15
+2601	Solothurn	3.25
+2611	Bärschwil	3.36
+2612	Beinwil (SO)	3.44
+2613	Breitenbach	3.21
+2614	Büsserach	3.16
+2615	Erschwil	3.39
+2616	Fehren	3.32
+2617	Grindel	3.42
+2618	Himmelried	3.23
+2619	Kleinlützel	3.34
+2620	Meltingen	3.44
+2621	Nunningen	3.3
+2622	Zullwil	3.44
+2701	Basel	0
+2702	Bettingen	0
+2703	Riehen	0
+2761	Aesch (BL)	0
+2762	Allschwil	0
+2763	Arlesheim	0
+2764	Biel-Benken	0
+2765	Binningen	0
+2766	Birsfelden	0
+2767	Bottmingen	0
+2768	Ettingen	0
+2769	Münchenstein	0
+2770	Muttenz	0
+2771	Oberwil (BL)	0
+2772	Pfeffingen	0
+2773	Reinach (BL)	0
+2774	Schönenbuch	0
+2775	Therwil	0
+2781	Blauen	0
+2782	Brislach	0
+2783	Burg im Leimental	0
+2784	Dittingen	0
+2785	Duggingen	0
+2786	Grellingen	0
+2787	Laufen	0
+2788	Liesberg	0
+2789	Nenzlingen	0
+2790	Roggenburg	0
+2791	Röschenz	0
+2792	Wahlen	0
+2793	Zwingen	0
+2821	Arisdorf	0
+2822	Augst	0
+2823	Bubendorf	0
+2824	Frenkendorf	0
+2825	Füllinsdorf	0
+2826	Giebenach	0
+2827	Hersberg	0
+2828	Lausen	0
+2829	Liestal	0
+2830	Lupsingen	0
+2831	Pratteln	0
+2832	Ramlinsburg	0
+2833	Seltisberg	0
+2834	Ziefen	0
+2841	Anwil	0
+2842	Böckten	0
+2843	Buckten	0
+2844	Buus	0
+2845	Diepflingen	0
+2846	Gelterkinden	0
+2847	Häfelfingen	0
+2848	Hemmiken	0
+2849	Itingen	0
+2850	Känerkinden	0
+2851	Kilchberg (BL)	0
+2852	Läufelfingen	0
+2853	Maisprach	0
+2854	Nusshof	0
+2855	Oltingen	0
+2856	Ormalingen	0
+2857	Rickenbach (BL)	0
+2858	Rothenfluh	0
+2859	Rümlingen	0
+2860	Rünenberg	0
+2861	Sissach	0
+2862	Tecknau	0
+2863	Tenniken	0
+2864	Thürnen	0
+2865	Wenslingen	0
+2866	Wintersingen	0
+2867	Wittinsburg	0
+2868	Zeglingen	0
+2869	Zunzgen	0
+2881	Arboldswil	0
+2882	Bennwil	0
+2883	Bretzwil	0
+2884	Diegten	0
+2885	Eptingen	0
+2886	Hölstein	0
+2887	Lampenberg	0
+2888	Langenbruck	0
+2889	Lauwil	0
+2890	Liedertswil	0
+2891	Niederdorf	0
+2892	Oberdorf (BL)	0
+2893	Reigoldswil	0
+2894	Titterten	0
+2895	Waldenburg	0
+2901	Gächlingen	1.64
+2902	Guntmadingen	1.56
+2903	Löhningen	1.42
+2904	Neunkirch	1.54
+2914	Büttenhardt	1.61
+2915	Dörflingen	1.46
+2917	Lohn (SH)	1.54
+2919	Stetten (SH)	1.29
+2920	Thayngen	1.43
+2931	Bargen (SH)	1.61
+2932	Beringen	1.55
+2933	Buchberg	1.4
+2936	Merishausen	1.63
+2937	Neuhausen am Rheinfall	1.54
+2938	Rüdlingen	1.38
+2939	Schaffhausen	1.55
+2951	Beggingen	1.68
+2952	Schleitheim	1.7
+2953	Siblingen	1.61
+2961	Buch (SH)	1.55
+2962	Hemishofen	1.59
+2963	Ramsen	1.65
+2964	Stein am Rhein	1.53
+2971	Hallau	1.63
+2972	Oberhallau	1.68
+2973	Trasadingen	1.67
+2974	Wilchingen	1.61
+3001	Herisau	3
+3002	Hundwil	3.09
+3003	Schönengrund	2.88
+3004	Schwellbrunn	3
+3005	Stein (AR)	2.88
+3006	Urnäsch	3.09
+3007	Waldstatt	3.05
+3021	Bühler	3.19
+3022	Gais	2.96
+3023	Speicher	2.8
+3024	Teufen (AR)	2.57
+3025	Trogen	3.23
+3031	Grub (AR)	3.03
+3032	Heiden	2.96
+3033	Lutzenberg	2.94
+3034	Rehetobel	2.92
+3035	Reute (AR)	3.09
+3036	Wald (AR)	3.11
+3037	Walzenhausen	2.88
+3038	Wolfhalden	3.09
+3101	Appenzell	2.18
+3102	Gonten	2.18
+3103	Rüte	2.25
+3104	Schlatt-Haslen	2.42
+3105	Schwende	2.45
+3111	Oberegg	2.4
+3201	Häggenschwil	0
+3202	Muolen	0
+3203	St. Gallen	0
+3204	Wittenbach	0
+3211	Berg (SG)	0
+3212	Eggersriet	0
+3213	Goldach	0
+3214	Mörschwil	0
+3215	Rorschach	0
+3216	Rorschacherberg	0
+3217	Steinach	0
+3218	Tübach	0
+3219	Untereggen	0
+3231	Au (SG)	0
+3232	Balgach	0
+3233	Berneck	0
+3234	Diepoldsau	0
+3235	Rheineck	0
+3236	St. Margrethen	0
+3237	Thal	0
+3238	Widnau	0
+3251	Altstätten	0
+3252	Eichberg	0
+3253	Marbach (SG)	0
+3254	Oberriet (SG)	0
+3255	Rebstein	0
+3256	Rüthi (SG)	0
+3271	Buchs (SG)	0
+3272	Gams	0
+3273	Grabs	0
+3274	Sennwald	0
+3275	Sevelen	0
+3276	Wartau	0
+3291	Bad Ragaz	0
+3292	Flums	0
+3293	Mels	0
+3294	Pfäfers	0
+3295	Quarten	0
+3296	Sargans	0
+3297	Vilters-Wangs	0
+3298	Walenstadt	0
+3311	Amden	0
+3312	Benken (SG)	0
+3313	Kaltbrunn	0
+3314	Rieden	0
+3315	Schänis	0
+3316	Weesen	0
+3331	Ernetschwil	0
+3332	Eschenbach (SG)	0
+3333	Goldingen	0
+3334	Gommiswald	0
+3337	St. Gallenkappel	0
+3338	Schmerikon	0
+3339	Uznach	0
+3340	Rapperswil-Jona	0
+3352	Ebnat-Kappel	0
+3356	Stein (SG)	0
+3358	Nesslau-Krummenau	0
+3359	Wildhaus-Alt St. Johann	0
+3372	Hemberg	0
+3373	Krinau	0
+3374	Lichtensteig	0
+3375	Oberhelfenschwil	0
+3377	Wattwil	0
+3378	Neckertal	0
+3391	Bütschwil	0
+3392	Kirchberg (SG)	0
+3393	Lütisburg	0
+3394	Mosnang	0
+3401	Degersheim	0
+3402	Flawil	0
+3403	Ganterschwil	0
+3405	Jonschwil	0
+3407	Oberuzwil	0
+3408	Uzwil	0
+3421	Bronschhofen	0
+3422	Niederbüren	0
+3423	Niederhelfenschwil	0
+3424	Oberbüren	0
+3425	Wil (SG)	0
+3426	Zuzwil (SG)	0
+3441	Andwil (SG)	0
+3442	Gaiserwald	0
+3443	Gossau (SG)	0
+3444	Waldkirch	0
+3501	Alvaschein	0
+3502	Mon	0
+3503	Mutten	0
+3504	Stierva	0
+3505	Tiefencastel	0
+3506	Vaz/Obervaz	0
+3511	Alvaneu	0
+3512	Brienz/Brinzauls	0
+3513	Lantsch/Lenz	0
+3514	Schmitten (GR)	0
+3515	Surava	0
+3521	Bergün/Bravuogn	0
+3522	Filisur	0
+3531	Bivio	0
+3532	Cunter	0
+3533	Marmorera	0
+3534	Mulegns	0
+3536	Riom-Parsonz	0
+3538	Salouf	0
+3539	Savognin	0
+3540	Sur	0
+3541	Tinizong-Rona	0
+3551	Brusio	0
+3561	Poschiavo	0
+3571	Castrisch	0
+3572	Falera	0
+3574	Ilanz	0
+3575	Laax	0
+3576	Ladir	0
+3577	Luven	0
+3578	Pitasch	0
+3579	Riein	0
+3580	Ruschein	0
+3581	Sagogn	0
+3582	Schluein	0
+3583	Schnaus	0
+3584	Sevgein	0
+3586	Valendas	0
+3587	Versam	0
+3592	Cumbel	0
+3593	Duvin	0
+3594	Degen	0
+3595	Lumbrein	0
+3596	Morissen	0
+3598	St. Martin	0
+3599	Suraua	0
+3603	Vals	0
+3604	Vignogn	0
+3605	Vella	0
+3606	Vrin	0
+3611	Andiast	0
+3612	Obersaxen	0
+3613	Pigniu	0
+3614	Rueun	0
+3615	Siat	0
+3616	Waltensburg/Vuorz	0
+3617	Mundaun	0
+3631	Almens	0
+3633	Fürstenau	0
+3634	Paspels	0
+3635	Pratval	0
+3636	Rodels	0
+3637	Rothenbrunnen	0
+3638	Scharans	0
+3640	Sils im Domleschg	0
+3651	Safien	0
+3652	Tenna	0
+3661	Cazis	0
+3662	Flerden	0
+3663	Masein	0
+3668	Thusis	0
+3669	Tschappina	0
+3670	Urmein	0
+3671	Tomils	0
+3681	Avers	0
+3691	Hinterrhein	0
+3693	Nufenen	0
+3694	Splügen	0
+3695	Sufers	0
+3701	Andeer	0
+3703	Casti-Wergenstein	0
+3705	Donat	0
+3707	Lohn (GR)	0
+3708	Mathon	0
+3711	Rongellen	0
+3712	Zillis-Reischen	0
+3713	Ferrera	0
+3721	Bonaduz	0
+3722	Domat/Ems	0
+3723	Rhäzüns	0
+3731	Felsberg	0
+3732	Flims	0
+3733	Tamins	0
+3734	Trin	0
+3741	Ardez	0
+3742	Guarda	0
+3743	Lavin	0
+3744	Susch	0
+3745	Tarasp	0
+3746	Zernez	0
+3751	Ramosch	0
+3752	Samnaun	0
+3753	Tschlin	0
+3761	Ftan	0
+3762	Scuol	0
+3763	Sent	0
+3781	Bever	0
+3782	Celerina/Schlarigna	0
+3783	Madulain	0
+3784	Pontresina	0
+3785	La Punt-Chamues-ch	0
+3786	Samedan	0
+3787	St. Moritz	0
+3788	S-chanf	0
+3789	Sils im Engadin/Segl	0
+3790	Silvaplana	0
+3791	Zuoz	0
+3792	Bregaglia	0
+3801	Arvigo	0
+3803	Braggio	0
+3804	Buseno	0
+3805	Castaneda	0
+3806	Cauco	0
+3808	Rossa	0
+3810	Santa Maria in Calanca	0
+3811	Selma	0
+3821	Lostallo	0
+3822	Mesocco	0
+3823	Soazza	0
+3831	Cama	0
+3832	Grono	0
+3833	Leggia	0
+3834	Roveredo (GR)	0
+3835	San Vittore	0
+3836	Verdabbio	0
+3847	Val Müstair	0
+3851	Davos	0
+3861	Fideris	0
+3862	Furna	0
+3863	Jenaz	0
+3871	Klosters-Serneus	0
+3881	Conters im Prättigau	0
+3882	Küblis	0
+3883	Saas	0
+3891	Luzein	0
+3893	St. Antönien	0
+3901	Chur	0
+3911	Churwalden	0
+3921	Arosa	0
+3922	Calfreisen	0
+3923	Castiel	0
+3924	Langwies	0
+3925	Lüen	0
+3926	Maladers	0
+3927	Molinis	0
+3929	Peist	0
+3931	St. Peter-Pagig	0
+3932	Tschiertschen-Praden	0
+3941	Haldenstein	0
+3942	Igis	0
+3943	Mastrils	0
+3945	Trimmis	0
+3946	Untervaz	0
+3947	Zizers	0
+3951	Fläsch	0
+3952	Jenins	0
+3953	Maienfeld	0
+3954	Malans	0
+3961	Grüsch	0
+3962	Schiers	0
+3971	Fanas	0
+3972	Seewis im Prättigau	0
+3973	Valzeina	0
+3981	Breil/Brigels	0
+3982	Disentis/Mustér	0
+3983	Medel (Lucmagn)	0
+3984	Schlans	0
+3985	Sumvitg	0
+3986	Tujetsch	0
+3987	Trun	0
+4001	Aarau	1.39
+4002	Biberstein	1.35
+4003	Buchs (AG)	1.44
+4004	Densbüren	1.62
+4005	Erlinsbach (AG)	1.44
+4006	Gränichen	1.54
+4007	Hirschthal	1.43
+4008	Küttigen	1.44
+4009	Muhen	1.54
+4010	Oberentfelden	1.5
+4012	Suhr	1.51
+4013	Unterentfelden	1.48
+4021	Baden	1.41
+4022	Bellikon	1.39
+4023	Bergdietikon	1.36
+4024	Birmenstorf (AG)	1.51
+4026	Ennetbaden	1.41
+4027	Fislisbach	1.45
+4028	Freienwil	1.54
+4029	Gebenstorf	1.48
+4030	Killwangen	1.43
+4031	Künten	1.54
+4032	Mägenwil	1.31
+4033	Mellingen	1.5
+4034	Neuenhof	1.55
+4035	Niederrohrdorf	1.41
+4037	Oberrohrdorf	1.34
+4038	Obersiggenthal	1.44
+4039	Remetschwil	1.34
+4040	Spreitenbach	1.44
+4041	Stetten (AG)	1.46
+4042	Turgi	1.54
+4044	Untersiggenthal	1.45
+4045	Wettingen	1.37
+4046	Wohlenschwil	1.59
+4047	Würenlingen	1.42
+4048	Würenlos	1.42
+4049	Ehrendingen	1.53
+4061	Arni (AG)	1.33
+4062	Berikon	1.28
+4063	Bremgarten (AG)	1.44
+4064	Büttikon	1.45
+4065	Dottikon	1.39
+4066	Eggenwil	1.42
+4067	Fischbach-Göslikon	1.53
+4068	Hägglingen	1.42
+4069	Hermetschwil-Staffeln	1.6
+4071	Jonen	1.45
+4072	Niederwil (AG)	1.44
+4073	Oberlunkhofen	1.25
+4074	Oberwil-Lieli	1.24
+4075	Rudolfstetten-Friedlisberg	1.37
+4076	Sarmenstorf	1.51
+4077	Tägerig	1.58
+4078	Uezwil	1.52
+4079	Unterlunkhofen	1.31
+4080	Villmergen	1.41
+4081	Widen	1.32
+4082	Wohlen (AG)	1.52
+4083	Zufikon	1.39
+4084	Islisberg	1.38
+4091	Auenstein	1.36
+4092	Birr	1.5
+4093	Birrhard	1.58
+4094	Bözen	1.62
+4095	Brugg	1.4
+4096	Effingen	1.61
+4097	Elfingen	1.59
+4098	Gallenkirch	1.57
+4099	Habsburg	1.39
+4100	Hausen (AG)	1.44
+4103	Linn	1.55
+4104	Lupfig	1.42
+4105	Mandach	1.6
+4106	Mönthal	1.55
+4107	Mülligen	1.5
+4108	Oberbözberg	1.53
+4109	Oberflachs	1.57
+4110	Remigen	1.48
+4111	Riniken	1.49
+4112	Rüfenach	1.51
+4113	Scherz	1.6
+4114	Schinznach-Bad	1.52
+4115	Schinznach-Dorf	1.48
+4117	Thalheim (AG)	1.55
+4119	Unterbözberg	1.45
+4120	Veltheim (AG)	1.55
+4121	Villigen	1.37
+4122	Villnachern	1.56
+4123	Windisch	1.55
+4131	Beinwil am See	1.44
+4132	Birrwil	1.46
+4133	Burg (AG)	1.59
+4134	Dürrenäsch	1.38
+4135	Gontenschwil	1.54
+4136	Holziken	1.49
+4137	Leimbach (AG)	1.48
+4138	Leutwil	1.6
+4139	Menziken	1.59
+4140	Oberkulm	1.54
+4141	Reinach (AG)	1.55
+4142	Schlossrued	1.56
+4143	Schmiedrued	1.55
+4144	Schöftland	1.47
+4145	Teufenthal (AG)	1.56
+4146	Unterkulm	1.6
+4147	Zetzwil	1.58
+4161	Eiken	1.51
+4163	Frick	1.47
+4164	Gansingen	1.59
+4165	Gipf-Oberfrick	1.51
+4166	Herznach	1.62
+4167	Hornussen	1.66
+4169	Kaisten	1.51
+4170	Laufenburg	1.49
+4172	Münchwilen (AG)	1.4
+4173	Oberhof	1.62
+4175	Oeschgen	1.58
+4176	Schwaderloch	1.65
+4177	Sisseln	1.36
+4179	Ueken	1.63
+4181	Wittnau	1.63
+4182	Wölflinswil	1.63
+4183	Zeihen	1.63
+4184	Mettauertal	1.57
+4191	Ammerswil	1.48
+4192	Boniswil	1.42
+4193	Brunegg	1.47
+4194	Dintikon	1.41
+4195	Egliswil	1.46
+4196	Fahrwangen	1.54
+4197	Hallwil	1.53
+4198	Hendschiken	1.58
+4199	Holderbank (AG)	1.44
+4200	Hunzenschwil	1.44
+4201	Lenzburg	1.49
+4202	Meisterschwanden	1.28
+4203	Möriken-Wildegg	1.42
+4204	Niederlenz	1.58
+4205	Othmarsingen	1.56
+4206	Rupperswil	1.42
+4207	Schafisheim	1.44
+4208	Seengen	1.32
+4209	Seon	1.5
+4210	Staufen	1.33
+4221	Abtwil	1.57
+4222	Aristau	1.53
+4223	Auw	1.52
+4224	Beinwil (Freiamt)	1.59
+4225	Benzenschwil	1.45
+4226	Besenbüren	1.57
+4227	Bettwil	1.58
+4228	Boswil	1.51
+4229	Bünzen	1.57
+4230	Buttwil	1.48
+4231	Dietwil	1.6
+4232	Geltwil	1.5
+4233	Kallern	1.51
+4234	Merenschwand	1.45
+4235	Mühlau	1.58
+4236	Muri (AG)	1.46
+4237	Oberrüti	1.59
+4238	Rottenschwil	1.51
+4239	Sins	1.49
+4240	Waltenschwil	1.44
+4251	Hellikon	1.6
+4252	Kaiseraugst	1.27
+4253	Magden	1.46
+4254	Möhlin	1.55
+4255	Mumpf	1.62
+4256	Obermumpf	1.65
+4257	Olsberg	1.43
+4258	Rheinfelden	1.48
+4259	Schupfart	1.62
+4260	Stein (AG)	1.43
+4261	Wallbach	1.46
+4262	Wegenstetten	1.59
+4263	Zeiningen	1.49
+4264	Zuzgen	1.63
+4271	Aarburg	1.55
+4272	Attelwil	1.46
+4273	Bottenwil	1.55
+4274	Brittnau	1.6
+4275	Kirchleerau	1.57
+4276	Kölliken	1.57
+4277	Moosleerau	1.59
+4279	Murgenthal	1.59
+4280	Oftringen	1.51
+4281	Reitnau	1.6
+4282	Rothrist	1.44
+4283	Safenwil	1.49
+4284	Staffelbach	1.55
+4285	Strengelbach	1.53
+4286	Uerkheim	1.62
+4287	Vordemwald	1.56
+4288	Wiliberg	1.57
+4289	Zofingen	1.46
+4301	Baldingen	1.6
+4302	Böbikon	1.62
+4303	Böttstein	1.53
+4304	Döttingen	1.2
+4305	Endingen	1.57
+4306	Fisibach	1.6
+4307	Full-Reuenthal	1.59
+4308	Kaiserstuhl	1.54
+4309	Klingnau	1.46
+4310	Koblenz	1.6
+4311	Leibstadt	1.46
+4312	Lengnau (AG)	1.53
+4313	Leuggern	1.58
+4314	Mellikon	1.58
+4315	Rekingen (AG)	1.65
+4316	Rietheim	1.65
+4317	Rümikon	1.58
+4318	Schneisingen	1.54
+4319	Siglistorf	1.6
+4320	Tegerfelden	1.57
+4321	Unterendingen	1.53
+4322	Wislikofen	1.59
+4323	Bad Zurzach	1.49
+4401	Arbon	0
+4406	Dozwil	0
+4411	Egnach	0
+4416	Hefenhofen	0
+4421	Horn	0
+4426	Kesswil	0
+4431	Roggwil (TG)	0
+4436	Romanshorn	0
+4441	Salmsach	0
+4446	Sommeri	0
+4451	Uttwil	0
+4461	Amriswil	0
+4471	Bischofszell	0
+4476	Erlen	0
+4486	Hauptwil-Gottshaus	0
+4495	Hohentannen	0
+4501	Kradolf-Schönenberg	0
+4506	Sulgen	0
+4511	Zihlschlacht-Sitterdorf	0
+4536	Basadingen-Schlattingen	0
+4545	Diessenhofen	0
+4546	Schlatt (TG)	0
+4551	Aadorf	0
+4561	Felben-Wellhausen	0
+4566	Frauenfeld	0
+4571	Gachnang	0
+4590	Hüttlingen	0
+4591	Matzingen	0
+4601	Neunforn	0
+4606	Stettfurt	0
+4611	Thundorf	0
+4616	Uesslingen-Buch	0
+4621	Warth-Weiningen	0
+4641	Altnau	0
+4643	Bottighofen	0
+4646	Ermatingen	0
+4651	Gottlieben	0
+4656	Güttingen	0
+4666	Kemmental	0
+4671	Kreuzlingen	0
+4681	Langrickenbach	0
+4683	Lengwil	0
+4691	Münsterlingen	0
+4696	Tägerwilen	0
+4701	Wäldi	0
+4711	Affeltrangen	0
+4716	Bettwiesen	0
+4721	Bichelsee-Balterswil	0
+4723	Braunau	0
+4724	Eschlikon	0
+4726	Fischingen	0
+4741	Lommis	0
+4746	Münchwilen (TG)	0
+4751	Rickenbach (TG)	0
+4756	Schönholzerswilen	0
+4761	Sirnach	0
+4776	Tobel-Tägerschen	0
+4781	Wängi	0
+4786	Wilen (TG)	0
+4791	Wuppenau	0
+4801	Berlingen	0
+4806	Eschenz	0
+4811	Herdern	0
+4816	Homburg	0
+4821	Hüttwilen	0
+4826	Mammern	0
+4831	Müllheim	0
+4841	Pfyn	0
+4846	Raperswilen	0
+4851	Salenstein	0
+4864	Steckborn	0
+4871	Wagenhausen	0
+4881	Amlikon-Bissegg	0
+4891	Berg (TG)	0
+4901	Birwinken	0
+4911	Bürglen (TG)	0
+4921	Bussnang	0
+4941	Märstetten	0
+4946	Weinfelden	0
+4951	Wigoltingen	0
+5001	Arbedo-Castione	0.08
+5002	Bellinzona	0.08
+5003	Cadenazzo	0.08
+5004	Camorino	0.08
+5005	Giubiasco	0.08
+5006	Gnosca	0.08
+5007	Gorduno	0.08
+5008	Gudo	0.08
+5009	Isone	0.08
+5010	Lumino	0.08
+5011	Medeglia	0.08
+5012	Moleno	0.08
+5013	Monte Carasso	0.08
+5014	Pianezzo	0.08
+5015	Preonzo	0.08
+5017	Sant'Antonino	0.08
+5018	Sant'Antonio	0.08
+5019	Sementina	0.08
+5040	Ludiano	0.08
+5041	Malvaglia	0.08
+5046	Semione	0.08
+5048	Acquarossa	0.08
+5049	Blenio	0.08
+5061	Airolo	0.08
+5062	Anzonico	0.08
+5063	Bedretto	0.08
+5064	Bodio	0.08
+5066	Calpiogna	0.08
+5067	Campello	0.08
+5068	Cavagnago	0.08
+5070	Chironico	0.08
+5071	Dalpe	0.08
+5072	Faido	0.08
+5073	Giornico	0.08
+5074	Mairengo	0.08
+5075	Osco	0.08
+5076	Personico	0.08
+5077	Pollegio	0.08
+5078	Prato (Leventina)	0.08
+5079	Quinto	0.08
+5081	Sobrio	0.08
+5091	Ascona	0.08
+5095	Brione (Verzasca)	0.08
+5096	Brione sopra Minusio	0.08
+5097	Brissago	0.08
+5098	Caviano	0.08
+5099	Cavigliano	0.08
+5101	Contone	0.08
+5102	Corippo	0.08
+5105	Frasco	0.08
+5106	Gerra (Gambarogno)	0.08
+5108	Gordola	0.08
+5109	Gresso	0.08
+5110	Indemini	0.08
+5112	Lavertezzo	0.08
+5113	Locarno	0.08
+5115	Losone	0.08
+5116	Magadino	0.08
+5117	Mergoscia	0.08
+5118	Minusio	0.08
+5119	Mosogno	0.08
+5120	Muralto	0.08
+5121	Orselina	0.08
+5123	Piazzogna	0.08
+5125	Ronco sopra Ascona	0.08
+5127	San Nazzaro	0.08
+5128	Sant'Abbondio	0.08
+5129	Sonogno	0.08
+5130	Tegna	0.08
+5131	Tenero-Contra	0.08
+5132	Vergeletto	0.08
+5133	Verscio	0.08
+5134	Vira (Gambarogno)	0.08
+5135	Vogorno	0.08
+5136	Onsernone	0.08
+5137	Isorno	0.08
+5138	Cugnasco-Gerra	0.08
+5141	Agno	0.08
+5143	Aranno	0.08
+5144	Arogno	0.08
+5146	Astano	0.08
+5148	Bedano	0.08
+5149	Bedigliora	0.08
+5151	Bioggio	0.08
+5153	Bironico	0.08
+5154	Bissone	0.08
+5155	Bogno	0.08
+5160	Brusino Arsizio	0.08
+5161	Cademario	0.08
+5162	Cadempino	0.08
+5163	Cadro	0.08
+5165	Camignolo	0.08
+5167	Canobbio	0.08
+5169	Carabietta	0.08
+5170	Carona	0.08
+5171	Caslano	0.08
+5173	Certara	0.08
+5174	Cimadera	0.08
+5176	Comano	0.08
+5178	Croglio	0.08
+5180	Cureglia	0.08
+5181	Curio	0.08
+5186	Grancia	0.08
+5187	Gravesano	0.08
+5189	Lamone	0.08
+5192	Lugano	0.08
+5193	Magliaso	0.08
+5194	Manno	0.08
+5195	Maroggia	0.08
+5196	Massagno	0.08
+5197	Melano	0.08
+5198	Melide	0.08
+5199	Mezzovico-Vira	0.08
+5200	Miglieglia	0.08
+5202	Monteggio	0.08
+5203	Morcote	0.08
+5205	Muzzano	0.08
+5206	Neggio	0.08
+5207	Novaggio	0.08
+5208	Origlio	0.08
+5210	Paradiso	0.08
+5212	Ponte Capriasca	0.08
+5213	Ponte Tresa	0.08
+5214	Porza	0.08
+5216	Pura	0.08
+5217	Rivera	0.08
+5219	Rovio	0.08
+5221	Savosa	0.08
+5222	Sessa	0.08
+5223	Sigirino	0.08
+5224	Sonvico	0.08
+5225	Sorengo	0.08
+5226	Capriasca	0.08
+5227	Torricella-Taverne	0.08
+5229	Valcolla	0.08
+5230	Vernate	0.08
+5231	Vezia	0.08
+5233	Vico Morcote	0.08
+5236	Collina d'Oro	0.08
+5237	Alto Malcantone	0.08
+5242	Balerna	0.08
+5243	Besazio	0.08
+5249	Castel San Pietro	0.08
+5250	Chiasso	0.08
+5251	Coldrerio	0.08
+5253	Ligornetto	0.08
+5254	Mendrisio	0.08
+5255	Meride	0.08
+5257	Morbio Inferiore	0.08
+5260	Novazzano	0.08
+5263	Riva San Vitale	0.08
+5266	Stabio	0.08
+5268	Vacallo	0.08
+5269	Breggia	0.08
+5281	Biasca	0.08
+5282	Claro	0.08
+5283	Cresciano	0.08
+5284	Iragna	0.08
+5285	Lodrino	0.08
+5286	Osogna	0.08
+5304	Bosco/Gurin	0.08
+5307	Campo (Vallemaggia)	0.08
+5309	Cerentino	0.08
+5310	Cevio	0.08
+5315	Linescio	0.08
+5317	Maggia	0.08
+5323	Lavizzara	0.08
+5324	Avegno Gordevio	0.08
+5397	Centovalli	0.08
+5401	Aigle	0.06
+5402	Bex	0.04
+5403	Chessel	0.04
+5404	Corbeyrier	0.04
+5405	Gryon	0.04
+5406	Lavey-Morcles	0.04
+5407	Leysin	0.04
+5408	Noville	0.04
+5409	Ollon	0.04
+5410	Ormont-Dessous	0.04
+5411	Ormont-Dessus	0.04
+5412	Rennaz	0.04
+5413	Roche (VD)	0.04
+5414	Villeneuve (VD)	0.04
+5415	Yvorne	0.04
+5421	Apples	0.04
+5422	Aubonne	0.04
+5423	Ballens	0.06
+5424	Berolle	0.04
+5425	Bière	0.04
+5426	Bougy-Villars	0.04
+5427	Féchy	0.04
+5428	Gimel	0.04
+5429	Longirod	0.04
+5430	Marchissy	0.04
+5431	Mollens (VD)	0.04
+5432	Montherod	0.04
+5433	Pizy	0.04
+5434	Saint-George	0.04
+5435	Saint-Livres	0.04
+5436	Saint-Oyens	0.04
+5437	Saubraz	0.06
+5451	Avenches	0.04
+5452	Bellerive (VD)	0.04
+5453	Chabrey	0.04
+5455	Constantine	0.06
+5456	Cudrefin	0.04
+5458	Faoug	0.04
+5459	Montmagny	0.04
+5460	Mur (VD)	0.04
+5461	Oleyres	0.04
+5462	Vallamand	0.04
+5463	Villars-le-Grand	0.04
+5471	Bettens	0.04
+5472	Bournens	0.04
+5473	Boussens	0.04
+5474	La Chaux (Cossonay)	0.04
+5475	Chavannes-le-Veyron	0.04
+5476	Chevilly	0.04
+5477	Cossonay	0.04
+5478	Cottens (VD)	0.04
+5479	Cuarnens	0.04
+5480	Daillens	0.04
+5481	Dizy	0.04
+5482	Eclépens	0.04
+5483	Ferreyres	0.04
+5484	Gollion	0.04
+5485	Grancy	0.04
+5486	L'Isle	0.04
+5487	Lussery-Villars	0.04
+5488	Mauraz	0.04
+5489	Mex (VD)	0.04
+5490	Moiry	0.04
+5491	Mont-la-Ville	0.06
+5492	Montricher	0.04
+5493	Orny	0.04
+5494	Pampigny	0.04
+5495	Penthalaz	0.04
+5496	Penthaz	0.04
+5497	Pompaples	0.04
+5498	La Sarraz	0.04
+5499	Senarclens	0.04
+5500	Sévery	0.04
+5501	Sullens	0.04
+5503	Vufflens-la-Ville	0.04
+5511	Assens	0.04
+5512	Bercher	0.04
+5513	Bioley-Orjulaz	0.04
+5514	Bottens	0.04
+5515	Bretigny-sur-Morrens	0.04
+5516	Cugy (VD)	0.04
+5517	Dommartin	0.04
+5518	Echallens	0.04
+5519	Eclagnens	0.06
+5520	Essertines-sur-Yverdon	0.04
+5521	Etagnières	0.04
+5522	Fey	0.04
+5523	Froideville	0.06
+5524	Goumoens-la-Ville	0.04
+5525	Goumoens-le-Jux	0.05
+5527	Morrens (VD)	0.04
+5528	Naz	0.04
+5529	Oulens-sous-Echallens	0.04
+5530	Pailly	0.04
+5531	Penthéréaz	0.04
+5532	Poliez-le-Grand	0.04
+5533	Poliez-Pittet	0.04
+5534	Rueyres	0.04
+5535	Saint-Barthélemy (VD)	0.04
+5536	Sugnens	0.04
+5537	Villars-le-Terroir	0.06
+5538	Villars-Tiercelin	0.04
+5539	Vuarrens	0.04
+5551	Bonvillars	0.04
+5552	Bullet	0.06
+5553	Champagne	0.04
+5554	Concise	0.06
+5555	Corcelles-près-Concise	0.04
+5556	Fiez	0.06
+5557	Fontaines-sur-Grandson	0.06
+5558	Fontanezier	0.06
+5559	Giez	0.04
+5560	Grandevent	0.04
+5561	Grandson	0.04
+5562	Mauborget	0.06
+5563	Mutrux	0.05
+5564	Novalles	0.04
+5565	Onnens (VD)	0.04
+5566	Provence	0.06
+5567	Romairon	0.05
+5568	Sainte-Croix	0.04
+5569	Vaugondry	0.06
+5570	Villars-Burquin	0.04
+5581	Belmont-sur-Lausanne	0.04
+5582	Cheseaux-sur-Lausanne	0.04
+5583	Crissier	0.04
+5584	Epalinges	0.04
+5585	Jouxtens-Mézery	0.04
+5586	Lausanne	0.04
+5587	Le Mont-sur-Lausanne	0.04
+5588	Paudex	0.04
+5589	Prilly	0.04
+5590	Pully	0.04
+5591	Renens (VD)	0.04
+5592	Romanel-sur-Lausanne	0.04
+5601	Chexbres	0.04
+5602	Cully	0.04
+5603	Epesses	0.04
+5604	Forel (Lavaux)	0.04
+5605	Grandvaux	0.04
+5606	Lutry	0.04
+5607	Puidoux	0.04
+5608	Riex	0.04
+5609	Rivaz	0.04
+5610	Saint-Saphorin (Lavaux)	0.04
+5611	Savigny	0.04
+5612	Villette (Lavaux)	0.04
+5621	Aclens	0.04
+5622	Bremblens	0.04
+5623	Buchillon	0.03
+5624	Bussigny-près-Lausanne	0.04
+5625	Bussy-Chardonney	0.04
+5627	Chavannes-près-Renens	0.04
+5628	Chigny	0.04
+5629	Clarmont	0.04
+5630	Colombier (VD)	0.04
+5631	Denens	0.04
+5632	Denges	0.04
+5633	Echandens	0.04
+5634	Echichens	0.04
+5635	Ecublens (VD)	0.04
+5636	Etoy	0.04
+5637	Lavigny	0.04
+5638	Lonay	0.04
+5639	Lully (VD)	0.04
+5640	Lussy-sur-Morges	0.04
+5641	Monnaz	0.04
+5642	Morges	0.04
+5643	Préverenges	0.04
+5644	Reverolle	0.04
+5645	Romanel-sur-Morges	0.04
+5646	Saint-Prex	0.04
+5647	Saint-Saphorin-sur-Morges	0.04
+5648	Saint-Sulpice (VD)	0.04
+5649	Tolochenaz	0.04
+5650	Vaux-sur-Morges	0.04
+5651	Villars-Sainte-Croix	0.04
+5652	Villars-sous-Yens	0.04
+5653	Vufflens-le-Château	0.04
+5654	Vullierens	0.04
+5655	Yens	0.04
+5661	Boulens	0.06
+5662	Brenles	0.04
+5663	Bussy-sur-Moudon	0.06
+5664	Chapelle-sur-Moudon	0.04
+5665	Chavannes-sur-Moudon	0.06
+5666	Chesalles-sur-Moudon	0.04
+5667	Correvon	0.04
+5668	Cremin	0.04
+5669	Curtilles	0.04
+5670	Denezy	0.04
+5671	Dompierre (VD)	0.06
+5672	Forel-sur-Lucens	0.04
+5673	Hermenches	0.06
+5674	Lovatens	0.04
+5675	Lucens	0.04
+5676	Martherenges	0.06
+5677	Montaubion-Chardonney	0.04
+5678	Moudon	0.06
+5679	Neyruz-sur-Moudon	0.06
+5680	Ogens	0.04
+5681	Oulens-sur-Lucens	0.04
+5682	Peyres-Possens	0.06
+5683	Prévonloup	0.04
+5684	Rossenges	0.04
+5685	Saint-Cierges	0.04
+5686	Sarzens	0.04
+5687	Sottens	0.04
+5688	Syens	0.04
+5689	Thierrens	0.04
+5690	Villars-le-Comte	0.06
+5691	Villars-Mendraz	0.06
+5692	Vucherens	0.04
+5701	Arnex-sur-Nyon	0.04
+5702	Arzier	0.04
+5703	Bassins	0.04
+5704	Begnins	0.04
+5705	Bogis-Bossey	0.04
+5706	Borex	0.04
+5707	Chavannes-de-Bogis	0.04
+5708	Chavannes-des-Bois	0.04
+5709	Chéserex	0.04
+5710	Coinsins	0.03
+5711	Commugny	0.04
+5712	Coppet	0.04
+5713	Crans-près-Céligny	0.04
+5714	Crassier	0.04
+5715	Duillier	0.04
+5716	Eysins	0.04
+5717	Founex	0.04
+5718	Genolier	0.04
+5719	Gingins	0.04
+5720	Givrins	0.04
+5721	Gland	0.04
+5722	Grens	0.04
+5723	Mies	0.04
+5724	Nyon	0.04
+5725	Prangins	0.04
+5726	La Rippe	0.04
+5727	Saint-Cergue	0.04
+5728	Signy-Avenex	0.04
+5729	Tannay	0.04
+5730	Trélex	0.04
+5731	Le Vaud	0.04
+5732	Vich	0.04
+5741	L'Abergement	0.06
+5742	Agiez	0.04
+5743	Arnex-sur-Orbe	0.06
+5744	Ballaigues	0.06
+5745	Baulmes	0.04
+5746	Bavois	0.04
+5747	Bofflens	0.04
+5748	Bretonnières	0.06
+5749	Chavornay	0.06
+5750	Les Clées	0.06
+5751	Corcelles-sur-Chavornay	0.04
+5752	Croy	0.04
+5754	Juriens	0.04
+5755	Lignerolle	0.06
+5756	Montcherand	0.04
+5757	Orbe	0.04
+5758	La Praz	0.06
+5759	Premier	0.04
+5760	Rances	0.06
+5761	Romainmôtier-Envy	0.04
+5762	Sergey	0.04
+5763	Valeyres-sous-Rances	0.06
+5764	Vallorbe	0.04
+5765	Vaulion	0.04
+5766	Vuiteboeuf	0.06
+5781	Bussigny-sur-Oron	0.04
+5782	Carrouge (VD)	0.04
+5783	Châtillens	0.04
+5784	Chesalles-sur-Oron	0.04
+5785	Corcelles-le-Jorat	0.04
+5786	Les Cullayes	0.04
+5787	Ecoteaux	0.04
+5788	Essertes	0.06
+5789	Ferlens (VD)	0.04
+5790	Maracon	0.06
+5791	Mézières (VD)	0.04
+5792	Montpreveyres	0.04
+5793	Oron-la-Ville	0.04
+5794	Oron-le-Châtel	0.04
+5795	Palézieux	0.04
+5796	Peney-le-Jorat	0.04
+5798	Ropraz	0.04
+5799	Servion	0.04
+5800	Les Tavernes	0.04
+5801	Les Thioleyres	0.04
+5802	Vuibroye	0.04
+5803	Vulliens	0.04
+5811	Cerniaz (VD)	0.06
+5812	Champtauroz	0.04
+5813	Chevroux	0.06
+5814	Combremont-le-Grand	0.04
+5815	Combremont-le-Petit	0.04
+5816	Corcelles-près-Payerne	0.04
+5817	Grandcour	0.06
+5818	Granges-près-Marnand	0.06
+5819	Henniez	0.05
+5820	Marnand	0.04
+5821	Missy	0.06
+5822	Payerne	0.04
+5824	Sassel	0.04
+5826	Seigneux	0.04
+5827	Trey	0.06
+5828	Treytorrens (Payerne)	0.04
+5829	Villars-Bramard	0.06
+5830	Villarzel	0.06
+5841	Château-d'Oex	0.04
+5842	Rossinière	0.04
+5843	Rougemont	0.04
+5851	Allaman	0.04
+5852	Bursinel	0.04
+5853	Bursins	0.04
+5854	Burtigny	0.04
+5855	Dully	0.04
+5856	Essertines-sur-Rolle	0.04
+5857	Gilly	0.04
+5858	Luins	0.04
+5859	Mont-sur-Rolle	0.04
+5860	Perroy	0.04
+5861	Rolle	0.04
+5862	Tartegnin	0.04
+5863	Vinzel	0.04
+5871	L'Abbaye	0.04
+5872	Le Chenit	0.04
+5873	Le Lieu	0.04
+5881	Blonay	0.04
+5882	Chardonne	0.04
+5883	Corseaux	0.04
+5884	Corsier-sur-Vevey	0.04
+5885	Jongny	0.04
+5886	Montreux	0.04
+5888	Saint-Légier-La Chiésaz	0.04
+5889	La Tour-de-Peilz	0.04
+5890	Vevey	0.04
+5891	Veytaux	0.04
+5902	Belmont-sur-Yverdon	0.04
+5903	Bioley-Magnoux	0.06
+5904	Chamblon	0.04
+5905	Champvent	0.06
+5906	Chanéaz	0.06
+5907	Chavannes-le-Chêne	0.06
+5908	Chêne-Pâquier	0.06
+5909	Cheseaux-Noréaz	0.04
+5910	Cronay	0.06
+5911	Cuarny	0.06
+5912	Démoret	0.06
+5913	Donneloye	0.04
+5914	Ependes (VD)	0.06
+5915	Essert-Pittet	0.04
+5916	Essert-sous-Champvent	0.04
+5918	Gressy	0.06
+5919	Mathod	0.06
+5921	Molondin	0.06
+5922	Montagny-près-Yverdon	0.04
+5923	Oppens	0.04
+5924	Orges	0.04
+5925	Orzens	0.06
+5926	Pomy	0.04
+5927	Prahins	0.04
+5928	Rovray	0.04
+5929	Suchy	0.04
+5930	Suscévaz	0.04
+5931	Treycovagnes	0.04
+5932	Ursins	0.06
+5933	Valeyres-sous-Montagny	0.04
+5934	Valeyres-sous-Ursins	0.06
+5935	Villars-Epeney	0.04
+5936	Villars-sous-Champvent	0.06
+5937	Vugelles-La Mothe	0.04
+5938	Yverdon-les-Bains	0.04
+5939	Yvonand	0.04
+6001	Birgisch	0.86
+6002	Brig-Glis	0.56
+6004	Eggerberg	1.74
+6006	Mund	1.75
+6007	Naters	0.57
+6008	Ried-Brig	1.03
+6009	Simplon	0.38
+6010	Termen	0.87
+6011	Zwischbergen	0.38
+6021	Ardon	1.02
+6022	Chamoson	1.42
+6023	Conthey	0.84
+6024	Nendaz	1.34
+6025	Vétroz	0.84
+6031	Bagnes	2.56
+6032	Bourg-Saint-Pierre	1.31
+6033	Liddes	1.04
+6034	Orsières	1.08
+6035	Sembrancher	1.08
+6036	Vollèges	1.09
+6052	Bellwald	1.07
+6054	Binn	1.56
+6055	Blitzingen	1.36
+6056	Ernen	1.19
+6057	Fiesch	0.58
+6058	Fieschertal	2.56
+6061	Lax	1.39
+6064	Niederwald	0.56
+6073	Grafschaft	0.85
+6074	Münster-Geschinen	1.36
+6075	Reckingen-Gluringen	1.37
+6076	Obergoms	2.57
+6081	Les Agettes	2.42
+6082	Ayent	0.56
+6083	Evolène	1.64
+6084	Hérémence	0.38
+6085	Mase	1.45
+6086	Nax	1.87
+6087	Saint-Martin (VS)	1.56
+6088	Vernamiège	1.25
+6089	Vex	1.18
+6101	Agarn	1.19
+6102	Albinen	1.72
+6104	Ergisch	0.52
+6105	Erschmatt	1.35
+6109	Inden	1.53
+6110	Leuk	1.2
+6111	Leukerbad	1.67
+6112	Oberems	1.04
+6113	Salgesch	1.43
+6114	Turtmann	1.07
+6115	Unterems	1.11
+6116	Varen	1.56
+6117	Guttet-Feschel	1.34
+6118	Gampel-Bratsch	1.26
+6131	Bovernier	0.99
+6132	Charrat	1.16
+6133	Fully	1.08
+6134	Isérables	1.55
+6135	Leytron	1.22
+6136	Martigny	0.67
+6137	Martigny-Combe	0.5
+6139	Riddes	1.24
+6140	Saillon	1.14
+6141	Saxon	0.87
+6142	Trient	2.55
+6151	Champéry	1.56
+6152	Collombey-Muraz	0.86
+6153	Monthey	0.87
+6154	Port-Valais	0.91
+6155	Saint-Gingolph	1.92
+6156	Troistorrents	1.04
+6157	Val-d'Illiez	1.46
+6158	Vionnaz	0.83
+6159	Vouvry	1.1
+6171	Betten	1.33
+6172	Bister	0.39
+6173	Bitsch	0.49
+6177	Grengiols	1.54
+6178	Martisberg	1.12
+6181	Riederalp	1.53
+6191	Ausserberg	1.66
+6192	Blatten	1.53
+6193	Bürchen	1.35
+6194	Eischoll	1.56
+6195	Ferden	1.96
+6197	Kippel	1.76
+6198	Niedergesteln	1.2
+6199	Raron	1.17
+6201	Unterbäch	1.24
+6202	Wiler (Lötschen)	1.56
+6203	Mörel-Filet	1.27
+6204	Steg-Hohtenn	0.81
+6211	Collonges	0.75
+6212	Dorénaz	1.14
+6213	Evionnaz	0.71
+6214	Finhaut	1.04
+6215	Massongex	1.24
+6216	Mex (VS)	1.1
+6217	Saint-Maurice	1.03
+6218	Salvan	1.06
+6219	Vernayaz	1
+6220	Vérossaz	1.2
+6232	Chalais	1.35
+6234	Chermignon	0.84
+6235	Chippis	1.22
+6238	Grône	1.35
+6239	Icogne	0.86
+6240	Lens	0.87
+6241	Miège	1.43
+6242	Mollens (VS)	1.07
+6243	Montana	0.86
+6244	Randogne	1.02
+6246	Saint-Léonard	0.99
+6248	Sierre	0.94
+6249	Venthône	0.81
+6250	Veyras	0.99
+6252	Anniviers	1.26
+6261	Arbaz	1.26
+6263	Grimisuat	1.18
+6264	Salins	1.94
+6265	Savièse	0.9
+6266	Sion	0.58
+6267	Veysonnaz	1.66
+6281	Baltschieder	1.03
+6282	Eisten	0.38
+6283	Embd	1.64
+6285	Grächen	2.09
+6286	Lalden	0.62
+6287	Randa	0.9
+6288	Saas-Almagell	2.17
+6289	Saas-Balen	1.97
+6290	Saas-Fee	2.04
+6291	Saas-Grund	1.97
+6292	St. Niklaus	1.14
+6293	Stalden (VS)	0.78
+6294	Staldenried	0.8
+6295	Täsch	1.08
+6296	Törbel	0.57
+6297	Visp	0.69
+6298	Visperterminen	1.44
+6299	Zeneggen	1.54
+6300	Zermatt	0.57
+6401	Auvernier	2.04
+6402	Bevaix	2.14
+6403	Bôle	2.07
+6404	Boudry	2.16
+6405	Brot-Dessous	2.13
+6406	Colombier (NE)	2.07
+6407	Corcelles-Cormondrèche	2.17
+6408	Cortaillod	2.11
+6409	Fresens	2.02
+6410	Gorgier	2.07
+6411	Montalchez	2.26
+6412	Peseux	2.15
+6413	Rochefort	2.16
+6414	Saint-Aubin-Sauges	2.18
+6415	Vaumarcus	2.07
+6421	La Chaux-de-Fonds	2.18
+6422	Les Planchettes	2.24
+6423	La Sagne	2.18
+6431	Les Brenets	2.07
+6432	La Brévine	2.22
+6433	Brot-Plamboz	2.17
+6434	Le Cerneux-Péquignot	2.18
+6435	La Chaux-du-Milieu	2.18
+6436	Le Locle	2.16
+6437	Les Ponts-de-Martel	2.18
+6451	Cornaux	2.09
+6452	Cressier (NE)	2.23
+6453	Enges	2.22
+6454	Hauterive (NE)	2.13
+6455	Le Landeron	2.09
+6456	Lignières	2.16
+6458	Neuchâtel	2.1
+6459	Saint-Blaise	2.09
+6461	La Tène	1.99
+6471	Boudevilliers	2.15
+6472	Cernier	2.17
+6473	Chézard-Saint-Martin	2.23
+6474	Coffrane	2.15
+6475	Dombresson	2.17
+6476	Engollon	2.11
+6477	Fenin-Vilars-Saules	2.16
+6478	Fontainemelon	2.04
+6479	Fontaines (NE)	2.09
+6480	Les Geneveys-sur-Coffrane	2.13
+6481	Les Hauts-Geneveys	2.15
+6482	Montmollin	2.15
+6483	Le Pâquier (NE)	2.21
+6484	Savagnier	2.14
+6485	Valangin	2.1
+6486	Villiers	2.18
+6504	La Côte-aux-Fées	2.12
+6511	Les Verrières	2.23
+6512	Val-de-Travers	2.21
+6601	Aire-la-Ville	0.05
+6602	Anières	0.05
+6603	Avully	0.05
+6604	Avusy	0.05
+6605	Bardonnex	0.05
+6606	Bellevue	0.05
+6607	Bernex	0.05
+6608	Carouge (GE)	0.05
+6609	Cartigny	0.05
+6610	Céligny	0.05
+6611	Chancy	0.05
+6612	Chêne-Bougeries	0.05
+6613	Chêne-Bourg	0.05
+6614	Choulex	0.05
+6615	Collex-Bossy	0.05
+6616	Collonge-Bellerive	0.05
+6617	Cologny	0.05
+6618	Confignon	0.05
+6619	Corsier (GE)	0.05
+6620	Dardagny	0.05
+6621	Genève	0.05
+6622	Genthod	0.05
+6623	Le Grand-Saconnex	0.05
+6624	Gy	0.05
+6625	Hermance	0.05
+6626	Jussy	0.05
+6627	Laconnex	0.05
+6628	Lancy	0.05
+6629	Meinier	0.05
+6630	Meyrin	0.05
+6631	Onex	0.05
+6632	Perly-Certoux	0.05
+6633	Plan-les-Ouates	0.05
+6634	Pregny-Chambésy	0.05
+6635	Presinge	0.05
+6636	Puplinge	0.05
+6637	Russin	0.05
+6638	Satigny	0.05
+6639	Soral	0.05
+6640	Thônex	0.05
+6641	Troinex	0.05
+6642	Vandoeuvres	0.05
+6643	Vernier	0.05
+6644	Versoix	0.05
+6645	Veyrier	0.05
+6701	Bassecourt	1.93
+6702	Boécourt	1.92
+6703	Bourrignon	2.05
+6704	Châtillon (JU)	1.85
+6705	Corban	2.04
+6706	Courchapoix	2.01
+6707	Courfaivre	2
+6708	Courrendlin	1.92
+6709	Courroux	1.91
+6710	Courtételle	1.87
+6711	Delémont	1.89
+6712	Develier	1.95
+6713	Ederswiler	1.94
+6714	Glovelier	1.94
+6715	Mervelier	2.04
+6716	Mettembert	2.01
+6717	Montsevelier	2.02
+6718	Movelier	2.05
+6719	Pleigne	2
+6720	Rebeuvelier	2.03
+6721	Rossemaison	1.94
+6722	Saulcy	2.03
+6723	Soulce	2
+6724	Soyhières	1.92
+6725	Undervelier	2.04
+6726	Vermes	2.06
+6727	Vicques	1.96
+6728	Vellerat	2
+6741	Le Bémont (JU)	1.9
+6742	Les Bois	2
+6743	Les Breuleux	1.95
+6744	La Chaux-des-Breuleux	1.95
+6745	Les Enfers	1.98
+6748	Les Genevez (JU)	1.96
+6750	Lajoux (JU)	1.98
+6751	Montfaucon	2
+6753	Muriaux	1.77
+6754	Le Noirmont	1.89
+6757	Saignelégier	1.9
+6758	Saint-Brais	2.05
+6759	Soubey	2.05
+6771	Alle	1.96
+6773	Beurnevésin	2
+6774	Boncourt	1.73
+6775	Bonfol	1.96
+6776	Bressaucourt	1.98
+6778	Bure	1.98
+6781	Coeuve	2.04
+6782	Cornol	1.97
+6783	Courchavon	1.96
+6784	Courgenay	1.94
+6785	Courtedoux	1.95
+6787	Damphreux	2.02
+6789	Fahy	1.98
+6790	Fontenais	1.88
+6792	Grandfontaine	2.05
+6793	Lugnez	2.05
+6800	Porrentruy	1.93
+6803	Rocourt	1.98
+6806	Vendlincourt	2
+6807	Basse-Allaine	2.04
+6808	Clos du Doubs	1.98
+6809	Haute-Ajoie	1.97
+6810	La Baroche	1.96
