@@ -11,6 +11,15 @@ postgis:
 import:
   build: "import"
   links:
-   - postgis:postgis
+   - postgis:db
   volumes:
    - ./data:/data
+   - ./geodata:/geodata
+mapbox-studio:
+  build: "mapbox-studio"
+  volumes:
+   - ./projects:/projects/
+  links:
+   - postgis:db
+  ports:
+   - "3000:3000"
