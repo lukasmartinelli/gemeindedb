@@ -15,7 +15,7 @@ from openpyxl import load_workbook
 
 
 HEADER_OFFSET = 3
-FOOTER_OFFSET = 11
+FOOTER_OFFSET = 10
 
 
 def find_data(xlsx_file):
@@ -37,8 +37,10 @@ if __name__ == '__main__':
     header_row = rows[0]
     header_row[0] = 'Regions-ID'
     header_row[1] = 'Regionsname'
+    header_row[2:] = [c.replace(',', '') for c in header_row[2:]]
 
-    data_rows = [r for r in rows[5:] if r[0] is not None]
+    # Skip second row after header row
+    data_rows = [r for r in rows[2:] if r[0] is not None]
 
     writer = csv.writer(sys.stdout, delimiter='\t', quoting=csv.QUOTE_MINIMAL)
     writer.writerow(header_row)
