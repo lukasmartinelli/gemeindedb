@@ -1,4 +1,5 @@
-Regions-ID	Regionsname	Anzahl der Personen im Alter von 0 bis 19 Jahren	Anteil dieser Bevölkerungsgruppe an der Gesamtbevölkerung, in %
+Regions-ID	Regionsname	Anzahl der Personen im Alter von 0 bis 19 Jahren	Anteil dieser Bevölkerungsgruppe an der Gesamtbevölkerung in %
+1	Aeugst am Albis	432	21.906693712
 2	Affoltern am Albis	2341	20.6019537094
 3	Bonstetten	1291	24.5437262357
 4	Hausen am Albis	795	23.1710871466
@@ -2393,3 +2394,4 @@ Regions-ID	Regionsname	Anzahl der Personen im Alter von 0 bis 19 Jahren	Anteil d
 6807	Basse-Allaine	284	22.3270440252
 6808	Clos du Doubs	245	18.8316679477
 6809	Haute-Ajoie	201	20.3647416413
+6810	La Baroche	291	24.6819338422
