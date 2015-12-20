@@ -3,19 +3,19 @@ pgdata:
   volumes:
   - /var/lib/postgresql/data
 postgres:
-  build: "postgres"
+  build: "src/postgres"
   volumes_from:
    - pgdata
   ports:
    - "5432"
 import:
-  build: "import"
+  build: "src/import"
   links:
    - postgres:postgres
   volumes:
    - ./data:/data
 convert:
-  build: "convert"
+  build: "src/convert"
   volumes:
    - ./rawdata:/excel
    - ./data:/tsv
