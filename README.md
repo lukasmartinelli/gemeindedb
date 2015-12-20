@@ -1,7 +1,12 @@
-# Open Data Statistics about Swiss Municipalities
+# Open Data Statistics about Swiss Communities
 
-A ready to use PostGIS database with prepared geo data and statistics
-about swiss municipalities.
+Raw data from the [BFS](http://www.bfs.admin.ch/) about swiss communities
+available as TSV downloads.
+
+The TSV format makes it easy to get started with the data and doing some real work with it
+instead of looking through XLSX files.
+
+The project also contains a ETL process to get the data into PostgreSQL and clean it up.
 
 ## Statistical Data
 
@@ -10,15 +15,10 @@ The data is available in the TSV format and is from the
 Because it is available as set of files you are free to use the files in the prepared format for your
 own purposes.
 
-## Geographical Data
-
-Additional to the statistical data there is also geographical data which is mostly the administrative
-boundaries of the municipalities.
-
 ## Import
 
 Using [my PostgreSQL import tool pgfutter](https://github.com/lukasmartinelli/pgfutter) the TSV files
-are automatically imported into the PostGIS database.
+are automatically imported into the PostgreSQL database.
 
-On the imported tables we then execute a ETL process to bring the data into a common schema
-where it is easy to work with.
+From the import tables a new relational schema is built to bring the data into a snowflake schema
+where it is easier to work with it.

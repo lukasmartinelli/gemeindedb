@@ -2,8 +2,8 @@ pgdata:
   image: "tianon/true"
   volumes:
   - /var/lib/postgresql/data
-postgis:
-  build: "postgis"
+postgres:
+  build: "postgres"
   volumes_from:
    - pgdata
   ports:
@@ -11,15 +11,6 @@ postgis:
 import:
   build: "import"
   links:
-   - postgis:db
+   - postgres:postgres
   volumes:
    - ./data:/data
-   - ./geodata:/geodata
-mapbox-studio:
-  build: "mapbox-studio"
-  volumes:
-   - ./projects:/projects/
-  links:
-   - postgis:db
-  ports:
-   - "3000:3000"

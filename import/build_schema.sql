@@ -7,16 +7,11 @@ DROP TABLE IF EXISTS public.cantons;
 -------------------------------------------
 CREATE TABLE public.cantons (
     id     integer PRIMARY KEY,
-    geometry  geometry(PolygonZ, 3857) NOT NULL,
     name    varchar(30) NOT NULL
 );
 
 INSERT INTO public.cantons
-
-SELECT k.id::integer, k.name, b.wkb_geometry as geometry
-FROM import.kantone as k, import.canton_boundaries as b
-WHERE k.id::integer = b.kantonsnum;
-
+SELECT id::integer, name FROM import.kantone;
 -------------------------------------------
 CREATE TABLE public.districts (
     id        integer PRIMARY KEY,
@@ -31,15 +26,11 @@ SELECT id::integer, kanton_id::integer as canton_id, name FROM import.bezirke;
 CREATE TABLE public.municipalities (
     id        integer PRIMARY KEY,
     canton_id integer REFERENCES public.cantons (id),
-    geometry  geometry(PolygonZ, 3857) NOT NULL,
     name      varchar(30) NOT NULL
 );
 
 INSERT INTO public.municipalities
-SELECT DISTINCT ON (ge.id) id::integer, ge.kanton_id::integer as canton_id,
-       b.wkb_geometry as geometry, ge.name
-FROM import.gemeinden as ge, import.community_boundaries as b
-WHERE ge.id::integer = b.bfs_nummer;
+SELECT id::integer, kanton_id::integer as canton_id, name FROM import.gemeinden;
 
 -------------------------------------------
 CREATE TABLE public.city_class (
