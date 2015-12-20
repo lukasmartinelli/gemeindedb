@@ -24,6 +24,7 @@ function import_tsv() {
 
 function exec_psql() {
     PG_PASSWORD="$DB_PASSWORD" psql \
+        -v ON_ERROR_STOP=1 \
         --host="$DB_HOST" \
         --port=5432 \
         --dbname="$DB_NAME" \
