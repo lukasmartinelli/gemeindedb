@@ -1,4 +1,4 @@
-# Open Data Statistics about Swiss Communities
+# Open Data Statistics about Swiss Communities [![Build Status](https://travis-ci.org/lukasmartinelli/gemeindedb.svg)](https://travis-ci.org/lukasmartinelli/gemeindedb)
 
 Data from the [BFS](http://www.bfs.admin.ch/) about swiss communities
 available as TSV downloads.
