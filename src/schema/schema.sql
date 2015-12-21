@@ -156,3 +156,78 @@ FROM values_by_year('import.todesfaelle_1981_2014', 'deaths')
 INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
 WHERE is_community(region);
 
+-------------------------------------------
+DROP TABLE IF EXISTS public.births CASCADE;
+CREATE TABLE public.births (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    births integer NOT NULL,
+    PRIMARY KEY (community_id, year),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.births
+SELECT extract_community_id(region),
+       year,
+       births::integer
+FROM values_by_year('import.geburt_1981_2014', 'births')
+     f(region text, year integer, births text)
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
+WHERE is_community(region);
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.immigration CASCADE;
+CREATE TABLE public.immigration (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    immigration integer NOT NULL,
+    PRIMARY KEY (community_id, year),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.immigration
+SELECT extract_community_id(region),
+       year,
+       immigration::integer
+FROM values_by_year('import.einwanderung_1981_2014', 'immigration')
+     f(region text, year integer, immigration text)
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
+WHERE is_community(region);
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.emigration CASCADE;
+CREATE TABLE public.emigration (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    emigration integer NOT NULL,
+    PRIMARY KEY (community_id, year),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.emigration
+SELECT extract_community_id(region),
+       year,
+       emigration::integer
+FROM values_by_year('import.auswanderung_1981_2014', 'emigration')
+     f(region text, year integer, emigration text)
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
+WHERE is_community(region);
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.new_citizenships CASCADE;
+CREATE TABLE public.new_citizenships (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    citizenships integer NOT NULL,
+    PRIMARY KEY (community_id, year),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.new_citizenships
+SELECT extract_community_id(region),
+       year,
+       citizenships::integer
+FROM values_by_year('import.buergerrecht_erwerb_1981_2014', 'citizenships')
+     f(region text, year integer, citizenships text)
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
+WHERE is_community(region);
