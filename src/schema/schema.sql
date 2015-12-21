@@ -483,3 +483,80 @@ FROM values_by_age_group('import.staendige_wohnbevoelkerung_alter_2014', 'popula
      f(region text, age_group text, population text)
 INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
 WHERE is_community(region);
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.cinemas CASCADE;
+CREATE TABLE public.cinemas (
+    community_id integer NOT NULL,
+    cinemas integer NOT NULL,
+    PRIMARY KEY (community_id),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.cinemas
+SELECT regions_id::integer as community_id,
+       anzahl_kinos::integer as cinemas
+FROM import.kinos_2014
+INNER JOIN public.communities AS c ON c.id = regions_id::integer;
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.commute_distance CASCADE;
+CREATE TABLE public.commute_distance (
+    community_id integer NOT NULL,
+    distance_km decimal NOT NULL,
+    PRIMARY KEY (community_id),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.commute_distance
+SELECT regions_id::integer as community_id,
+       durchschnittliche_länge_des_arbeitswegs_in_km::decimal as distance_km
+FROM import.laenge_arbeitsweg_2010_2012
+INNER JOIN public.communities AS c ON c.id = regions_id::integer;
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.housing_estate_share CASCADE;
+CREATE TABLE public.housing_estate_share (
+    community_id integer NOT NULL,
+    share decimal NOT NULL,
+    PRIMARY KEY (community_id),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.housing_estate_share
+SELECT regions_id::integer as community_id,
+       anteil_der_siedlungsflächen_an_der_gesamtfläche_in_::decimal as share
+FROM import.anteil_siedlungsflaeche_2004
+INNER JOIN public.communities AS c ON c.id = regions_id::integer;
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.commuter_balance CASCADE;
+CREATE TABLE public.commuter_balance (
+    community_id integer NOT NULL,
+    commuters integer NOT NULL,
+    balance_per_100_workers decimal NOT NULL,
+    PRIMARY KEY (community_id),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.commuter_balance
+SELECT regions_id::integer as community_id,
+       pendlersaldo_in_personen::integer as commuters,
+       bilanz_der_zu__und_wegpendler_pro_100_erwerbstätige_sowie_sch::decimal as balance_per_100_workers
+FROM import.pendlersaldo_2000
+INNER JOIN public.communities AS c ON c.id = regions_id::integer;
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.language_areas CASCADE;
+CREATE TABLE public.language_areas (
+    community_id integer NOT NULL,
+    language text NOT NULL,
+    PRIMARY KEY (community_id),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.language_areas
+SELECT regions_id::integer as community_id,
+       Sprachgebiete as language
+FROM import.sprachgebiete_2000
+INNER JOIN public.communities AS c ON c.id = regions_id::integer;
