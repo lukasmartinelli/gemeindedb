@@ -14,8 +14,3 @@ import:
    - postgres:postgres
   volumes:
    - ./data:/data
-convert:
-  build: "src/convert"
-  volumes:
-   - ./rawdata:/excel
-   - ./data:/tsv
