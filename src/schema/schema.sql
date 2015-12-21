@@ -128,12 +128,31 @@ CREATE TABLE public.residential_population (
     FOREIGN KEY (community_id) REFERENCES public.communities (id)
 );
 
-
 INSERT INTO public.residential_population
 SELECT extract_community_id(region),
        year,
        population::integer
-FROM values_by_year('import.mittlere_wohnbevoelkerung_csv_1981_2014', 'population')
+FROM values_by_year('import.mittlere_wohnbevoelkerung_1981_2014', 'population')
      f(region text, year integer, population text)
 INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
-WHERE is_community(region)
+WHERE is_community(region);
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.deaths CASCADE;
+CREATE TABLE public.deaths (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    deaths integer NOT NULL,
+    PRIMARY KEY (community_id, year),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.deaths
+SELECT extract_community_id(region),
+       year,
+       deaths::integer
+FROM values_by_year('import.todesfaelle_1981_2014', 'deaths')
+     f(region text, year integer, deaths text)
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
+WHERE is_community(region);
+
