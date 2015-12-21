@@ -270,3 +270,110 @@ FROM values_by_year('import.wanderungssaldo_1981_2014', 'balance')
 INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
 WHERE is_community(region);
 
+-------------------------------------------
+DROP TABLE IF EXISTS public.immigration_from_other_canton CASCADE;
+CREATE TABLE public.immigration_from_other_canton (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    immigration integer NOT NULL,
+    PRIMARY KEY (community_id, year),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.immigration_from_other_canton
+SELECT extract_community_id(region),
+       year,
+       immigration::integer
+FROM values_by_year('import.wanderung_interkantonal_zuzug_1981_2014', 'immigration')
+     f(region text, year integer, immigration text)
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
+WHERE is_community(region);
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.emigration_from_other_canton CASCADE;
+CREATE TABLE public.emigration_from_other_canton (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    emigration integer NOT NULL,
+    PRIMARY KEY (community_id, year),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.emigration_from_other_canton
+SELECT extract_community_id(region),
+       year,
+       emigration::integer
+FROM values_by_year('import.wanderung_interkantonal_wegzug_1981_2014', 'emigration')
+     f(region text, year integer, emigration text)
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
+WHERE is_community(region);
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.immigration_from_same_canton CASCADE;
+CREATE TABLE public.immigration_from_same_canton (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    immigration integer NOT NULL,
+    PRIMARY KEY (community_id, year),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.immigration_from_same_canton
+SELECT extract_community_id(region),
+       year,
+       immigration::integer
+FROM values_by_year('import.wanderung_intrakantonal_zuzug_1981_2014', 'immigration')
+     f(region text, year integer, immigration text)
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
+WHERE is_community(region);
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.emigration_from_same_canton CASCADE;
+CREATE TABLE public.emigration_from_same_canton (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    emigration integer NOT NULL,
+    PRIMARY KEY (community_id, year),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.emigration_from_same_canton
+SELECT extract_community_id(region),
+       year,
+       emigration::integer
+FROM values_by_year('import.wanderung_intrakantonal_zuzug_1981_2014', 'emigration')
+     f(region text, year integer, emigration text)
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
+WHERE is_community(region);
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.empty_flats CASCADE;
+CREATE TABLE public.empty_flats (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    rooms text NOT NULL,
+    flats integer NOT NULL,
+    PRIMARY KEY (community_id, year, rooms),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.empty_flats
+SELECT extract_community_id(f15.region),
+       2015 as year,
+       f15.rooms,
+       f15.flats::integer
+FROM (
+    SELECT region, '1' as rooms, _1_wohnraum as flats FROM import.leerstehende_wohnungen_2015
+    UNION ALL
+    SELECT region, '2' as rooms, _1_wohnraum as flats FROM import.leerstehende_wohnungen_2015
+    UNION ALL
+    SELECT region, '3' as rooms, _2_wohnräume as flats FROM import.leerstehende_wohnungen_2015
+    UNION ALL
+    SELECT region, '4' as rooms, _3_wohnräume as flats FROM import.leerstehende_wohnungen_2015
+    UNION ALL
+    SELECT region, '5' as rooms, _5_wohnräume as flats FROM import.leerstehende_wohnungen_2015
+    UNION ALL
+    SELECT region, '6+' as rooms, _6_wohnräume_und_mehr as flats FROM import.leerstehende_wohnungen_2015
+) AS f15
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
+WHERE is_community(region);
