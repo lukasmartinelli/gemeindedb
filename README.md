@@ -1,8 +1,8 @@
 # Open Data Statistics about Swiss Communities [![Build Status](https://travis-ci.org/lukasmartinelli/gemeindedb.svg)](https://travis-ci.org/lukasmartinelli/gemeindedb)
 
-Data from the [BFS](http://www.bfs.admin.ch/) about swiss communities
-available as TSV downloads.
-The TSV format makes it easy to get started with the data and doing some real work with it
+The goal of the project is to aggregate statistics about swiss communities in one places.
+Most of the data is from the [BFS](http://www.bfs.admin.ch/) and is transformed
+to TSV files.  The TSV format makes it easy to get started with the data and doing some real work with it
 instead of looking through XLSX files.
 
 The project also contains a ETL process to get the data into PostgreSQL and clean it up.
