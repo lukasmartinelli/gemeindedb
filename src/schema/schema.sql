@@ -231,3 +231,42 @@ FROM values_by_year('import.buergerrecht_erwerb_1981_2014', 'citizenships')
      f(region text, year integer, citizenships text)
 INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
 WHERE is_community(region);
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.birth_surplus CASCADE;
+CREATE TABLE public.birth_surplus (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    surplus integer NOT NULL,
+    PRIMARY KEY (community_id, year),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.birth_surplus
+SELECT extract_community_id(region),
+       year,
+       surplus::integer
+FROM values_by_year('import.geburtenueberschuss_1981_2014', 'surplus')
+     f(region text, year integer, surplus text)
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
+WHERE is_community(region);
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.migration_balance CASCADE;
+CREATE TABLE public.migration_balance (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    balance integer NOT NULL,
+    PRIMARY KEY (community_id, year),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.migration_balance
+SELECT extract_community_id(region),
+       year,
+       balance::integer
+FROM values_by_year('import.wanderungssaldo_1981_2014', 'balance')
+     f(region text, year integer, balance text)
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
+WHERE is_community(region);
+
