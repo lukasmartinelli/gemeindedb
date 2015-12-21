@@ -16,6 +16,58 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql IMMUTABLE;
 
+
+-------------------------------------------
+CREATE OR REPLACE FUNCTION values_by_age_group(table_name text, column_name text)
+RETURNS SETOF RECORD AS $$
+BEGIN
+    RETURN QUERY EXECUTE format(
+        'SELECT region, ''0-4'' AS age_group, _0_4_years as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, ''5-9'' AS age_group, _5_9_years as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, ''10-14'' AS age_group, _10_14_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''15-19'' AS age_group, _15_19_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''20-24'' AS age_group, _20_24_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''25-29'' AS age_group, _25_29_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''30-34'' AS age_group, _30_34_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''35-39'' AS age_group, _35_39_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''40-44'' AS age_group, _40_44_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''45-49'' AS age_group, _45_49_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''50-54'' AS age_group, _50_54_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''55-59'' AS age_group, _55_59_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''60-64'' AS age_group, _60_64_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''65-69'' AS age_group, _65_69_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''70-74'' AS age_group, _70_74_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''75-79'' AS age_group, _75_79_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''80-84'' AS age_group, _80_84_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''85-89'' AS age_group, _85_89_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''90-94'' AS age_group, _90_94_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''95-99'' AS age_group, _95_99_years as %2$s FROM %1$s
+        UNION ALL        
+        SELECT region, ''100+'' AS age_group, _100_years_or_older as %2$s FROM %1$s',
+        table_name, column_name);
+END;
+$$
+LANGUAGE plpgsql;
+
 -------------------------------------------
 CREATE OR REPLACE FUNCTION values_by_year(table_name text, column_name text)
 RETURNS SETOF RECORD AS $$
@@ -347,6 +399,25 @@ INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
 WHERE is_community(region);
 
 -------------------------------------------
+DROP TABLE IF EXISTS public.population_end_of_year CASCADE;
+CREATE TABLE public.population_end_of_year (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    population integer NOT NULL,
+    PRIMARY KEY (community_id, year),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.population_end_of_year
+SELECT extract_community_id(region),
+       year,
+       population::integer
+FROM values_by_year('import.bevoelkerung_bestand_1981_2014', 'population')
+     f(region text, year integer, population text)
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
+WHERE is_community(region);
+
+-------------------------------------------
 DROP TABLE IF EXISTS public.empty_flats CASCADE;
 CREATE TABLE public.empty_flats (
     community_id integer NOT NULL,
@@ -375,5 +446,40 @@ FROM (
     UNION ALL
     SELECT region, '6+' as rooms, _6_wohnräume_und_mehr as flats FROM import.leerstehende_wohnungen_2015
 ) AS f15
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
+WHERE is_community(region);
+
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.population_age_group CASCADE;
+CREATE TABLE public.population_age_group (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    residential boolean NOT NULL,
+    age_group text NOT NULL,
+    population integer NOT NULL,
+    PRIMARY KEY (community_id, year, residential, age_group),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.population_age_group
+SELECT extract_community_id(region),
+       2014 as year,
+       FALSE as residential,
+       age_group,
+       population::integer
+FROM values_by_age_group('import.nichtstaendinge_wohnbevoelkerung_alter_2014', 'population')
+     f(region text, age_group text, population text)
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
+WHERE is_community(region);
+
+INSERT INTO public.population_age_group
+SELECT extract_community_id(region),
+       2014 as year,
+       TRUE as residential,
+       age_group,
+       population::integer
+FROM values_by_age_group('import.staendige_wohnbevoelkerung_alter_2014', 'population')
+     f(region text, age_group text, population text)
 INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
 WHERE is_community(region);
