@@ -34,3 +34,11 @@ From the import tables a new relational schema is created where it is easier to 
 ```
 docker-compose run schema
 ```
+
+## Data Sources
+
+| File                                   | Source                                                                                                                                         |
+|----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| politische_gemeinden_2015.tsv          | STATATLAS Institutionelle Gliederungen > Politische Gemeinden 2015                                                                             |
+| kantone_1997.tsv                       | STATATLAS Institutionelle Gliederungen > Kantone 1997                                                                                          |
+| mittlere_wohnbevölkerung_1981_2014.tsv | STAT-TAB Gemeindestatistik1981-2014 nach demographischen Komponenten, institutionellen Gliederungen, Staatsangehörigkeit, Geschlecht und Jahr  |
