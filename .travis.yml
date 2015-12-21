@@ -12,8 +12,8 @@ before_install:
 script:
   - docker-compose up -d postgres
   - sleep 5
-  - docker-compose run convert
   - docker-compose run import
+  - docker-compose run schema
 cache:
   directories:
     - $HOME/cache

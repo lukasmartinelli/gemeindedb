@@ -12,4 +12,4 @@ COPY . /usr/src/app/
 WORKDIR /usr/src/app
 
 VOLUME /data
-CMD ["./import_data.sh"]
+CMD ["./import.sh"]

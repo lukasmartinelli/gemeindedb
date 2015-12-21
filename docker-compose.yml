@@ -14,3 +14,7 @@ import:
    - postgres:postgres
   volumes:
    - ./data:/data
+schema:
+  build: "src/schema"
+  links:
+   - postgres:postgres

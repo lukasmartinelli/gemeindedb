@@ -7,7 +7,7 @@ CREATE TABLE public.cantons (
 
 INSERT INTO public.cantons
 SELECT regions_id::integer as id, regionsname as name
-FROM import._134_die_26_kantone_der_schweiz_de;
+FROM import.kantone_1997;
 
 -------------------------------------------
 DROP TABLE IF EXISTS public.communities CASCADE;
@@ -21,6 +21,6 @@ INSERT INTO public.communities
 SELECT regions_id::integer,
        substring("kantonszugehörigkeit" FROM '\((.*)\)+$')::integer as canton_id,
        regionsname as name
-FROM import._18838_die_2324_gemeinden_der_schweiz_am_1_1_2015_de;
+FROM import.politische_gemeinden_2015;
 
 -------------------------------------------

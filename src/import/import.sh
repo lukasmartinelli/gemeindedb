@@ -9,7 +9,6 @@ readonly DB_PASSWORD=${DB_PASSWORD:-suisse}
 readonly DB_HOST=postgres
 
 readonly IMPORT_DIR=${IMPORT_DIR:-/data}
-readonly BUILD_SCHEMA_SQL_FILE="build_schema.sql"
 
 function import_tsv() {
     local tsv_file="$1"
@@ -39,9 +38,8 @@ function import_all() {
 }
 
 function main() {
-    echo "drop schema import cascade; create schema import;" | exec_psql
+    echo "DROP schema IF EXISTS import CASCADE; CREATE SCHEMA import;" | exec_psql
     import_all
-    cat "$BUILD_SCHEMA_SQL_FILE" | exec_psql
 }
 
 main
