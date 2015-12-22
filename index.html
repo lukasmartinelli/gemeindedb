@@ -1,0 +1,179 @@
+---
+layout: default
+---
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//code.highcharts.com/highcharts.js"></script>
+<script src="//code.highcharts.com/modules/exporting.js"></script>
+
+<div class="home">
+  <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+  <div id="population" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+  <div id="immigrationChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+  <div id="ageGroupChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+</div>
+
+<script>
+$(function () {
+    $.get('http://192.168.99.101:3000/communities/3313', function(data) {
+    function sortByYear(a, b) {
+      return a.year - b.year;
+    }
+    var years = $.map(data.births.sort(sortByYear), function(record) {
+      return record.year;
+    });
+    var birthSeries = $.map(data.births.sort(sortByYear), function(record) {
+      return record.births;
+    });
+    var deathSeries = $.map(data.deaths.sort(sortByYear), function(record) {
+      return -record.deaths;
+    });
+    var populationSeries = $.map(data.residential_population.sort(sortByYear), function(record) {
+      return record.population;
+    });
+
+    var immigrationSeries = $.map(data.immigration.sort(sortByYear), function(record) {
+      return record.immigration;
+    });
+
+    var emigrationSeries = $.map(data.emigration.sort(sortByYear), function(record) {
+      return -record.emigration;
+    });
+
+    $('#immigrationChart').highcharts({
+        chart: { type: 'area' },
+        title: { text: 'Immigration and Emmigration' },
+        xAxis: { categories: years },
+        yAxis: {
+            title: { text: 'People' }
+        },
+        series: [{
+            name: 'Immigration',
+            data: immigrationSeries
+        }, {
+            name: 'Emigration',
+            data: emigrationSeries
+        }]
+    });
+
+    $('#container').highcharts({
+        chart: { type: 'area' },
+        title: { text: 'Births and Deaths' },
+        xAxis: { categories: years },
+        yAxis: {
+            title: { text: 'People' }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: { enabled: true },
+                enableMouseTracking: false
+            }
+        },
+        series: [{
+            name: 'Births',
+            data: birthSeries
+        }, {
+            name: 'Deaths',
+            data: deathSeries
+        }]
+    });
+
+    $('#population').highcharts({
+        chart: { type: 'line' },
+        title: { text: 'Population' },
+        xAxis: { categories: years },
+        yAxis: {
+            title: { text: 'People' }
+        },
+        series: [{
+            name: 'Residential',
+            data: populationSeries
+        }]
+    });
+
+    function ageGroupsAsArray(record) {
+      return [
+        record.population_5_9_years,
+        record.population_10_14_years,
+        record.population_15_19_years,
+        record.population_20_24_years,
+        record.population_25_29_years,
+        record.population_30_34_years,
+        record.population_35_39_years,
+        record.population_40_44_years,
+        record.population_45_49_years,
+        record.population_50_54_years,
+        record.population_55_59_years,
+        record.population_60_64_years,
+        record.population_65_69_years,
+        record.population_70_74_years,
+        record.population_75_79_years,
+        record.population_80_84_years,
+        record.population_85_89_years,
+        record.population_90_94_years,
+        record.population_95_99_years
+      ];
+    }
+
+    var residentialAgeGroupSeries = $.map(data.population_by_age_groups.filter(function(record) {
+      return record.residential === true;
+    }), ageGroupsAsArray);
+    var nonResidentialAgeGroupSeries = $.map(data.population_by_age_groups.filter(function(record) {
+      return record.residential === false;
+    }), ageGroupsAsArray);
+
+    $('#ageGroupChart').highcharts({
+        chart: { type: 'column' },
+        title: { text: 'Population by Age Groups' },
+        xAxis: {
+          categories: [
+            '0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54',
+            '55-59', '60-64', '65-69', '70-74', '75-79', '80-84', '85-89', '90-94', '95-99', '100+'
+          ]
+        },
+        yAxis: {
+            title: { text: 'People' }
+        },
+        plotOptions: {
+            column: { stacking: 'normal' }
+        },
+        series: [{
+            name: 'Residential',
+            data: residentialAgeGroupSeries
+        }, {
+            name: 'Non-Residential',
+            data: nonResidentialAgeGroupSeries
+        }]
+    });
+
+    var immigrationSameCantonSeries = $.map(data.immigration_from_same_canton.sort(sortByYear), function(record) {
+      return record.immigration;
+    });
+
+    var immigrationOtherCantonSeries = $.map(data.immigration_from_other_canton.sort(sortByYear), function(record) {
+      return record.immigration;
+    });
+
+    $('#ageGroupChart').highcharts({
+        chart: { type: 'column' },
+        title: { text: 'Immigration' },
+        xAxis: {
+          categories: years,
+        },
+        yAxis: {
+            title: { text: 'People' }
+        },
+        plotOptions: {
+            column: { stacking: 'normal' }
+        },
+        series: [{
+            name: 'Same Canton',
+            data: immigrationSameCantonSeries
+        }, {
+            name: 'Other Canton',
+            data: immigrationOtherCantonSeries
+        }]
+    });
+
+    });
+});
+</script>
