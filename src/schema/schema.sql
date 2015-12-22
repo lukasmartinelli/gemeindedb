@@ -488,14 +488,16 @@ WHERE is_community(region);
 DROP TABLE IF EXISTS public.cinemas CASCADE;
 CREATE TABLE public.cinemas (
     community_id integer NOT NULL,
+    year integer NOT NULL,
     cinemas integer NOT NULL,
-    PRIMARY KEY (community_id),
+    PRIMARY KEY (community_id, year),
     FOREIGN KEY (community_id) REFERENCES public.communities (id)
 );
 
 INSERT INTO public.cinemas
 SELECT regions_id::integer as community_id,
-       anzahl_kinos::integer as cinemas
+        2014 as year,
+        anzahl_kinos::integer as cinemas
 FROM import.kinos_2014
 INNER JOIN public.communities AS c ON c.id = regions_id::integer;
 
@@ -503,13 +505,15 @@ INNER JOIN public.communities AS c ON c.id = regions_id::integer;
 DROP TABLE IF EXISTS public.commute_distance CASCADE;
 CREATE TABLE public.commute_distance (
     community_id integer NOT NULL,
+    year integer NOT NULL,
     distance_km decimal NOT NULL,
-    PRIMARY KEY (community_id),
+    PRIMARY KEY (community_id, year),
     FOREIGN KEY (community_id) REFERENCES public.communities (id)
 );
 
 INSERT INTO public.commute_distance
 SELECT regions_id::integer as community_id,
+       2012 as year,
        durchschnittliche_länge_des_arbeitswegs_in_km::decimal as distance_km
 FROM import.laenge_arbeitsweg_2010_2012
 INNER JOIN public.communities AS c ON c.id = regions_id::integer;
@@ -518,13 +522,15 @@ INNER JOIN public.communities AS c ON c.id = regions_id::integer;
 DROP TABLE IF EXISTS public.housing_estate_share CASCADE;
 CREATE TABLE public.housing_estate_share (
     community_id integer NOT NULL,
+    year integer NOT NULL,
     share decimal NOT NULL,
-    PRIMARY KEY (community_id),
+    PRIMARY KEY (community_id, year),
     FOREIGN KEY (community_id) REFERENCES public.communities (id)
 );
 
 INSERT INTO public.housing_estate_share
 SELECT regions_id::integer as community_id,
+       2004 as year,
        anteil_der_siedlungsflächen_an_der_gesamtfläche_in_::decimal as share
 FROM import.anteil_siedlungsflaeche_2004
 INNER JOIN public.communities AS c ON c.id = regions_id::integer;
@@ -533,6 +539,7 @@ INNER JOIN public.communities AS c ON c.id = regions_id::integer;
 DROP TABLE IF EXISTS public.commuter_balance CASCADE;
 CREATE TABLE public.commuter_balance (
     community_id integer NOT NULL,
+    year integer NOT NULL,
     commuters integer NOT NULL,
     balance_per_100_workers decimal NOT NULL,
     PRIMARY KEY (community_id),
@@ -541,6 +548,7 @@ CREATE TABLE public.commuter_balance (
 
 INSERT INTO public.commuter_balance
 SELECT regions_id::integer as community_id,
+       2000 as year,
        pendlersaldo_in_personen::integer as commuters,
        bilanz_der_zu__und_wegpendler_pro_100_erwerbstätige_sowie_sch::decimal as balance_per_100_workers
 FROM import.pendlersaldo_2000
@@ -550,6 +558,7 @@ INNER JOIN public.communities AS c ON c.id = regions_id::integer;
 DROP TABLE IF EXISTS public.language_areas CASCADE;
 CREATE TABLE public.language_areas (
     community_id integer NOT NULL,
+    year integer NOT NULL,
     language text NOT NULL,
     PRIMARY KEY (community_id),
     FOREIGN KEY (community_id) REFERENCES public.communities (id)
@@ -557,6 +566,59 @@ CREATE TABLE public.language_areas (
 
 INSERT INTO public.language_areas
 SELECT regions_id::integer as community_id,
+        2000 AS year,
        Sprachgebiete as language
 FROM import.sprachgebiete_2000
 INNER JOIN public.communities AS c ON c.id = regions_id::integer;
+
+
+-------------------------------------------
+CREATE OR REPLACE VIEW public.communities_detail AS (
+    SELECT 
+        c.id AS community_id,
+        c.name AS name,
+        (
+            SELECT array_to_json(array_agg(bi)) FROM (
+                SELECT year, births FROM public.births
+                WHERE community_id = c.id
+            ) AS bi
+        ) AS births,
+        (
+            SELECT array_to_json(array_agg(de)) FROM (
+                SELECT year, deaths FROM public.deaths
+                WHERE community_id = c.id
+            ) AS de
+        ) AS deaths,
+        (
+            SELECT array_to_json(array_agg(re)) FROM (
+                SELECT year, population FROM public.residential_population
+                WHERE community_id = c.id
+            ) AS re
+        ) AS residential_population,
+        (
+            SELECT array_to_json(array_agg(la)) FROM (
+                SELECT year, language FROM public.language_areas
+                WHERE community_id = c.id
+            ) AS la
+        ) AS language_areas,
+        (
+            SELECT array_to_json(array_agg(ho)) FROM (
+                SELECT year, share FROM public.housing_estate_share
+                WHERE community_id = c.id
+            ) AS ho
+        ) AS housing_estate_share,
+        (
+            SELECT array_to_json(array_agg(co)) FROM (
+                SELECT year, commuters, balance_per_100_workers FROM public.commuter_balance
+                WHERE community_id = c.id
+            ) AS co
+        ) AS commuter_balance,
+        (
+            SELECT array_to_json(array_agg(ci)) FROM (
+                SELECT year, cinemas FROM public.cinemas
+                WHERE community_id = c.id
+            ) AS ci
+        ) AS cinemas
+    FROM public.communities AS c
+);
+

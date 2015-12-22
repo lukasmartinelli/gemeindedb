@@ -1,0 +1,16 @@
+{
+  "name": "gemeindedb",
+  "version": "1.0.0",
+  "description": "API to provide information about swiss communities",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lukas Martinelli",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3",
+    "pg-promise": "^2.8.5"
+  }
+}

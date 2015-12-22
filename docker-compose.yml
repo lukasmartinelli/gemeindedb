@@ -18,3 +18,11 @@ schema:
   build: "src/schema"
   links:
    - postgres:postgres
+api:
+  build: "src/api"
+  links:
+   - postgres:postgres
+  ports:
+   - "3000:3000"
+  volumes:
+   - ./src/api:/usr/src/app
