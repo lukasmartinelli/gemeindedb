@@ -456,9 +456,27 @@ CREATE TABLE public.population_age_group (
     community_id integer NOT NULL,
     year integer NOT NULL,
     residential boolean NOT NULL,
-    age_group text NOT NULL,
-    population integer NOT NULL,
-    PRIMARY KEY (community_id, year, residential, age_group),
+    population_5_9_years integer NOT NULL,
+    population_10_14_years integer NOT NULL,
+    population_15_19_years integer NOT NULL,
+    population_20_24_years integer NOT NULL,
+    population_25_29_years integer NOT NULL,
+    population_30_34_years integer NOT NULL,
+    population_35_39_years integer NOT NULL,
+    population_40_44_years integer NOT NULL,
+    population_45_49_years integer NOT NULL,
+    population_50_54_years integer NOT NULL,
+    population_55_59_years integer NOT NULL,
+    population_60_64_years integer NOT NULL,
+    population_65_69_years integer NOT NULL,
+    population_70_74_years integer NOT NULL,
+    population_75_79_years integer NOT NULL,
+    population_80_84_years integer NOT NULL,
+    population_85_89_years integer NOT NULL,
+    population_90_94_years integer NOT NULL,
+    population_95_99_years integer NOT NULL,
+    population_100_years_or_older integer NOT NULL,
+    PRIMARY KEY (community_id, year, residential),
     FOREIGN KEY (community_id) REFERENCES public.communities (id)
 );
 
@@ -466,10 +484,27 @@ INSERT INTO public.population_age_group
 SELECT extract_community_id(region),
        2014 as year,
        FALSE as residential,
-       age_group,
-       population::integer
-FROM values_by_age_group('import.nichtstaendinge_wohnbevoelkerung_alter_2014', 'population')
-     f(region text, age_group text, population text)
+        _5_9_years::integer AS population_5_9_years,
+        _10_14_years::integer AS population_10_14_years,
+        _15_19_years::integer AS population_15_19_years,
+        _20_24_years::integer AS population_20_24_years,
+        _25_29_years::integer AS population_25_29_years,
+        _30_34_years::integer AS population_30_34_years,
+        _35_39_years::integer AS population_35_39_years,
+        _40_44_years::integer AS population_40_44_years,
+        _45_49_years::integer AS population_45_49_years,
+        _50_54_years::integer AS population_50_54_years,
+        _55_59_years::integer AS population_55_59_years,
+        _60_64_years::integer AS population_60_64_years,
+        _65_69_years::integer AS population_65_69_years,
+        _70_74_years::integer AS population_70_74_years,
+        _75_79_years::integer AS population_75_79_years,
+        _80_84_years::integer AS population_80_84_years,
+        _85_89_years::integer AS population_85_89_years,
+        _90_94_years::integer AS population_90_94_years,
+        _95_99_years::integer AS population_95_99_years,
+        _100_years_or_older::integer AS population_100_years_or_older
+FROM import.nichtstaendinge_wohnbevoelkerung_alter_2014
 INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
 WHERE is_community(region);
 
@@ -477,10 +512,27 @@ INSERT INTO public.population_age_group
 SELECT extract_community_id(region),
        2014 as year,
        TRUE as residential,
-       age_group,
-       population::integer
-FROM values_by_age_group('import.staendige_wohnbevoelkerung_alter_2014', 'population')
-     f(region text, age_group text, population text)
+        _5_9_years::integer AS population_5_9_years,
+        _10_14_years::integer AS population_10_14_years,
+        _15_19_years::integer AS population_15_19_years,
+        _20_24_years::integer AS population_20_24_years,
+        _25_29_years::integer AS population_25_29_years,
+        _30_34_years::integer AS population_30_34_years,
+        _35_39_years::integer AS population_35_39_years,
+        _40_44_years::integer AS population_40_44_years,
+        _45_49_years::integer AS population_45_49_years,
+        _50_54_years::integer AS population_50_54_years,
+        _55_59_years::integer AS population_55_59_years,
+        _60_64_years::integer AS population_60_64_years,
+        _65_69_years::integer AS population_65_69_years,
+        _70_74_years::integer AS population_70_74_years,
+        _75_79_years::integer AS population_75_79_years,
+        _80_84_years::integer AS population_80_84_years,
+        _85_89_years::integer AS population_85_89_years,
+        _90_94_years::integer AS population_90_94_years,
+        _95_99_years::integer AS population_95_99_years,
+        _100_years_or_older::integer AS population_100_years_or_older
+FROM import.staendige_wohnbevoelkerung_alter_2014
 INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
 WHERE is_community(region);
 
@@ -571,7 +623,6 @@ SELECT regions_id::integer as community_id,
 FROM import.sprachgebiete_2000
 INNER JOIN public.communities AS c ON c.id = regions_id::integer;
 
-
 -------------------------------------------
 CREATE OR REPLACE VIEW public.communities_detail AS (
     SELECT 
@@ -618,7 +669,37 @@ CREATE OR REPLACE VIEW public.communities_detail AS (
                 SELECT year, cinemas FROM public.cinemas
                 WHERE community_id = c.id
             ) AS ci
-        ) AS cinemas
+        ) AS cinemas,
+        (
+            SELECT array_to_json(array_agg(pag)) FROM (
+                SELECT * FROM public.population_age_group
+                WHERE community_id = c.id
+            ) AS pag
+        ) AS population_by_age_groups,
+        (
+            SELECT array_to_json(array_agg(im)) FROM (
+                SELECT year, immigration FROM public.immigration
+                WHERE community_id = c.id
+            ) AS im
+        ) AS immigration,
+        (
+            SELECT array_to_json(array_agg(em)) FROM (
+                SELECT year, emigration FROM public.emigration
+                WHERE community_id = c.id
+            ) AS em
+        ) AS emigration,
+        (
+            SELECT array_to_json(array_agg(im)) FROM (
+                SELECT year, immigration FROM public.immigration_from_same_canton
+                WHERE community_id = c.id
+            ) AS im
+        ) AS immigration_from_same_canton,
+        (
+            SELECT array_to_json(array_agg(im)) FROM (
+                SELECT year, immigration FROM public.immigration_from_other_canton
+                WHERE community_id = c.id
+            ) AS im
+        ) AS immigration_from_other_canton
     FROM public.communities AS c
 );
 

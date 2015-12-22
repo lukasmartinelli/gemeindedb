@@ -10,6 +10,12 @@ var db = pgp({
     password: process.env.DB_PASSWORD ||  'suisse'
 });
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.get('/communities', function(req, res) {
   var searchQuery = req.query.q;
   var dbQuery = db.query("SELECT id AS community_id, name FROM public.communities");
