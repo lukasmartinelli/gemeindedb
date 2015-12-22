@@ -11,8 +11,16 @@ var db = pgp({
 });
 
 app.get('/communities', function(req, res) {
-  db.query("select id as community_id, name from public.communities")
-    .then(function (data) {
+  var searchQuery = req.query.q;
+  var dbQuery = db.query("SELECT id AS community_id, name FROM public.communities");
+  if(searchQuery) {
+    dbQuery = db.query(
+        "SELECT id AS community_id, name FROM public.communities WHERE name ILIKE '$1^%'",
+        searchQuery
+    );
+  }
+
+  dbQuery.then(function (data) {
       res.json(data);
     })
     .catch(function (error) {
