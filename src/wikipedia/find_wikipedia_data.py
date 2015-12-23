@@ -19,13 +19,10 @@ if __name__ == '__main__':
         zipcode, bfs_id, canton_abbreviation, name = row
 
         try:
-            page = try_find_page(name + ' ' + zipcode)
-            if not page:
-                page = try_find_page(name + ' ' + canton_abbreviation)
-            if not page:
-                page = try_find_page(name)
-        except wikipedia.exceptions.DisambiguationError as err:
+            page = try_find_page(name)
+        except Exception as err:
             sys.stderr.write('Cannot find article: %sn' % str(err))
+            sys.stderr.write('---------------------\n')
             pass
 
         if not page:
