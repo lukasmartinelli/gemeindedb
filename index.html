@@ -181,34 +181,53 @@ $(function () {
       ];
     }
 
-    var residentialAgeGroupSeries = $.map(data.population_by_age_groups.filter(function(record) {
-      return record.residential === true;
+    var maleAgeGroupSeries = $.map(data.population_by_age_groups.filter(function(record) {
+      return record.sex === 'male';
     }), ageGroupsAsArray);
-    var nonResidentialAgeGroupSeries = $.map(data.population_by_age_groups.filter(function(record) {
-      return record.residential === false;
+    var femaleAgeGroupSeries = $.map(data.population_by_age_groups.filter(function(record) {
+      return record.sex === 'female';
     }), ageGroupsAsArray);
+    var negatedFemaleAgeGroupSeries = $.map(femaleAgeGroupSeries, function negate(value) {
+      return -value;
+    });
+
+    var ageGroups = [
+      '0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54',
+      '55-59', '60-64', '65-69', '70-74', '75-79', '80-84', '85-89', '90-94', '95-99', '100+'
+    ];
 
     $('#ageGroupChart').highcharts({
-        chart: { type: 'column' },
+        chart: { type: 'bar' },
         title: { text: 'Age Groups' },
-        xAxis: {
-          categories: [
-            '0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54',
-            '55-59', '60-64', '65-69', '70-74', '75-79', '80-84', '85-89', '90-94', '95-99', '100+'
-          ]
+        xAxis: [{
+            categories: ageGroups,
+            reversed: false,
+            labels: { step: 1 }
+        }, { // mirror axis on right side
+            opposite: true,
+            reversed: false,
+            categories: ageGroups,
+            linkedTo: 0,
+            labels: { step: 1 }
+        }],
+        tooltip: {
+          formatter: function () {
+              return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
+                  'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
+          }
         },
         yAxis: {
-            title: { text: 'People' }
+            title: { text: null }
         },
         plotOptions: {
-            column: { stacking: 'normal' }
+            series: { stacking: 'normal' }
         },
         series: [{
-            name: 'Residential',
-            data: residentialAgeGroupSeries
+            name: 'Male',
+            data: maleAgeGroupSeries
         }, {
-            name: 'Non-Residential',
-            data: nonResidentialAgeGroupSeries
+            name: 'Female',
+            data: negatedFemaleAgeGroupSeries
         }]
     });
 
