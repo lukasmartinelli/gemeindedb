@@ -35,6 +35,15 @@ From the import tables a new relational schema is created where it is easier to 
 docker-compose run schema
 ```
 
+## Find Wikipedia Links for Data
+
+```bash
+cat communities_zip_search_data.tsv \
+    | sed 1d \
+    | python find_wikipedia_data.py \
+    | tee gemeinden_wikipedia_2015.tsv
+```
+
 ## Data Sources
 
 | File                                   | Source                                                                                                                                         |

@@ -171,6 +171,20 @@ SELECT regions_id::integer,
 FROM import.politische_gemeinden_2015;
 
 -------------------------------------------
+DROP TABLE IF EXISTS public.zipcode CASCADE;
+CREATE TABLE public.zipcode (
+    community_id integer NOT NULL,
+    zip integer NOT NULL,
+    PRIMARY KEY (community_id, zip),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.zipcode
+SELECT gdenr::integer, plz4::integer as zip
+FROM import.postleitzahlen_2015
+INNER JOIN public.communities AS c ON c.id = gdenr::integer;
+
+-------------------------------------------
 DROP TABLE IF EXISTS public.residential_population CASCADE;
 CREATE TABLE public.residential_population (
     community_id integer NOT NULL,
