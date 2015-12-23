@@ -16,58 +16,6 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql IMMUTABLE;
 
-
--------------------------------------------
-CREATE OR REPLACE FUNCTION values_by_age_group(table_name text, column_name text)
-RETURNS SETOF RECORD AS $$
-BEGIN
-    RETURN QUERY EXECUTE format(
-        'SELECT region, ''0-4'' AS age_group, _0_4_years as %2$s FROM %1$s
-        UNION ALL
-        SELECT region, ''5-9'' AS age_group, _5_9_years as %2$s FROM %1$s
-        UNION ALL
-        SELECT region, ''10-14'' AS age_group, _10_14_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''15-19'' AS age_group, _15_19_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''20-24'' AS age_group, _20_24_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''25-29'' AS age_group, _25_29_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''30-34'' AS age_group, _30_34_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''35-39'' AS age_group, _35_39_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''40-44'' AS age_group, _40_44_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''45-49'' AS age_group, _45_49_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''50-54'' AS age_group, _50_54_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''55-59'' AS age_group, _55_59_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''60-64'' AS age_group, _60_64_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''65-69'' AS age_group, _65_69_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''70-74'' AS age_group, _70_74_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''75-79'' AS age_group, _75_79_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''80-84'' AS age_group, _80_84_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''85-89'' AS age_group, _85_89_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''90-94'' AS age_group, _90_94_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''95-99'' AS age_group, _95_99_years as %2$s FROM %1$s
-        UNION ALL        
-        SELECT region, ''100+'' AS age_group, _100_years_or_older as %2$s FROM %1$s',
-        table_name, column_name);
-END;
-$$
-LANGUAGE plpgsql;
-
 -------------------------------------------
 CREATE OR REPLACE FUNCTION values_by_year(table_name text, column_name text)
 RETURNS SETOF RECORD AS $$
@@ -407,7 +355,7 @@ INSERT INTO public.emigration_from_same_canton
 SELECT extract_community_id(region),
        year,
        emigration::integer
-FROM values_by_year('import.wanderung_intrakantonal_zuzug_1981_2014', 'emigration')
+FROM values_by_year('import.wanderung_intrakantonal_wegzug_1981_2014', 'emigration')
      f(region text, year integer, emigration text)
 INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
 WHERE is_community(region);
@@ -450,11 +398,11 @@ SELECT extract_community_id(f15.region),
 FROM (
     SELECT region, '1' as rooms, _1_wohnraum as flats FROM import.leerstehende_wohnungen_2015
     UNION ALL
-    SELECT region, '2' as rooms, _1_wohnraum as flats FROM import.leerstehende_wohnungen_2015
+    SELECT region, '2' as rooms, _2_wohnräume as flats FROM import.leerstehende_wohnungen_2015
     UNION ALL
-    SELECT region, '3' as rooms, _2_wohnräume as flats FROM import.leerstehende_wohnungen_2015
+    SELECT region, '3' as rooms, _3_wohnräume as flats FROM import.leerstehende_wohnungen_2015
     UNION ALL
-    SELECT region, '4' as rooms, _3_wohnräume as flats FROM import.leerstehende_wohnungen_2015
+    SELECT region, '4' as rooms, _4_wohnräume as flats FROM import.leerstehende_wohnungen_2015
     UNION ALL
     SELECT region, '5' as rooms, _5_wohnräume as flats FROM import.leerstehende_wohnungen_2015
     UNION ALL
@@ -713,7 +661,43 @@ CREATE OR REPLACE VIEW public.communities_detail AS (
                 SELECT year, immigration FROM public.immigration_from_other_canton
                 WHERE community_id = c.id
             ) AS im
-        ) AS immigration_from_other_canton
+        ) AS immigration_from_other_canton,
+        (
+            SELECT array_to_json(array_agg(em)) FROM (
+                SELECT year, emigration FROM public.emigration_from_same_canton
+                WHERE community_id = c.id
+            ) AS em
+        ) AS emigration_from_same_canton,
+        (
+            SELECT array_to_json(array_agg(em)) FROM (
+                SELECT year, emigration FROM public.emigration_from_other_canton
+                WHERE community_id = c.id
+            ) AS em
+        ) AS emigration_from_other_canton,
+        (
+            SELECT array_to_json(array_agg(bs)) FROM (
+                SELECT year, surplus FROM public.birth_surplus
+                WHERE community_id = c.id
+            ) AS bs
+        ) AS birth_surplus,
+        (
+            SELECT array_to_json(array_agg(mb)) FROM (
+                SELECT year, balance FROM public.migration_balance
+                WHERE community_id = c.id
+            ) AS mb
+        ) AS migration_balance,
+        (
+            SELECT array_to_json(array_agg(cs)) FROM (
+                SELECT year, citizenships FROM public.new_citizenships
+                WHERE community_id = c.id
+            ) AS cs
+        ) AS new_citizenships,
+        (
+            SELECT array_to_json(array_agg(cd)) FROM (
+                SELECT year, distance_km FROM public.commute_distance
+                WHERE community_id = c.id
+            ) AS cd
+        ) AS commute_distance
     FROM public.communities AS c
 );
 
