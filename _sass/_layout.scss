@@ -1,6 +1,11 @@
-.community-header {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+@media only screen and (min-width: 1400px) {
+    .flakes-frame .flakes-content {
+        width: 1100px;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .flakes-frame .flakes-content {
+        width: 85%;
+    }
 }

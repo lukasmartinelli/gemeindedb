@@ -1,36 +1,81 @@
 ---
 layout: default
 ---
-<div class="row community-header" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/8a/Kaltbrunn_2012.JPG');">
-  <h3>Kaltbrunn</h3>
-  <form>
-    <div class="eight columns">
-      <input class="u-full-width" type="text" placeholder="Search community">
-    </div>
-    <div class="four columns">
-      <input class="button-primary" type="submit" value="Search">
-    </div>
-  </form>
-</div>
-
-
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="//code.highcharts.com/highcharts.js"></script>
 <script src="//code.highcharts.com/modules/exporting.js"></script>
 
-<div class="home">
-  <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-  <div id="population" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-  <div id="immigrationChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-  <div id="ageGroupChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div class="container">
+  <div class="title">
+    <h1>Gemeindeinformationen für Kaltbrunn SG</h1>
+    <form class="pure-form">
+        <fieldset>
+            <input type="text" placeholder="PLZ oder Name">
+            <button type="submit" class="pure-button">Suche</button>
+        </fieldset>
+    </form>
+  </div>
+  <div class="pure-g">
+    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+      <div id="population" style="height: 400px;"></div>
+    </div>
+    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+      <div id="ageGroupChart" style="height: 400px;"></div>
+      </div>
+  </div>
+  <div class="grid-12 gutter-20">
+    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+      <div id="birth-chart" style="height: 400px;"></div>
+    </div>
+    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3" id="emigrationChart" style="height: 400px; margin: 0 auto"></div>
+  </div>
 </div>
 
 <script>
 $(function () {
+    Highcharts.theme = {
+        colors: ['#006699', '#66afe9', '#fffab2', '#DC0018', '#757575', '##F7001D'],
+        chart: {
+            backgroundColor: {
+                linearGradient: [0, 0, 500, 500],
+                stops: [
+                    [0, 'rgb(255, 255, 255)'],
+                    [1, 'rgb(240, 240, 255)']
+                ]
+            },
+        },
+        title: {
+            style: {
+                color: '#454545',
+                font: '16px "Open Sans", sans-serif'
+            }
+        },
+        subtitle: {
+            style: {
+                color: '#454545',
+                font: '12px "Open Sans", sans-serif'
+            }
+        },
+
+        legend: {
+            itemStyle: {
+                color: '454545',
+                font: '9pt Open Sans, sans-serif'
+            },
+            itemHoverStyle:{
+                color: 'gray'
+            }
+        }
+    };
+    Highcharts.setOptions(Highcharts.theme);
+
     $.get('http://192.168.99.101:3000/communities/3313', function(data) {
     function sortByYear(a, b) {
       return a.year - b.year;
     }
+    var citizenshipsSeries = $.map(data.new_citizenships.sort(sortByYear), function(record) {
+      return record.citizenships;
+    });
     var years = $.map(data.births.sort(sortByYear), function(record) {
       return record.year;
     });
@@ -43,6 +88,9 @@ $(function () {
     var populationSeries = $.map(data.residential_population.sort(sortByYear), function(record) {
       return record.population;
     });
+    var birthSurplusSeries = $.map(data.birth_surplus.sort(sortByYear), function(record) {
+      return record.surplus;
+    });
 
     var immigrationSeries = $.map(data.immigration.sort(sortByYear), function(record) {
       return record.immigration;
@@ -53,7 +101,7 @@ $(function () {
     });
 
     $('#immigrationChart').highcharts({
-        chart: { type: 'area' },
+        chart: { type: 'column' },
         title: { text: 'Immigration and Emmigration' },
         xAxis: { categories: years },
         yAxis: {
@@ -68,7 +116,7 @@ $(function () {
         }]
     });
 
-    $('#container').highcharts({
+    $('#birth-chart').highcharts({
         chart: { type: 'area' },
         title: { text: 'Births and Deaths' },
         xAxis: { categories: years },
@@ -76,17 +124,22 @@ $(function () {
             title: { text: 'People' }
         },
         plotOptions: {
-            line: {
-                dataLabels: { enabled: true },
-                enableMouseTracking: false
-            }
+            column: { stacking: 'normal' }
         },
         series: [{
             name: 'Births',
+            type: 'column',
             data: birthSeries
         }, {
             name: 'Deaths',
+            type: 'column',
             data: deathSeries
+        }, {
+            name: 'Birth Surplus',
+            type: 'spline',
+            dashStyle: 'shortdot',
+            color: '#DC0018',
+            data: birthSurplusSeries
         }]
     });
 
@@ -95,7 +148,7 @@ $(function () {
         title: { text: 'Population' },
         xAxis: { categories: years },
         yAxis: {
-            title: { text: 'People' }
+            title: { text: 'Residential Population' }
         },
         series: [{
             name: 'Residential',
@@ -123,7 +176,8 @@ $(function () {
         record.population_80_84_years,
         record.population_85_89_years,
         record.population_90_94_years,
-        record.population_95_99_years
+        record.population_95_99_years,
+        record.population_100_years_or_older
       ];
     }
 
@@ -136,7 +190,7 @@ $(function () {
 
     $('#ageGroupChart').highcharts({
         chart: { type: 'column' },
-        title: { text: 'Population by Age Groups' },
+        title: { text: 'Age Groups' },
         xAxis: {
           categories: [
             '0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54',
@@ -166,9 +220,21 @@ $(function () {
       return record.immigration;
     });
 
-    $('#ageGroupChart').highcharts({
+    var emigrationSameCantonSeries = $.map(data.emigration_from_same_canton.sort(sortByYear), function(record) {
+      return -record.emigration;
+    });
+
+    var emigrationOtherCantonSeries = $.map(data.emigration_from_other_canton.sort(sortByYear), function(record) {
+      return -record.emigration;
+    });
+
+    var migrationBalanceSeries = $.map(data.migration_balance.sort(sortByYear), function(record) {
+      return record.balance;
+    });
+
+    $('#emigrationChart').highcharts({
         chart: { type: 'column' },
-        title: { text: 'Immigration' },
+        title: { text: 'Emigration' },
         xAxis: {
           categories: years,
         },
@@ -178,12 +244,26 @@ $(function () {
         plotOptions: {
             column: { stacking: 'normal' }
         },
+        //colors: ['#7cb5ec','#434348','#A8D0F6', '#626268'],
+        colors: ['#006699', '#66afe9', '#757575', '#454545'],
         series: [{
-            name: 'Same Canton',
+            name: 'Immigration Same Canton',
             data: immigrationSameCantonSeries
         }, {
-            name: 'Other Canton',
+            name: 'Immigration Other Canton',
             data: immigrationOtherCantonSeries
+        }, {
+            name: 'Emigration Same Canton',
+            data: emigrationSameCantonSeries
+        }, {
+            name: 'Emigration Other Canton',
+            data: emigrationOtherCantonSeries
+        }, {
+            name: 'Migration Balance',
+            type: 'spline',
+            dashStyle: 'shortdot',
+            color: '#DC0018',
+            data: migrationBalanceSeries
         }]
     });
 
