@@ -17,7 +17,7 @@ layout: default
   </div>
   <div class="pure-g">
     <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
-      <div id="population" style="height: 400px;"></div>
+      <div id="birthplaceChart" style="height: 400px;"></div>
     </div>
     <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
       <div id="ageGroupChart" style="height: 400px;"></div>
@@ -143,6 +143,32 @@ $(function () {
         }]
     });
 
+    var foreignBirthSeries = $.map(data.population_birth_place_abroad.sort(sortByYear), function(record) {
+      return record.people;
+    });
+    var swissBirthSeries = $.map(data.population_birth_place_switzerland.sort(sortByYear), function(record) {
+      return record.people;
+    });
+
+    $('#birthplaceChart').highcharts({
+        chart: { type: 'column' },
+        title: { text: 'Herkunft' },
+        xAxis: { categories: years },
+        yAxis: {
+            title: { text: 'People' }
+        },
+        plotOptions: {
+            series: { stacking: 'normal' }
+        },
+        series: [{
+            name: 'Schweiz',
+            data: swissBirthSeries
+        }, {
+            name: 'Ausland',
+            data: foreignBirthSeries
+        }]
+    });
+
     $('#population').highcharts({
         chart: { type: 'line' },
         title: { text: 'Population' },
@@ -150,10 +176,6 @@ $(function () {
         yAxis: {
             title: { text: 'Residential Population' }
         },
-        series: [{
-            name: 'Residential',
-            data: populationSeries
-        }]
     });
 
     function ageGroupsAsArray(record) {
