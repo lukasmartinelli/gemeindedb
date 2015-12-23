@@ -133,6 +133,45 @@ FROM import.postleitzahlen_2015
 INNER JOIN public.communities AS c ON c.id = gdenr::integer;
 
 -------------------------------------------
+DROP TABLE IF EXISTS public.workplaces_by_sector CASCADE;
+CREATE TABLE public.workplaces_by_sector (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    sector integer NOT NULL,
+    workplaces integer NOT NULL,
+    workers integer NOT NULL,
+    PRIMARY KEY (community_id, year, sector),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.workplaces_by_sector
+SELECT c.id as community_id,
+       2013 as year,
+       1 as sector,
+       s1.arbeitsstätten::integer as workplaces,
+       s1.beschäftigte::integer as workers
+FROM import.beschaeftigte_primaersektor_2013 AS s1
+INNER JOIN public.communities AS c ON c.id = split_part(s1.region, ' ', 1)::integer;
+
+INSERT INTO public.workplaces_by_sector
+SELECT c.id as community_id,
+       2013 as year,
+       2 as sector,
+       s2.arbeitsstätten::integer as workplaces,
+       s2.beschäftigte::integer as workers
+FROM import.beschaeftigte_sekundaersektor_2013 AS s2
+INNER JOIN public.communities AS c ON c.id = split_part(s2.region, ' ', 1)::integer;
+
+INSERT INTO public.workplaces_by_sector
+SELECT c.id as community_id,
+       2013 as year,
+       3 as sector,
+       s3.arbeitsstätten::integer as workplaces,
+       s3.beschäftigte::integer as workers
+FROM import.beschaeftigte_tertiaersektor_2013 AS s3
+INNER JOIN public.communities AS c ON c.id = split_part(s3.region, ' ', 1)::integer;
+
+-------------------------------------------
 DROP TABLE IF EXISTS public.population_birth_place_switzerland CASCADE;
 CREATE TABLE public.population_birth_place_switzerland (
     community_id integer NOT NULL,
@@ -745,7 +784,13 @@ CREATE OR REPLACE VIEW public.communities_detail AS (
                 SELECT year, people FROM public.population_birth_place_abroad
                 WHERE community_id = c.id
             ) AS bp
-        ) AS population_birth_place_abroad
+        ) AS population_birth_place_abroad,
+        (
+            SELECT array_to_json(array_agg(wbs)) FROM (
+                SELECT year, sector, workplaces, workers FROM public.workplaces_by_sector
+                WHERE community_id = c.id
+            ) AS wbs
+        ) AS workplaces_by_sector
     FROM public.communities AS c
 );
 
