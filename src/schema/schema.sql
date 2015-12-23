@@ -133,6 +133,42 @@ FROM import.postleitzahlen_2015
 INNER JOIN public.communities AS c ON c.id = gdenr::integer;
 
 -------------------------------------------
+DROP TABLE IF EXISTS public.population_birth_place_switzerland CASCADE;
+CREATE TABLE public.population_birth_place_switzerland (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    people integer NOT NULL,
+    PRIMARY KEY (community_id, year),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.population_birth_place_switzerland
+SELECT c.id as community_id,
+       year as year,
+       people::integer
+FROM values_by_year('import.mittlere_bevoelkerung_schweiz_1981_2014', 'people')
+     f(region text, year integer, people text)
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region);
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.population_birth_place_abroad CASCADE;
+CREATE TABLE public.population_birth_place_abroad (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    people integer NOT NULL,
+    PRIMARY KEY (community_id, year),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.population_birth_place_abroad
+SELECT c.id as community_id,
+       year as year,
+       people::integer
+FROM values_by_year('import.mittlere_bevoelkerung_ausland_1981_2014', 'people')
+     f(region text, year integer, people text)
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region);
+
+-------------------------------------------
 DROP TABLE IF EXISTS public.residential_population CASCADE;
 CREATE TABLE public.residential_population (
     community_id integer NOT NULL,
@@ -587,7 +623,7 @@ INNER JOIN public.communities AS c ON c.id = regions_id::integer;
 
 -------------------------------------------
 CREATE OR REPLACE VIEW public.communities_detail AS (
-    SELECT 
+    SELECT
         c.id AS community_id,
         c.name AS name,
         (
@@ -697,7 +733,19 @@ CREATE OR REPLACE VIEW public.communities_detail AS (
                 SELECT year, distance_km FROM public.commute_distance
                 WHERE community_id = c.id
             ) AS cd
-        ) AS commute_distance
+        ) AS commute_distance,
+        (
+            SELECT array_to_json(array_agg(bp)) FROM (
+                SELECT year, people FROM public.population_birth_place_switzerland
+                WHERE community_id = c.id
+            ) AS bp
+        ) AS population_birth_place_switzerland,
+        (
+            SELECT array_to_json(array_agg(bp)) FROM (
+                SELECT year, people FROM public.population_birth_place_abroad
+                WHERE community_id = c.id
+            ) AS bp
+        ) AS population_birth_place_abroad
     FROM public.communities AS c
 );
 
