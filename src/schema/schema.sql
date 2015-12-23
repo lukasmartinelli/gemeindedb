@@ -417,7 +417,7 @@ DROP TABLE IF EXISTS public.population_age_group CASCADE;
 CREATE TABLE public.population_age_group (
     community_id integer NOT NULL,
     year integer NOT NULL,
-    residential boolean NOT NULL,
+    sex text NOT NULL,
     population_5_9_years integer NOT NULL,
     population_10_14_years integer NOT NULL,
     population_15_19_years integer NOT NULL,
@@ -438,14 +438,14 @@ CREATE TABLE public.population_age_group (
     population_90_94_years integer NOT NULL,
     population_95_99_years integer NOT NULL,
     population_100_years_or_older integer NOT NULL,
-    PRIMARY KEY (community_id, year, residential),
+    PRIMARY KEY (community_id, year, sex),
     FOREIGN KEY (community_id) REFERENCES public.communities (id)
 );
 
 INSERT INTO public.population_age_group
 SELECT extract_community_id(region),
        2014 as year,
-       FALSE as residential,
+       'male' as sex,
         _5_9_years::integer AS population_5_9_years,
         _10_14_years::integer AS population_10_14_years,
         _15_19_years::integer AS population_15_19_years,
@@ -466,14 +466,14 @@ SELECT extract_community_id(region),
         _90_94_years::integer AS population_90_94_years,
         _95_99_years::integer AS population_95_99_years,
         _100_years_or_older::integer AS population_100_years_or_older
-FROM import.nichtstaendinge_wohnbevoelkerung_alter_2014
+FROM import.staendinge_bevoelkerung_alter_maennlich_2014
 INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
 WHERE is_community(region);
 
 INSERT INTO public.population_age_group
 SELECT extract_community_id(region),
        2014 as year,
-       TRUE as residential,
+       'female' as sex,
         _5_9_years::integer AS population_5_9_years,
         _10_14_years::integer AS population_10_14_years,
         _15_19_years::integer AS population_15_19_years,
@@ -494,7 +494,7 @@ SELECT extract_community_id(region),
         _90_94_years::integer AS population_90_94_years,
         _95_99_years::integer AS population_95_99_years,
         _100_years_or_older::integer AS population_100_years_or_older
-FROM import.staendige_wohnbevoelkerung_alter_2014
+FROM import.staendinge_bevoelkerung_alter_weiblich_2014
 INNER JOIN public.communities AS c ON c.id = extract_community_id(region)
 WHERE is_community(region);
 
