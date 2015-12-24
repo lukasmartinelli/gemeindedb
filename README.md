@@ -7,6 +7,8 @@ instead of looking through XLSX or PX files.
 
 The project also contains a ETL process to transform the data into a relational schema with PostgreSQL.
 
+![Screenshot of info portal](screenshot.png)
+
 ## Statistical Data
 
 The collected data files are in the folder `data`.
