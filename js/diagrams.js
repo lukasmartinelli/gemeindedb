@@ -372,5 +372,13 @@ $(function () {
         });
     });
 
+    $("#search-query").easyAutocomplete({
+        url: baseUrl + '/communities',
+        getValue: "name",
+        list: {
+            match: { enabled: true }
+         },
+    });
+
     loadDiagrams(3313);
 });

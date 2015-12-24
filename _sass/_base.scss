@@ -17,6 +17,14 @@ body {
     }
 }
 
+.easy-autocomplete, .search-query, .search-button {
+    display: inline-block;
+}
+
+.search-button {
+    margin-left: 1rem;
+}
+
 .github-corner:hover .octo-arm {
     animation: octocat-wave 560ms ease-in-out
 }

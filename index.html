@@ -5,14 +5,15 @@ layout: default
 <script src="//code.highcharts.com/highcharts.js"></script>
 <script src="//code.highcharts.com/modules/exporting.js"></script>
 <script src="/js/diagrams.js"></script>
+<script src="/js/jquery.easy-autocomplete.min.js"></script>
 
 <div class="container">
   <div class="title">
     <h1>Gemeindeinformationen für <span id="community-name">Kaltbrunn SG</span></h1>
     <form class="pure-form" id="search-form">
         <fieldset>
-            <input id="search-query" type="text" placeholder="PLZ oder Name">
-            <button type="submit" class="pure-button">Suche</button>
+            <input id="search-query" class="search-query" type="text" placeholder="PLZ oder Name">
+            <button type="submit" class="pure-button search-button">Suche</button>
         </fieldset>
     </form>
   </div>
