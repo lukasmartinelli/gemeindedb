@@ -5,10 +5,25 @@ CREATE OR REPLACE VIEW public.communities_search AS (
     INNER JOIN public.zipcode AS z ON z.community_id = c.id
 );
 -------------------------------------------
+CREATE OR REPLACE VIEW public.wiki_background_images AS (
+    SELECT community_id, url FROM public.wikipedia_images
+    WHERE url NOT ILIKE '%logo%'
+      AND url NOT ILIKE '%coat%'
+      AND url NOT ILIKE '%karte%'
+      AND url NOT ILIKE '%wappen%'
+);
+-------------------------------------------
 CREATE OR REPLACE VIEW public.communities_detail AS (
     SELECT
         c.id AS community_id,
         c.name AS name,
+        (SELECT url FROM public.wikipedia_links WHERE c.id = community_id) AS wikipedia_link,
+        (
+            SELECT array_to_json(array_agg(t)) FROM (
+                SELECT url FROM public.wiki_background_images
+                WHERE c.id = community_id
+            ) AS t
+        ) AS wikipedia_images,
         (
             SELECT array_to_json(array_agg(t)) FROM (
                 SELECT year, births FROM public.births
