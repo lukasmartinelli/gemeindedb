@@ -349,12 +349,28 @@ $(function () {
         });
     }
 
-    $.get('http://192.168.99.101:3000/communities/3313', function(data) {
-        populationOriginDiagram($('#population-origin-diagram'), data);
-        birthDeathDiagram($('#birth-death-diagram'), data);
-        ageGroupDiagram($('#age-group-diagram'), data);
-        workSectorDiagram($('#work-sector-diagram'), data);
-        workSizeDiagram($('#work-size-diagram'), data);
-        migrationDiagram($('#migration-diagram'), data);
+    var baseUrl = 'http://192.168.99.101:3000';
+
+    function loadDiagrams(communityId) {
+        $.get(baseUrl + '/communities/' + communityId, function(data) {
+            populationOriginDiagram($('#population-origin-diagram'), data);
+            birthDeathDiagram($('#birth-death-diagram'), data);
+            ageGroupDiagram($('#age-group-diagram'), data);
+            workSectorDiagram($('#work-sector-diagram'), data);
+            workSizeDiagram($('#work-size-diagram'), data);
+            migrationDiagram($('#migration-diagram'), data);
+        });
+    }
+
+    $('#search-form').submit(function(e) {
+        var query = $('#search-query').val();
+        e.preventDefault();
+        $.get(baseUrl + '/communities?q=' + query, function(results) {
+            var community = results[0];
+            loadDiagrams(community.id);
+            $('#community-name').text(community.name);
+        });
     });
+
+    loadDiagrams(3313);
 });
