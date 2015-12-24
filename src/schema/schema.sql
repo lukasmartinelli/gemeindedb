@@ -133,6 +133,57 @@ FROM import.postleitzahlen_2015
 INNER JOIN public.communities AS c ON c.id = gdenr::integer;
 
 -------------------------------------------
+DROP TYPE workplace_size CASCADE;
+CREATE TYPE workplace_size AS ENUM ('micro', 'small', 'medium', 'big');
+
+DROP TABLE IF EXISTS public.workplaces_by_size CASCADE;
+CREATE TABLE public.workplaces_by_size (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    workplace_size workplace_size NOT NULL,
+    workplaces integer NOT NULL,
+    workers integer NOT NULL,
+    PRIMARY KEY (community_id, year, workplace_size),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.workplaces_by_size
+SELECT c.id as community_id,
+       2013 as year,
+       'micro' AS workplace_size,
+       arbeitsstätten::integer as workplaces,
+       beschäftigte::integer as workers
+FROM import.beschaeftigte_mikrounternehmen_2013
+INNER JOIN public.communities AS c ON c.id = split_part(region, ' ', 1)::integer;
+
+INSERT INTO public.workplaces_by_size
+SELECT c.id as community_id,
+       2013 as year,
+       'small' AS workplace_size,
+       arbeitsstätten::integer as workplaces,
+       beschäftigte::integer as workers
+FROM import.beschaeftigte_kleinunternehmen_2013
+INNER JOIN public.communities AS c ON c.id = split_part(region, ' ', 1)::integer;
+
+INSERT INTO public.workplaces_by_size
+SELECT c.id as community_id,
+       2013 as year,
+       'medium' AS workplace_size,
+       arbeitsstätten::integer as workplaces,
+       beschäftigte::integer as workers
+FROM import.beschaeftigte_mittlere_unternehmen_2013
+INNER JOIN public.communities AS c ON c.id = split_part(region, ' ', 1)::integer;
+
+INSERT INTO public.workplaces_by_size
+SELECT c.id as community_id,
+       2013 as year,
+       'big' AS workplace_size,
+       arbeitsstätten::integer as workplaces,
+       beschäftigte::integer as workers
+FROM import.beschaeftigte_grossunternehmen_2013
+INNER JOIN public.communities AS c ON c.id = split_part(region, ' ', 1)::integer;
+
+-------------------------------------------
 DROP TABLE IF EXISTS public.workplaces_by_sector CASCADE;
 CREATE TABLE public.workplaces_by_sector (
     community_id integer NOT NULL,
@@ -790,7 +841,13 @@ CREATE OR REPLACE VIEW public.communities_detail AS (
                 SELECT year, sector, workplaces, workers FROM public.workplaces_by_sector
                 WHERE community_id = c.id
             ) AS wbs
-        ) AS workplaces_by_sector
+        ) AS workplaces_by_sector,
+        (
+            SELECT array_to_json(array_agg(wbs)) FROM (
+                SELECT year, workplace_size, workplaces, workers FROM public.workplaces_by_size
+                WHERE community_id = c.id
+            ) AS wbs
+        ) AS workplaces_by_size
     FROM public.communities AS c
 );
 
