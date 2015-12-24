@@ -1,4 +1,10 @@
 -------------------------------------------
+CREATE OR REPLACE VIEW public.communities_search AS (
+    SELECT c.id, c.name AS name, z.zip
+    FROM public.communities AS c
+    INNER JOIN public.zipcode AS z ON z.community_id = c.id
+);
+-------------------------------------------
 CREATE OR REPLACE VIEW public.communities_detail AS (
     SELECT
         c.id AS community_id,

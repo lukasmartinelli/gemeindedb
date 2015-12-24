@@ -21,7 +21,7 @@ app.get('/communities', function(req, res) {
   var dbQuery = db.query("SELECT id AS community_id, name FROM public.communities");
   if(searchQuery) {
     dbQuery = db.query(
-        "SELECT id AS community_id, name FROM public.communities WHERE name ILIKE '$1^%'",
+        "SELECT id, name FROM public.communities_search WHERE name ILIKE '$1^%' OR zip::text = $1",
         searchQuery
     );
   }
