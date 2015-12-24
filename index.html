@@ -28,13 +28,15 @@ layout: default
       <div id="birth-chart" style="height: 400px;"></div>
     </div>
     <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3" id="emigrationChart" style="height: 400px; margin: 0 auto"></div>
+    <div class="pure-u-1-6 pure-u-md-1-2 pure-u-lg-1-3" id="workplaceSectorChart" style="height: 400px; margin: 0 auto"></div>
+    <div class="pure-u-1-6 pure-u-md-1-2 pure-u-lg-1-3" id="workplaceSizeChart" style="height: 400px; margin: 0 auto"></div>
   </div>
 </div>
 
 <script>
 $(function () {
     Highcharts.theme = {
-        colors: ['#006699', '#66afe9', '#fffab2', '#DC0018', '#757575', '##F7001D'],
+        colors: ['#006699', '#66afe9', '#D8E8EF', '#757575', '#DC0018', '#fffab2',  '##F7001D'],
         chart: {
             backgroundColor: {
                 linearGradient: [0, 0, 500, 500],
@@ -169,15 +171,6 @@ $(function () {
         }]
     });
 
-    $('#population').highcharts({
-        chart: { type: 'line' },
-        title: { text: 'Population' },
-        xAxis: { categories: years },
-        yAxis: {
-            title: { text: 'Residential Population' }
-        },
-    });
-
     function ageGroupsAsArray(record) {
       return [
         record.population_5_9_years,
@@ -307,6 +300,145 @@ $(function () {
             data: migrationBalanceSeries
         }]
     });
+
+    function getWorkers(record) {
+      return record.workers;
+    }
+    function getWorkplaces(record) {
+      return record.workplaces;
+    }
+
+
+    var primarySectorWorkersSeries = $.map(data.workplaces_by_sector.filter(function(record) {
+      return record.sector === 1;
+    }), getWorkers);
+    var secondarySectorWorkersSeries = $.map(data.workplaces_by_sector.filter(function(record) {
+      return record.sector === 2;
+    }), getWorkers);
+    var tertiarySectorWorkersSeries = $.map(data.workplaces_by_sector.filter(function(record) {
+      return record.sector === 3;
+    }), getWorkers);
+
+    var primarySectorWorkplacesSeries = $.map(data.workplaces_by_sector.filter(function(record) {
+      return record.sector === 1;
+    }), getWorkplaces);
+    var secondarySectorWorkplacesSeries = $.map(data.workplaces_by_sector.filter(function(record) {
+      return record.sector === 2;
+    }), getWorkplaces);
+    var tertiarySectorWorkplacesSeries = $.map(data.workplaces_by_sector.filter(function(record) {
+      return record.sector === 3;
+    }), getWorkplaces);
+
+    $('#workplaceSectorChart').highcharts({
+        chart: { type: 'pie' },
+        title: { text: 'Workplaces by Sector' },
+        plotOptions: {
+            pie: {
+              shadow: false,
+              center: ['50%', '50%']
+            }
+        },
+        series: [{
+          name: 'Betriebe',
+          size: '60%',
+          data: [{
+            name: 'Betriebe 1. Sektor',
+            y: primarySectorWorkplacesSeries[0]
+          }, {
+            name: 'Betriebe 2. Sektor',
+            y: secondarySectorWorkplacesSeries[0]
+          }, {
+            name: 'Betriebe 3. Sektor',
+            y: tertiarySectorWorkplacesSeries[0]
+          }]
+        }, {
+          name: 'Arbeitsplätze',
+          size: '80%',
+          innerSize: '60%',
+          data: [{
+            name: 'Arbeitsplätze 1. Sektor',
+            y: primarySectorWorkersSeries[0]
+          }, {
+            name: 'Arbeitsplätze 2. Sektor',
+            y: secondarySectorWorkersSeries[0]
+          }, {
+            name: 'Arbeitsplätze 3. Sektor',
+            y: tertiarySectorWorkersSeries[0]
+          }]
+        }]
+    });
+
+    var microWorkersSeries = $.map(data.workplaces_by_size.filter(function(record) {
+      return record.workplace_size === 'micro';
+    }), getWorkers);
+    var smallWorkersSeries = $.map(data.workplaces_by_size.filter(function(record) {
+      return record.workplace_size === 'small';
+    }), getWorkers);
+    var mediumWorkersSeries = $.map(data.workplaces_by_size.filter(function(record) {
+      return record.workplace_size === 'medium';
+    }), getWorkers);
+    var bigWorkersSeries = $.map(data.workplaces_by_size.filter(function(record) {
+      return record.workplace_size === 'big';
+    }), getWorkers);
+
+    var microWorkplacesSeries = $.map(data.workplaces_by_size.filter(function(record) {
+      return record.workplace_size === 'micro';
+    }), getWorkplaces);
+    var smallWorkplacesSeries = $.map(data.workplaces_by_size.filter(function(record) {
+      return record.workplace_size === 'small';
+    }), getWorkplaces);
+    var mediumWorkplacesSeries = $.map(data.workplaces_by_size.filter(function(record) {
+      return record.workplace_size === 'medium';
+    }), getWorkplaces);
+    var bigWorkplacesSeries = $.map(data.workplaces_by_size.filter(function(record) {
+      return record.workplace_size === 'big';
+    }), getWorkplaces);
+
+    $('#workplaceSizeChart').highcharts({
+        chart: { type: 'pie' },
+        title: { text: 'Workplaces by Size' },
+        plotOptions: {
+            pie: {
+              shadow: false,
+              center: ['50%', '50%']
+            }
+        },
+        series: [{
+          name: 'Betriebe',
+          size: '60%',
+          data: [{
+            name: 'Mikrounternehmen',
+            y: microWorkplacesSeries[0]
+          }, {
+            name: 'Kleinunternehmen',
+            y: smallWorkplacesSeries[0]
+          }, {
+            name: 'Mittlere Unternehmen',
+            y: mediumWorkplacesSeries[0]
+          }, {
+            name: 'Grossunternehmen',
+            y: bigWorkplacesSeries[0]
+          }]
+        }, {
+          name: 'Arbeitsplätze',
+          size: '80%',
+          innerSize: '60%',
+          data: [{
+            name: 'Mikrounternehmen',
+            y: microWorkersSeries[0]
+          }, {
+            name: 'Kleinunternehmen',
+            y: smallWorkersSeries[0]
+          }, {
+            name: 'Mittlere Unternehmen',
+            y: mediumWorkersSeries[0]
+          }, {
+            name: 'Grossunternehmen',
+            y: bigWorkersSeries[0]
+          }]
+        }]
+    });
+
 
     });
 });
