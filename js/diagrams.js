@@ -39,6 +39,76 @@ $(function () {
         return -number;
     }
 
+    function partyShareDiagram(elem, data) {
+        function getVoters(r) { return r.voters; }
+        function filterParty(party) {
+            return function(r) {
+                return r.party == party;
+            }
+        }
+        var years = $.unique($.map(data.political_parties, function(record) { return record.year; }));
+
+        var sp = $.map(data.political_parties.filter(filterParty('SP/PS')), getVoters);
+        var cvp = $.map(data.political_parties.filter(filterParty('CVP/PDC')), getVoters);
+        var fdp = $.map(data.political_parties.filter(filterParty('FDP/PLR (PRD)')), getVoters);
+        var glp = $.map(data.political_parties.filter(filterParty('GLP/PVL')), getVoters);
+        var svp = $.map(data.political_parties.filter(filterParty('SVP/UDC')), getVoters);
+        var bdp = $.map(data.political_parties.filter(filterParty('BDP/PBD')), getVoters);
+        var gps = $.map(data.political_parties.filter(filterParty('GPS/PES')), getVoters);
+        var edu = $.map(data.political_parties.filter(filterParty('EDU/UDF')), getVoters);
+        var evp = $.map(data.political_parties.filter(filterParty('EVP/PEV')), getVoters);
+        var other = $.map(data.political_parties.filter(filterParty('Other')), getVoters);
+
+        $(elem).highcharts({
+            chart: { type: 'area' },
+            title: { text: 'Share of Political Parties' },
+            xAxis: { categories: years },
+            yAxis: {
+                title: { text: 'Percentage' }
+            },
+            tooltip: {
+                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b> ({point.y:,.0f})<br/>'
+            },
+            plotOptions: {
+                area: { stacking: 'percent' }
+            },
+            series: [{
+                name: 'Übrige/Autres',
+                data: other
+            }, {
+                name: 'BDP',
+                data: bdp
+            }, {
+                name: 'FDP/PLR',
+                data: fdp
+            }, {
+                name: 'CVP/PDC',
+                data: cvp
+            }, {
+                name: 'GPS/PES',
+                data: gps
+            }, {
+                name: 'FDP/PLR',
+                data: fdp
+            }, {
+                name: 'GLP/PVL',
+                data: glp
+            }, {
+                name: 'SVP/UDP',
+                data: svp
+            }, {
+                name: 'SP/PES',
+                data: sp
+            }, {
+                name: 'EDU/UDF',
+                data: edu
+            }, {
+                name: 'EVP/PEV',
+                data: evp
+            }]
+        });
+    };
+
     function birthDeathDiagram(elem, data) {
         var births = $.map(data.births, function(record) { return record.births; });
         var deaths = $.map(data.deaths, function(record) { return record.deaths; });
@@ -349,7 +419,7 @@ $(function () {
         });
     }
 
-    var baseUrl = 'http://192.168.99.101:3000';
+    var baseUrl = 'http://192.168.99.100:3000';
 
     function loadDiagrams(communityId) {
         $.get(baseUrl + '/communities/' + communityId, function(data) {
@@ -359,6 +429,7 @@ $(function () {
             workSectorDiagram($('#work-sector-diagram'), data);
             workSizeDiagram($('#work-size-diagram'), data);
             migrationDiagram($('#migration-diagram'), data);
+            partyShareDiagram($('#party-share-diagram'), data);
         });
     }
 
@@ -380,5 +451,5 @@ $(function () {
          },
     });
 
-    loadDiagrams(3313);
+    loadDiagrams(261);
 });
