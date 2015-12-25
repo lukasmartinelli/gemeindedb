@@ -22,6 +22,7 @@ function exec_psql_file() {
 function main() {
     exec_psql_file "schema.sql"
     exec_psql_file "functions.sql"
+    exec_psql_file "schema_politics.sql"
     exec_psql_file "schema_population.sql"
     exec_psql_file "schema_culture.sql"
     exec_psql_file "schema_mobility.sql"

@@ -4,6 +4,7 @@ CREATE OR REPLACE VIEW public.communities_search AS (
     FROM public.communities AS c
     INNER JOIN public.zipcode AS z ON z.community_id = c.id
 );
+
 -------------------------------------------
 CREATE OR REPLACE VIEW public.wiki_background_images AS (
     SELECT community_id, url FROM public.wikipedia_images
@@ -12,6 +13,49 @@ CREATE OR REPLACE VIEW public.wiki_background_images AS (
       AND url NOT ILIKE '%karte%'
       AND url NOT ILIKE '%wappen%'
 );
+
+-------------------------------------------
+CREATE OR REPLACE VIEW public.political_parties_aggregated AS (
+    SELECT community_id, year, party, round(sum(voters)) as voters FROM (
+        SELECT community_id, year, party, voters FROM public.political_parties
+        WHERE party <> 'FGA/AVF'
+           AND party <> 'EDU/UDF'
+           AND party <> 'CSP/PCS'
+           AND party <> 'PdA/PST'
+           AND party <> 'SD/DS'
+           AND party <> 'FPS/PSL'
+           AND party <> 'LdU/AdI'
+           AND party <> 'Lega'
+           AND party <> 'LPS/PLS'
+           AND party <> 'MCR'
+           AND party <> 'POCH'
+           AND party <> 'PSA'
+           AND party <> 'Rep./Rép.'
+           AND party <> 'Sep./Sép.'
+           AND party <> 'Sol.'
+           AND party <> 'Übrige/Autres'
+        UNION ALL
+        SELECT community_id, year, 'Other' as party, voters FROM public.political_parties
+        WHERE party = 'FGA/AVF'
+           OR party = 'EDU/UDF'
+           OR party = 'CSP/PCS'
+           OR party = 'PdA/PST'
+           OR party = 'SD/DS'
+           OR party = 'FPS/PSL'
+           OR party = 'LdU/AdI'
+           OR party = 'Lega'
+           OR party = 'LPS/PLS'
+           OR party = 'MCR'
+           OR party = 'POCH'
+           OR party = 'PSA'
+           OR party = 'Rep./Rép.'
+           OR party = 'Sep./Sép.'
+           OR party = 'Sol.'
+           OR party = 'Übrige/Autres'
+    ) AS t
+    GROUP BY community_id, year, party
+);
+
 -------------------------------------------
 CREATE OR REPLACE VIEW public.communities_detail AS (
     SELECT
@@ -177,6 +221,13 @@ CREATE OR REPLACE VIEW public.communities_detail AS (
                 WHERE community_id = c.id
                 ORDER BY year ASC
             ) AS t
-        ) AS workplaces_by_size
+        ) AS workplaces_by_size,
+        (
+            SELECT array_to_json(array_agg(t)) FROM (
+                SELECT year, party, voters FROM public.political_parties_aggregated
+                WHERE community_id = c.id
+                ORDER BY year ASC
+            ) AS t
+        ) AS political_parties
     FROM public.communities AS c
 );
