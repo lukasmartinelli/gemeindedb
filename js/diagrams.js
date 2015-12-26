@@ -255,6 +255,43 @@ $(function () {
         });
     }
 
+    function buildingProjectsDiagram(elem, data) {
+        var years = $.unique($.map(data.building_projects, function(r) { return r.year; }));
+
+        function getProjects(constructionType, workType) {
+            return $.map(data.building_projects.filter(function(r) {
+                return r.construction_type === constructionType && r.work_type === workType;
+            }), function(r) {
+                return r.amount;
+            });
+        }
+
+        $(elem).highcharts({
+            chart: { type: 'column' },
+            title: { text: 'Building Projects' },
+            xAxis: { categories: years },
+            yAxis: {
+                title: { text: 'CHF' }
+            },
+            plotOptions: {
+                series: { stacking: 'normal' }
+            },
+            series: [{
+                name: 'Hochbau Neubau',
+                data: getProjects('Hochbau', 'Neubau')
+            }, {
+                name: 'Hochbau Umbau',
+                data: getProjects('Hochbau', 'Umbau')
+            }, {
+                name: 'Tiefbau Neubau',
+                data: getProjects('Tiefbau', 'Neubau')
+            }, {
+                name: 'Tiefbau Umbau',
+                data: getProjects('Tiefbau', 'Umbau')
+            }]
+        });
+    }
+
     function flatsByRoomsDiagram(elem, data) {
         function getFlats(r) {
             return r.flats;
@@ -276,7 +313,7 @@ $(function () {
         var sixOrMoreRooms = $.map(flats.filter(filterRooms('6+')), getFlats);
 
         $(elem).highcharts({
-            chart: { type: 'area' },
+            chart: { type: 'column' },
             title: { text: 'Flats' },
             xAxis: { categories: years },
             yAxis: {
@@ -303,6 +340,88 @@ $(function () {
             }, {
                 name: '6+',
                 data: sixOrMoreRooms
+            }]
+        });
+    }
+
+    function divorceDiagram(elem, data) {
+        function filterOrigin(originMan, originWoman) {
+            return function(r) {
+                return r.origin_man == originMan && r.origin_woman == originWoman;
+            }
+        }
+
+        function getDivorces(originMan, originWoman) {
+            return $.map(data.divorces.filter(filterOrigin(originMan, originWoman)), function(r) {
+                return r.divorces;
+            });
+        }
+
+        var years = $.unique($.map(data.divorces, function(r) { return r.year; }));
+
+        $(elem).highcharts({
+            chart: { type: 'column' },
+            title: { text: 'Divorces' },
+            xAxis: { categories: years },
+            yAxis: {
+                title: { text: 'Divorces' }
+            },
+            plotOptions: {
+                series: { stacking: 'normal' }
+            },
+            series: [{
+                name: 'Divorces (Swiss man and woman)',
+                data: getDivorces('Switzerland', 'Switzerland')
+            }, {
+                name: 'Divorces (Swiss man and foreign woman)',
+                data: getDivorces('Switzerland', 'Foreign country')
+            }, {
+                name: 'Divorces (Foreign man and woman)',
+                data: getDivorces('Foreign country', 'Foreign country')
+            }, {
+                name: 'Divorces (Foreign man and swiss woman)',
+                data: getDivorces('Foreign country', 'Switzerland')
+            }]
+        });
+    }
+
+    function marriageDiagram(elem, data) {
+        function filterOrigin(originMan, originWoman) {
+            return function(r) {
+                return r.origin_man == originMan && r.origin_woman == originWoman;
+            }
+        }
+
+        function getMarriages(originMan, originWoman) {
+            return $.map(data.marriages.filter(filterOrigin(originMan, originWoman)), function(r) {
+                return r.marriages;
+            });
+        }
+
+        var years = $.unique($.map(data.marriages, function(r) { return r.year; }));
+
+        $(elem).highcharts({
+            chart: { type: 'column' },
+            title: { text: 'Marriages' },
+            xAxis: { categories: years },
+            yAxis: {
+                title: { text: 'Marriages' }
+            },
+            plotOptions: {
+                series: { stacking: 'normal' }
+            },
+            series: [{
+                name: 'Marriages (Swiss man and woman)',
+                data: getMarriages('Switzerland', 'Switzerland')
+            }, {
+                name: 'Marriages (Swiss man and foreign woman)',
+                data: getMarriages('Switzerland', 'Foreign country')
+            }, {
+                name: 'Marriages (Foreign man and woman)',
+                data: getMarriages('Foreign country', 'Foreign country')
+            }, {
+                name: 'Marriages (Foreign man and swiss woman)',
+                data: getMarriages('Foreign country', 'Switzerland')
             }]
         });
     }
@@ -519,6 +638,9 @@ $(function () {
             partyShareDiagram($('#party-share-diagram'), data);
             buildingInvestmentsDiagram($('#building-investments-diagram'), data);
             flatsByRoomsDiagram($('#flats-rooms-diagram'), data);
+            marriageDiagram($('#marriage-diagram'), data);
+            divorceDiagram($('#divorce-diagram'), data);
+            buildingProjectsDiagram($('#building-projects-diagram'), data);
         });
     }
 
