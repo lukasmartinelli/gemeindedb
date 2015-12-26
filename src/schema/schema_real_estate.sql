@@ -56,27 +56,58 @@ CREATE TABLE public.building_investments (
     community_id integer NOT NULL,
     year integer NOT NULL,
     sector investment_sector NOT NULL,
-    thousand_swiss_francs integer NOT NULL,
-    PRIMARY KEY (community_id, year, sector),
+    category text NOT NULL,
+    amount integer NOT NULL,
+    PRIMARY KEY (community_id, year, sector, category),
     FOREIGN KEY (community_id) REFERENCES public.communities (id)
 );
 
 INSERT INTO public.building_investments
 SELECT c.id as community_id,
        year,
-       'private' as sector,
-       thousand_swiss_francs::integer
-FROM values_by_year_1995_2012('import.bauinvestitionen_privat_1995_2012', 'thousand_swiss_francs')
-     f(region text, year integer, thousand_swiss_francs text)
-INNER JOIN public.communities AS c ON c.id = extract_community_id(region);
-
-INSERT INTO public.building_investments
-SELECT c.id as community_id,
-       year,
-       'public' as sector,
-       thousand_swiss_francs::integer
-FROM values_by_year_1995_2012('import.bauinvestitionen_oeffentlich_1995_2012', 'thousand_swiss_francs')
-     f(region text, year integer, thousand_swiss_francs text)
+       CASE auftraggeber
+         WHEN 'Private Auftraggeber' THEN 'private'::investment_sector
+         WHEN 'Öffentliche Auftraggeber' THEN 'public'::investment_sector
+        END as sector,
+       kategorie as category,
+       (1000 * amount::integer) as amount
+FROM (
+    SELECT *, 2012 as year, _2012 as amount FROM import.bauinvestitionen_1995_2012
+    UNION ALL
+    SELECT *, 2011 as year, _2011 as amount FROM import.bauinvestitionen_1995_2012
+    UNION ALL
+    SELECT *, 2010 as year, _2010 as amount FROM import.bauinvestitionen_1995_2012
+    UNION ALL
+    SELECT *, 2009 as year, _2009 as amount FROM import.bauinvestitionen_1995_2012
+    UNION ALL
+    SELECT *, 2008 as year, _2008 as amount FROM import.bauinvestitionen_1995_2012
+    UNION ALL
+    SELECT *, 2007 as year, _2007 as amount FROM import.bauinvestitionen_1995_2012
+    UNION ALL
+    SELECT *, 2006 as year, _2006 as amount FROM import.bauinvestitionen_1995_2012
+    UNION ALL
+    SELECT *, 2005 as year, _2005 as amount FROM import.bauinvestitionen_1995_2012
+    UNION ALL
+    SELECT *, 2004 as year, _2004 as amount FROM import.bauinvestitionen_1995_2012
+    UNION ALL
+    SELECT *, 2003 as year, _2003 as amount FROM import.bauinvestitionen_1995_2012
+    UNION ALL
+    SELECT *, 2002 as year, _2002 as amount FROM import.bauinvestitionen_1995_2012
+    UNION ALL
+    SELECT *, 2001 as year, _2001 as amount FROM import.bauinvestitionen_1995_2012
+    UNION ALL
+    SELECT *, 2000 as year, _2000 as amount FROM import.bauinvestitionen_1995_2012
+    UNION ALL
+    SELECT *, 1999 as year, _1999 as amount FROM import.bauinvestitionen_1995_2012
+    UNION ALL
+    SELECT *, 1998 as year, _1998 as amount FROM import.bauinvestitionen_1995_2012
+    UNION ALL
+    SELECT *, 1997 as year, _1997 as amount FROM import.bauinvestitionen_1995_2012
+    UNION ALL
+    SELECT *, 1996 as year, _1996 as amount FROM import.bauinvestitionen_1995_2012
+    UNION ALL
+    SELECT *, 1995 as year, _1995 as amount FROM import.bauinvestitionen_1995_2012
+) AS t
 INNER JOIN public.communities AS c ON c.id = extract_community_id(region);
 
 -------------------------------------------

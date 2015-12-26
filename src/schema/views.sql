@@ -59,6 +59,26 @@ CREATE OR REPLACE VIEW public.political_parties_aggregated AS (
 );
 
 -------------------------------------------
+CREATE OR REPLACE VIEW public.building_investments_by_category AS (
+    SELECT community_id, year, category, sum(amount) as amount FROM (
+        SELECT community_id, year, category, amount FROM public.building_investments
+        WHERE category <> 'Infrastruktur: Entsorgung'
+           AND category <> 'Infrastruktur: Strassenverkehr'
+           AND category <> 'Infrastruktur: Versorgung'
+           AND category <> 'Infrastruktur: Übrige Verkehr und Kommunikation'
+           AND category <> 'Übrige Infrastruktur'
+        UNION ALL
+        SELECT community_id, year, 'Infrastruktur' as category, amount FROM public.building_investments
+        WHERE category = 'Infrastruktur: Entsorgung'
+           OR category = 'Infrastruktur: Strassenverkehr'
+           OR category = 'Infrastruktur: Versorgung'
+           OR category = 'Infrastruktur: Übrige Verkehr und Kommunikation'
+           AND category <> 'Übrige Infrastruktur'
+    ) AS t
+    GROUP BY community_id, year, category
+);
+
+-------------------------------------------
 CREATE OR REPLACE VIEW public.communities_detail AS (
     SELECT
         c.id AS community_id,
@@ -233,11 +253,11 @@ CREATE OR REPLACE VIEW public.communities_detail AS (
         ) AS political_parties,
         (
             SELECT array_to_json(array_agg(t)) FROM (
-                SELECT year, sector, thousand_swiss_francs FROM public.building_investments
+                SELECT year, category, amount FROM public.building_investments_by_category
                 WHERE community_id = c.id
                 ORDER BY year ASC
             ) AS t
-        ) AS building_investments,
+        ) AS building_investments_by_category,
         (
             SELECT array_to_json(array_agg(t)) FROM (
                 SELECT year, rooms, sum(flats) AS flats FROM public.flats
