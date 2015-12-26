@@ -255,6 +255,103 @@ $(function () {
         });
     }
 
+    function flatsByRoomsDiagram(elem, data) {
+        function getFlats(r) {
+            return r.flats;
+        }
+
+        function filterRooms(constraint) {
+            return function(r) {
+                return r.rooms === constraint;
+            }
+        }
+
+        var flats = data.flats_by_rooms;
+        var years = $.unique($.map(flats, function(r) { return r.year; }));
+        var oneRoom = $.map(flats.filter(filterRooms('1')), getFlats);
+        var twoRooms = $.map(flats.filter(filterRooms('2')), getFlats);
+        var threeRooms = $.map(flats.filter(filterRooms('3')), getFlats);
+        var fourRooms = $.map(flats.filter(filterRooms('4')), getFlats);
+        var fiveRooms = $.map(flats.filter(filterRooms('5')), getFlats);
+        var sixOrMoreRooms = $.map(flats.filter(filterRooms('6+')), getFlats);
+
+        $(elem).highcharts({
+            chart: { type: 'area' },
+            title: { text: 'Flats' },
+            xAxis: { categories: years },
+            yAxis: {
+                title: { text: 'Wohnungen' }
+            },
+            plotOptions: {
+                area: { stacking: 'normal' }
+            },
+            series: [{
+                name: '1',
+                data: oneRoom
+            }, {
+                name: '2',
+                data: twoRooms
+            }, {
+                name: '3',
+                data: threeRooms
+            }, {
+                name: '4',
+                data: fourRooms
+            }, {
+                name: '5',
+                data: fiveRooms
+            }, {
+                name: '6+',
+                data: sixOrMoreRooms
+            }]
+        });
+    }
+
+    function buildingInvestmentsDiagram(elem, data) {
+
+        function extractAmount(category) {
+            var investments = data.building_investments_by_category
+                .filter(function(r) { return r.category === category; });
+            return $.map(investments, function(r) { return r.amount; });
+        }
+
+        var years = $.unique($.map(data.building_investments_by_category, function(r) { return r.year; }));
+
+        $(elem).highcharts({
+            chart: { type: 'column' },
+            title: { text: 'Building Investments' },
+            xAxis: { categories: years },
+            yAxis: {
+                title: { text: 'CHF' }
+            },
+            plotOptions: {
+                series: { stacking: 'normal' }
+            },
+            series: [{
+                name: 'Gesundheit',
+                data: extractAmount('Gesundheit'),
+            }, {
+                name: 'Bildung, Forschung',
+                data: extractAmount('Bildung, Forschung'),
+            }, {
+                name: 'Wohnen',
+                data: extractAmount('Wohnen'),
+            }, {
+                name: 'Infrastruktur',
+                data: extractAmount('Infrastruktur'),
+            }, {
+                name: 'Freizeit, Kultur',
+                data: extractAmount('Freizeit, Kultur'),
+            }, {
+                name: 'Industrie, Gewerbe, Dienstleistungen',
+                data: extractAmount('Industrie, Gewerbe, Dienstleistungen'),
+            }, {
+                name: 'Land- und Forstwirtschaft',
+                data: extractAmount('Land- und Forstwirtschaft'),
+            }]
+        });
+    }
+
     function populationOriginDiagram(elem, data) {
         function getPeople(r) {
             return r.people;
@@ -420,6 +517,8 @@ $(function () {
             workSizeDiagram($('#work-size-diagram'), data);
             migrationDiagram($('#migration-diagram'), data);
             partyShareDiagram($('#party-share-diagram'), data);
+            buildingInvestmentsDiagram($('#building-investments-diagram'), data);
+            flatsByRoomsDiagram($('#flats-rooms-diagram'), data);
         });
     }
 
