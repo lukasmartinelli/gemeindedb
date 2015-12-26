@@ -55,8 +55,6 @@ $(function () {
         var svp = $.map(data.political_parties.filter(filterParty('SVP/UDC')), getVoters);
         var bdp = $.map(data.political_parties.filter(filterParty('BDP/PBD')), getVoters);
         var gps = $.map(data.political_parties.filter(filterParty('GPS/PES')), getVoters);
-        var edu = $.map(data.political_parties.filter(filterParty('EDU/UDF')), getVoters);
-        var evp = $.map(data.political_parties.filter(filterParty('EVP/PEV')), getVoters);
         var other = $.map(data.political_parties.filter(filterParty('Other')), getVoters);
 
         $(elem).highcharts({
@@ -67,17 +65,21 @@ $(function () {
                 title: { text: 'Percentage' }
             },
             tooltip: {
-                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b> ({point.y:,.0f})<br/>'
+                pointFormat: '<span>{series.name}</span>: <b>{point.percentage:.1f}%</b> ({point.y:,.0f})<br/>'
             },
             plotOptions: {
                 area: { stacking: 'percent' }
             },
+            colors: ['#D8E8EF', '#006400', '#CC0000', '#007AD2', '#DB8300', '#66BB66', '#A2BB00', '#FBD81B', '#757575', '#454545', '#DB9200', '#354F00', '#7A9F35', '#C20C0C'],
             series: [{
                 name: 'Übrige/Autres',
                 data: other
             }, {
-                name: 'BDP',
-                data: bdp
+                name: 'SVP/UDP',
+                data: svp
+            }, {
+                name: 'SP/PES',
+                data: sp
             }, {
                 name: 'FDP/PLR',
                 data: fdp
@@ -88,23 +90,11 @@ $(function () {
                 name: 'GPS/PES',
                 data: gps
             }, {
-                name: 'FDP/PLR',
-                data: fdp
-            }, {
                 name: 'GLP/PVL',
                 data: glp
             }, {
-                name: 'SVP/UDP',
-                data: svp
-            }, {
-                name: 'SP/PES',
-                data: sp
-            }, {
-                name: 'EDU/UDF',
-                data: edu
-            }, {
-                name: 'EVP/PEV',
-                data: evp
+                name: 'BDP',
+                data: bdp
             }]
         });
     };
