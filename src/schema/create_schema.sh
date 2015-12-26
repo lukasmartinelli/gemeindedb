@@ -22,12 +22,12 @@ function exec_psql_file() {
 function main() {
     exec_psql_file "schema.sql"
     exec_psql_file "functions.sql"
+    exec_psql_file "schema_real_estate.sql"
     exec_psql_file "schema_politics.sql"
     exec_psql_file "schema_population.sql"
     exec_psql_file "schema_culture.sql"
     exec_psql_file "schema_mobility.sql"
     exec_psql_file "schema_industry_and_services.sql"
-    exec_psql_file "schema_real_estate.sql"
     exec_psql_file "views.sql"
 }
 

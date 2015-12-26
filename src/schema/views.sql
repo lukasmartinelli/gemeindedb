@@ -19,6 +19,7 @@ CREATE OR REPLACE VIEW public.political_parties_aggregated AS (
     SELECT community_id, year, party, round(sum(voters)) as voters FROM (
         SELECT community_id, year, party, voters FROM public.political_parties
         WHERE party <> 'FGA/AVF'
+           AND party <> 'EVP/PEV'
            AND party <> 'EDU/UDF'
            AND party <> 'CSP/PCS'
            AND party <> 'PdA/PST'
@@ -37,6 +38,7 @@ CREATE OR REPLACE VIEW public.political_parties_aggregated AS (
         UNION ALL
         SELECT community_id, year, 'Other' as party, voters FROM public.political_parties
         WHERE party = 'FGA/AVF'
+           OR party = 'EVP/PEV'
            OR party = 'EDU/UDF'
            OR party = 'CSP/PCS'
            OR party = 'PdA/PST'
@@ -228,6 +230,21 @@ CREATE OR REPLACE VIEW public.communities_detail AS (
                 WHERE community_id = c.id
                 ORDER BY year ASC
             ) AS t
-        ) AS political_parties
+        ) AS political_parties,
+        (
+            SELECT array_to_json(array_agg(t)) FROM (
+                SELECT year, sector, thousand_swiss_francs FROM public.building_investments
+                WHERE community_id = c.id
+                ORDER BY year ASC
+            ) AS t
+        ) AS building_investments,
+        (
+            SELECT array_to_json(array_agg(t)) FROM (
+                SELECT year, rooms, sum(flats) AS flats FROM public.flats
+                WHERE community_id = c.id
+                GROUP BY year, rooms
+                ORDER BY year ASC
+            ) AS t
+        ) AS flats_by_rooms
     FROM public.communities AS c
 );

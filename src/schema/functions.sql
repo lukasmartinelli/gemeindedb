@@ -92,3 +92,48 @@ BEGIN
 END;
 $$
 LANGUAGE plpgsql;
+
+-------------------------------------------
+CREATE OR REPLACE FUNCTION values_by_year_1995_2012(table_name text, column_name text)
+RETURNS SETOF RECORD AS $$
+BEGIN
+    RETURN QUERY EXECUTE format(
+        'SELECT region, 2012 as year, _2012 as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, 2011 as year, _2011 as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, 2010 as year, _2010 as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, 2009 as year, _2009 as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, 2008 as year, _2008 as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, 2007 as year, _2007 as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, 2006 as year, _2006 as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, 2005 as year, _2005 as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, 2004 as year, _2004 as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, 2003 as year, _2003 as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, 2002 as year, _2002 as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, 2001 as year, _2001 as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, 2000 as year, _2000 as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, 1999 as year, _1999 as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, 1998 as year, _1998 as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, 1997 as year, _1997 as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, 1996 as year, _1996 as %2$s FROM %1$s
+        UNION ALL
+        SELECT region, 1995 as year, _1995 as %2$s FROM %1$s',
+        table_name, column_name);
+END;
+$$
+LANGUAGE plpgsql;
