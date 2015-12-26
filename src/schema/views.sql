@@ -265,6 +265,29 @@ CREATE OR REPLACE VIEW public.communities_detail AS (
                 GROUP BY year, rooms
                 ORDER BY year ASC
             ) AS t
-        ) AS flats_by_rooms
+        ) AS flats_by_rooms,
+        (
+            SELECT array_to_json(array_agg(t)) FROM (
+                SELECT year, origin_man, origin_woman, marriages FROM public.marriages
+                WHERE community_id = c.id
+                ORDER BY year ASC
+            ) AS t
+        ) AS marriages,
+        (
+            SELECT array_to_json(array_agg(t)) FROM (
+                SELECT year, origin_man, origin_woman, sum(divorces) as divorces FROM public.divorces
+                WHERE community_id = c.id
+                GROUP BY year, origin_man, origin_woman
+                ORDER BY year ASC
+            ) AS t
+        ) AS divorces,
+        (
+            SELECT array_to_json(array_agg(t)) FROM (
+                SELECT year, construction_type, work_type, sum(amount) AS amount FROM public.building_projects
+                WHERE community_id = c.id
+                GROUP BY year, construction_type, work_type
+                ORDER BY year ASC
+            ) AS t
+        ) AS building_projects
     FROM public.communities AS c
 );

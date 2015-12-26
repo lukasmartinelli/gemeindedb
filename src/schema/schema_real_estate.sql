@@ -154,3 +154,37 @@ FROM (
     SELECT region, gebäudekategorie, anzahl_zimmer, 2009 as year, _2009 as flats FROM import.wohnungen_2009_2014
 ) AS t
 INNER JOIN public.communities AS c ON c.id = extract_community_id(region);
+
+-------------------------------------------
+DROP TABLE IF EXISTS public.building_projects CASCADE;
+
+DROP TYPE IF EXISTS employer;
+CREATE TYPE employer AS ENUM ('Private Auftraggeber', 'Öffentliche Auftraggeber');
+
+DROP TYPE IF EXISTS construction_type;
+CREATE TYPE construction_type AS ENUM ('Hochbau', 'Tiefbau');
+
+DROP TYPE IF EXISTS work_type;
+CREATE TYPE work_type AS ENUM ('Umbau', 'Neubau');
+
+CREATE TABLE public.building_projects (
+    community_id integer NOT NULL,
+    year integer NOT NULL,
+    employer employer NOT NULL,
+    construction_type construction_type NOT NULL,
+    work_type work_type NOT NULL,
+    amount integer NOT NULL,
+    PRIMARY KEY (community_id, year, employer, construction_type, work_type),
+    FOREIGN KEY (community_id) REFERENCES public.communities (id)
+);
+
+INSERT INTO public.building_projects
+SELECT c.id as community_id,
+       year,
+       auftraggeber::employer as employer,
+       art_bauwerk::construction_type as construction_type,
+       art_arbeit::work_type as work_type,
+       (amount::integer * 1000) as amount
+FROM values_by_year(flats'import.bauvorhaben_1995_2012', 'amount', 'region, auftraggeber, art_bauwerk, art_arbeit')
+     f(region text, auftraggeber text, art_bauwerk text, art_arbeit text, year integer, projects text)
+INNER JOIN public.communities AS c ON c.id = extract_community_id(region);
