@@ -1,5 +1,5 @@
 -------------------------------------------
-DROP TYPE workplace_size CASCADE;
+DROP TYPE IF EXISTS workplace_size CASCADE;
 CREATE TYPE workplace_size AS ENUM ('micro', 'small', 'medium', 'big');
 
 DROP TABLE IF EXISTS public.workplaces_by_size CASCADE;
