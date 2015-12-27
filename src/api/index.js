@@ -30,6 +30,7 @@ app.get('/communities', function(req, res) {
       res.json(data);
     })
     .catch(function (error) {
+      console.error(err);
       res.json(error);
   });
 });

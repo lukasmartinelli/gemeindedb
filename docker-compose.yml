@@ -26,3 +26,9 @@ api:
    - "3000:3000"
   volumes:
    - ./src/api:/usr/src/app
+pregenerate:
+  build: "src/pregenerate"
+  links:
+   - api:api
+  volumes:
+   - ./apidata/:/data

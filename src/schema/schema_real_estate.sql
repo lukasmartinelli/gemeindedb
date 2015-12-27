@@ -185,6 +185,6 @@ SELECT c.id as community_id,
        art_bauwerk::construction_type as construction_type,
        art_arbeit::work_type as work_type,
        (amount::integer * 1000) as amount
-FROM values_by_year(flats'import.bauvorhaben_1995_2012', 'amount', 'region, auftraggeber, art_bauwerk, art_arbeit')
-     f(region text, auftraggeber text, art_bauwerk text, art_arbeit text, year integer, projects text)
+FROM values_by_year_1995_2012('import.bauvorhaben_1995_2012', 'amount', 'region, auftraggeber, art_bauwerk, art_arbeit')
+     f(region text, auftraggeber text, art_bauwerk text, art_arbeit text, year integer, amount text)
 INNER JOIN public.communities AS c ON c.id = extract_community_id(region);
