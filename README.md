@@ -1,4 +1,4 @@
-# Open Data Statistics about Swiss Communities [![Build Status](https://travis-ci.org/lukasmartinelli/gemeindedb.svg)](https://travis-ci.org/lukasmartinelli/gemeindedb)
+# Open Data Statistics about Swiss Communities [![Build Status](https://travis-ci.org/lukasmartinelli/gemeindeinfo.svg)](https://travis-ci.org/lukasmartinelli/gemeindedb)
 
 The goal of the project is to collect statistics about swiss communities in one places.
 Most of the data is from the [BFS](http://www.bfs.admin.ch/) and is transformed
