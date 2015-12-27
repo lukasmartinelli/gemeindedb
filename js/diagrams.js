@@ -1,5 +1,7 @@
 $(function () {
     Highcharts.theme = {
+        credits: { enabled: false },
+        exporting: { enabled: false },
         colors: ['#006699', '#66afe9', '#D8E8EF', '#757575', '#DC0018', '#fffab2',  '##F7001D'],
         chart: {
             backgroundColor: {
@@ -629,6 +631,8 @@ $(function () {
 
     function loadDiagrams(communityId) {
         $.get(baseUrl + '/communities/' + communityId + '.json', function(data) {
+            $('#community-name').text(data.name);
+
             populationOriginDiagram($('#population-origin-diagram'), data);
             birthDeathDiagram($('#birth-death-diagram'), data);
             ageGroupDiagram($('#age-group-diagram'), data);
@@ -644,7 +648,7 @@ $(function () {
         });
     }
 
-    $('#search-form').submit(function(e) {
+    /*$('#search-form').submit(function(e) {
         var query = $('#search-query').val();
         e.preventDefault();
         $.get(baseUrl + '/communities?q=' + query, function(results) {
@@ -652,13 +656,17 @@ $(function () {
             loadDiagrams(community.id);
             $('#community-name').text(community.name);
         });
-    });
+    });*/
 
     $("#search-query").easyAutocomplete({
         url: baseUrl + '/communities.json',
         getValue: "name",
         list: {
-            match: { enabled: true }
+            match: { enabled: true },
+            onSelectItemEvent: function() {
+                var selectedItemValue = $("#search-query").getSelectedItemData();
+                loadDiagrams(selectedItemValue.community_id);
+            }
          },
     });
 
