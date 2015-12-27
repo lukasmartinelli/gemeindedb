@@ -625,10 +625,10 @@ $(function () {
         });
     }
 
-    var baseUrl = 'http://192.168.99.100:3000';
+    var baseUrl = '/api';
 
     function loadDiagrams(communityId) {
-        $.get(baseUrl + '/communities/' + communityId, function(data) {
+        $.get(baseUrl + '/communities/' + communityId + '.json', function(data) {
             populationOriginDiagram($('#population-origin-diagram'), data);
             birthDeathDiagram($('#birth-death-diagram'), data);
             ageGroupDiagram($('#age-group-diagram'), data);
@@ -655,7 +655,7 @@ $(function () {
     });
 
     $("#search-query").easyAutocomplete({
-        url: baseUrl + '/communities',
+        url: baseUrl + '/communities.json',
         getValue: "name",
         list: {
             match: { enabled: true }
