@@ -1,5 +1,7 @@
 # Open Data Statistics about Swiss Communities [![Build Status](https://travis-ci.org/lukasmartinelli/gemeindeinfo.svg)](https://travis-ci.org/lukasmartinelli/gemeindedb)
 
+> :warning: This repository is no longer maintained by Lukas Martinelli.
+
 The goal of the project is to collect statistics about swiss communities in one place and provide
 TSV downloads and a website to show of some nice statistics.
 
